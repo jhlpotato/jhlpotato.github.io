@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Jinhongliang&#39;s Blog</title>
+  <title>第385题---Mini Parse | Jinhongliang&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="题意描述：给定一个嵌套整数列表的字符串，返回的他的NestedInteger类的结构体，反序列化？
 
@@ -13,7 +13,7 @@
 parseList函数，判断是不是[，如果是，则进入parseList函数，递归了，如果是-或者数，进入parseNum函数，如果是，跳过，如果是]break，结束
 parseNum函数">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Jinhongliang's Blog">
+<meta property="og:title" content="第385题---Mini Parse">
 <meta property="og:url" content="http://www.jinhongliang.cn/2016/08/15/第385题---Mini_Parse/index.html">
 <meta property="og:site_name" content="Jinhongliang's Blog">
 <meta property="og:description" content="题意描述：给定一个嵌套整数列表的字符串，返回的他的NestedInteger类的结构体，反序列化？
@@ -22,9 +22,9 @@ parseNum函数">
 
 parseList函数，判断是不是[，如果是，则进入parseList函数，递归了，如果是-或者数，进入parseNum函数，如果是，跳过，如果是]break，结束
 parseNum函数">
-<meta property="og:updated_time" content="2016-08-15T09:54:47.000Z">
+<meta property="og:updated_time" content="2016-08-15T10:01:42.403Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Jinhongliang's Blog">
+<meta name="twitter:title" content="第385题---Mini Parse">
 <meta name="twitter:description" content="题意描述：给定一个嵌套整数列表的字符串，返回的他的NestedInteger类的结构体，反序列化？
 
 思路：遍历字符串，判断是不是’[‘,如果是，则进入parseList函数，不是则进入parseNum函数；
@@ -125,7 +125,7 @@ parseNum函数">
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						
+						<a href="/tags/leetcode/" style="font-size: 10px;">leetcode</a>
 					</div>
 				</section>
 				
@@ -195,7 +195,7 @@ parseNum函数">
   
     <div class="article-meta">
       <a href="/2016/08/15/第385题---Mini_Parse/" class="article-date">
-  	<time datetime="2016-08-15T09:59:09.312Z" itemprop="datePublished">2016-08-15</time>
+  	<time datetime="2016-08-15T10:01:42.403Z" itemprop="datePublished">2016-08-15</time>
 </a>
     </div>
   
@@ -203,6 +203,28 @@ parseNum函数">
     
       <input type="hidden" class="isFancy" />
     
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      第385题---Mini Parse
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
     
     <div class="article-entry" itemprop="articleBody">
       
@@ -216,7 +238,8 @@ parseNum函数">
 </ul>
 </li>
 <li><p>代码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * // This is the interface that allows for creating nested lists.</div><div class="line"> * // You should not implement it, or speculate about its implementation</div><div class="line"> * class NestedInteger &#123;</div><div class="line"> *   public:</div><div class="line"> *     // Constructor initializes an empty nested list.</div><div class="line"> *     NestedInteger();</div><div class="line"> *</div><div class="line"> *     // Constructor initializes a single integer.</div><div class="line"> *     NestedInteger(int value);</div><div class="line"> *</div><div class="line"> *     // Return true if this NestedInteger holds a single integer, rather than a nested list.</div><div class="line"> *     bool isInteger() const;</div><div class="line"> *</div><div class="line"> *     // Return the single integer that this NestedInteger holds, if it holds a single integer</div><div class="line"> *     // The result is undefined if this NestedInteger holds a nested list</div><div class="line"> *     int getInteger() const;</div><div class="line"> *</div><div class="line"> *     // Set this NestedInteger to hold a single integer.</div><div class="line"> *     void setInteger(int value);</div><div class="line"> *</div><div class="line"> *     // Set this NestedInteger to hold a nested list and adds a nested integer to it.</div><div class="line"> *     void add(const NestedInteger &amp;ni);</div><div class="line"> *</div><div class="line"> *     // Return the nested list that this NestedInteger holds, if it holds a nested list</div><div class="line"> *     // The result is undefined if this NestedInteger holds a single integer</div><div class="line"> *     const vector&lt;NestedInteger&gt; &amp;getList() const;</div><div class="line"> * &#125;;</div><div class="line"> */</div><div class="line">class Solution &#123;</div><div class="line">public:</div><div class="line">    NestedInteger deserialize(string s) &#123;</div><div class="line">        int index = 0;</div><div class="line">        char c = s[index];</div><div class="line">        if (c == &apos;[&apos;) &#123;</div><div class="line">            return parseList(s, index);</div><div class="line">        &#125; else &#123;</div><div class="line">            return parseNum(s, index);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    NestedInteger parseList(string &amp;s, int &amp;index) &#123;</div><div class="line">        index ++; // eat &apos;[&apos;</div><div class="line">        NestedInteger root;</div><div class="line">        while(index &lt; s.size()) &#123;</div><div class="line">            char c = s[index];</div><div class="line">            if (c == &apos;[&apos;) &#123;</div><div class="line">                root.add(parseList(s, index));</div><div class="line">            &#125; else if (c == &apos;-&apos; || isNumber(c)) &#123;</div><div class="line">                root.add(parseNum(s, index));</div><div class="line">            &#125; else if (c == &apos;,&apos;) &#123;</div><div class="line">                index ++;</div><div class="line">            &#125; else if (c == &apos;]&apos;) &#123;</div><div class="line">                break;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        index ++;</div><div class="line">        return root;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    NestedInteger parseNum(string &amp;s, int &amp;index) &#123;</div><div class="line">        int n = 0;</div><div class="line">        int positive = 1;</div><div class="line">        if(s[index] == &apos;-&apos;) &#123;</div><div class="line">            positive = -1;</div><div class="line">            index ++;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        while(index &lt; s.size()) &#123;</div><div class="line">            char c = s[index];</div><div class="line">            if (isNumber(c)) &#123;</div><div class="line">                n = 10 * n + c - &apos;0&apos;;</div><div class="line">                index ++;</div><div class="line">            &#125; else &#123;</div><div class="line">                break;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        return NestedInteger(n * positive);</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    bool isNumber(char c) &#123;</div><div class="line">        return &apos;0&apos; &lt;= c  &amp;&amp; c &lt;= &apos;9&apos;;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></li>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * // This is the interface that allows for creating nested lists.</div><div class="line"> * // You should not implement it, or speculate about its implementation</div><div class="line"> * class NestedInteger &#123;</div><div class="line"> *   public:</div><div class="line"> *     // Constructor initializes an empty nested list.</div><div class="line"> *     NestedInteger();</div><div class="line"> *</div><div class="line"> *     // Constructor initializes a single integer.</div><div class="line"> *     NestedInteger(int value);</div><div class="line"> *</div><div class="line"> *     // Return true if this NestedInteger holds a single integer, rather than a nested list.</div><div class="line"> *     bool isInteger() const;</div><div class="line"> *</div><div class="line"> *     // Return the single integer that this NestedInteger holds, if it holds a single integer</div><div class="line"> *     // The result is undefined if this NestedInteger holds a nested list</div><div class="line"> *     int getInteger() const;</div><div class="line"> *</div><div class="line"> *     // Set this NestedInteger to hold a single integer.</div><div class="line"> *     void setInteger(int value);</div><div class="line"> *</div><div class="line"> *     // Set this NestedInteger to hold a nested list and adds a nested integer to it.</div><div class="line"> *     void add(const NestedInteger &amp;ni);</div><div class="line"> *</div><div class="line"> *     // Return the nested list that this NestedInteger holds, if it holds a nested list</div><div class="line"> *     // The result is undefined if this NestedInteger holds a single integer</div><div class="line"> *     const vector&lt;NestedInteger&gt; &amp;getList() const;</div><div class="line"> * &#125;;</div><div class="line"> */</div><div class="line">class Solution &#123;</div><div class="line">public:</div><div class="line">    NestedInteger deserialize(string s) &#123;</div><div class="line">        int index = 0;</div><div class="line">        char c = s[index];</div><div class="line">        if (c == &apos;[&apos;) &#123;</div><div class="line">            return parseList(s, index);</div><div class="line">        &#125; else &#123;</div><div class="line">            return parseNum(s, index);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    NestedInteger parseList(string &amp;s, int &amp;index) &#123;</div><div class="line">        index ++; // eat &apos;[&apos;</div><div class="line">        NestedInteger root;</div><div class="line">        while(index &lt; s.size()) &#123;</div><div class="line">            char c = s[index];</div><div class="line">            if (c == &apos;[&apos;) &#123;</div><div class="line">                root.add(parseList(s, index));</div><div class="line">            &#125; else if (c == &apos;-&apos; || isNumber(c)) &#123;</div><div class="line">                root.add(parseNum(s, index));</div><div class="line">            &#125; else if (c == &apos;,&apos;) &#123;</div><div class="line">                index ++;</div><div class="line">            &#125; else if (c == &apos;]&apos;) &#123;</div><div class="line">                break;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        index ++;</div><div class="line">        return root;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    NestedInteger parseNum(string &amp;s, int &amp;index) &#123;</div><div class="line">        int n = 0;</div><div class="line">        int positive = 1;</div><div class="line">        if(s[index] == &apos;-&apos;) &#123;</div><div class="line">            positive = -1;</div><div class="line">            index ++;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        while(index &lt; s.size()) &#123;</div><div class="line">            char c = s[index];</div><div class="line">            if (isNumber(c)) &#123;</div><div class="line">                n = 10 * n + c - &apos;0&apos;;</div><div class="line">                index ++;</div><div class="line">            &#125; else &#123;</div><div class="line">                break;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        return NestedInteger(n * positive);</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    bool isNumber(char c) &#123;</div><div class="line">        return &apos;0&apos; &lt;= c  &amp;&amp; c &lt;= &apos;9&apos;;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+</li>
 </ul>
 
       
@@ -264,7 +287,7 @@ parseNum函数">
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="第385题---Mini_Parse" data-title="" data-url="http://www.jinhongliang.cn/2016/08/15/第385题---Mini_Parse/"></div>
+	<div class="ds-thread" data-thread-key="第385题---Mini_Parse" data-title="第385题---Mini Parse" data-url="http://www.jinhongliang.cn/2016/08/15/第385题---Mini_Parse/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
