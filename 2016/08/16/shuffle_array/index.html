@@ -4,21 +4,51 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Hello World | Jinhongliang&#39;s Blog</title>
+  <title>第384题 shuffle an array | Jinhongliang&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+  <meta name="description" content="题意描述
+
+给定一个数组，把这个数组当作参数传给solution的类，实现这个类的构造函数，reset（）函数还原这个数组，shuffle函数是这数组随机洗牌
+
+
+思路一
+
+定义两个数组，一个保存原来的数组，用于reset函数；一个数组用于随机洗牌函数，随机的算法是遍历数组，生成一个随机数，交换随机数的位置的值和当前位置的值，遍历完成
+
+
+代码
+1234567891011121314151617">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://www.jinhongliang.cn/2016/08/15/20190912/index.html">
+<meta property="og:title" content="第384题 shuffle an array">
+<meta property="og:url" content="http://www.jinhongliang.cn/2016/08/16/shuffle_array/index.html">
 <meta property="og:site_name" content="Jinhongliang's Blog">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
-<meta property="og:updated_time" content="2016-08-15T08:55:09.725Z">
+<meta property="og:description" content="题意描述
+
+给定一个数组，把这个数组当作参数传给solution的类，实现这个类的构造函数，reset（）函数还原这个数组，shuffle函数是这数组随机洗牌
+
+
+思路一
+
+定义两个数组，一个保存原来的数组，用于reset函数；一个数组用于随机洗牌函数，随机的算法是遍历数组，生成一个随机数，交换随机数的位置的值和当前位置的值，遍历完成
+
+
+代码
+1234567891011121314151617">
+<meta property="og:updated_time" content="2016-08-16T02:47:49.284Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+<meta name="twitter:title" content="第384题 shuffle an array">
+<meta name="twitter:description" content="题意描述
+
+给定一个数组，把这个数组当作参数传给solution的类，实现这个类的构造函数，reset（）函数还原这个数组，shuffle函数是这数组随机洗牌
+
+
+思路一
+
+定义两个数组，一个保存原来的数组，用于reset函数；一个数组用于随机洗牌函数，随机的算法是遍历数组，生成一个随机数，交换随机数的位置的值和当前位置的值，遍历完成
+
+
+代码
+1234567891011121314151617">
   
     <link rel="alternative" href="/atom.xml" title="Jinhongliang&#39;s Blog" type="application/atom+xml">
   
@@ -179,11 +209,11 @@ Quick">
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-20190912" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-shuffle_array" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/08/15/20190912/" class="article-date">
-  	<time datetime="2016-08-15T08:55:09.725Z" itemprop="datePublished">2016-08-15</time>
+      <a href="/2016/08/16/shuffle_array/" class="article-date">
+  	<time datetime="2016-08-16T02:47:49.284Z" itemprop="datePublished">2016-08-16</time>
 </a>
     </div>
   
@@ -196,7 +226,7 @@ Quick">
         
   
     <h1 class="article-title" itemprop="name">
-      Hello World
+      第384题 shuffle an array
     </h1>
   
 
@@ -212,15 +242,21 @@ Quick">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <ul>
+<li><p>题意描述</p>
+<ul>
+<li>给定一个数组，把这个数组当作参数传给solution的类，实现这个类的构造函数，reset（）函数还原这个数组，shuffle函数是这数组随机洗牌</li>
+</ul>
+</li>
+<li><p>思路一</p>
+<ul>
+<li>定义两个数组，一个保存原来的数组，用于reset函数；一个数组用于随机洗牌函数，随机的算法是遍历数组，生成一个随机数，交换随机数的位置的值和当前位置的值，遍历完成</li>
+</ul>
+</li>
+<li><p>代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">public:</div><div class="line">    Solution(vector&lt;int&gt; nums) &#123;</div><div class="line">        temp = nums;</div><div class="line">        orig = nums;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    /** Resets the array to its original configuration and return it. */</div><div class="line">    vector&lt;int&gt; reset() &#123;</div><div class="line">        return orig;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    /** Returns a random shuffling of the array. */</div><div class="line">    vector&lt;int&gt; shuffle() &#123;</div><div class="line">        int size = temp.size();</div><div class="line">        for(int i = 0; i &lt; size; ++i) &#123;</div><div class="line">            int random = rand() % size;</div><div class="line">            swap(i, random);</div><div class="line">        &#125;</div><div class="line">        return temp;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    void swap(int a, int b) &#123;</div><div class="line">        int tmp = temp[a];</div><div class="line">        temp[a] = temp[b];</div><div class="line">        temp[b] = tmp;</div><div class="line">    &#125;</div><div class="line">private:</div><div class="line">    vector&lt;int&gt; temp;</div><div class="line">    vector&lt;int&gt; orig;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">/**</div><div class="line"> * Your Solution object will be instantiated and called as such:</div><div class="line"> * Solution obj = new Solution(nums);</div><div class="line"> * vector&lt;int&gt; param_1 = obj.reset();</div><div class="line"> * vector&lt;int&gt; param_2 = obj.shuffle();</div><div class="line"> */</div></pre></td></tr></table></figure>
+</li>
+</ul>
 
       
     </div>
@@ -230,18 +266,9 @@ Quick">
     
 <nav id="article-nav">
   
-    <a href="/2016/08/15/test/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          jhl-test
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/08/15/123/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">123</div>
+    <a href="/2016/08/15/test_markdown/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">test markdown</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -276,7 +303,7 @@ Quick">
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="20190912" data-title="Hello World" data-url="http://www.jinhongliang.cn/2016/08/15/20190912/"></div>
+	<div class="ds-thread" data-thread-key="shuffle_array" data-title="第384题 shuffle an array" data-url="http://www.jinhongliang.cn/2016/08/16/shuffle_array/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
