@@ -4,51 +4,63 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>第384题 shuffle an array | Jinhongliang&#39;s Blog</title>
+  <title>Jinhongliang&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="题意描述
-
-给定一个数组，把这个数组当作参数传给solution的类，实现这个类的构造函数，reset（）函数还原这个数组，shuffle函数是这数组随机洗牌
+  <meta name="description" content="title: 第382题—Linked_list_random_nodetags: leetcode
 
 
-思路一
+题意描述
 
-定义两个数组，一个保存原来的数组，用于reset函数；一个数组用于随机洗牌函数，随机的算法是遍历数组，生成一个随机数，交换随机数的位置的值和当前位置的值，遍历完成
+给定一个单链表，返回单链表的随机结点，每一个结点的概率相同。假设链表非常大，不知道长度，不用额外的空间
 
 
-代码
-1234567891011121314151617">
+思路1
+
+首先，求出链表的长度，生成随机数，模上链表长度，再从头遍历到指定的结点（错误）
+
+
+思路2
+
+水库抽样的思想：从N个数里面抽n个数，每个概率一样。首先把前个数放到">
 <meta property="og:type" content="article">
-<meta property="og:title" content="第384题 shuffle an array">
-<meta property="og:url" content="http://www.jinhongliang.cn/2016/08/16/shuffle_array/index.html">
+<meta property="og:title" content="Jinhongliang's Blog">
+<meta property="og:url" content="http://www.jinhongliang.cn/2016/08/17/Linked_list_random_node/index.html">
 <meta property="og:site_name" content="Jinhongliang's Blog">
-<meta property="og:description" content="题意描述
-
-给定一个数组，把这个数组当作参数传给solution的类，实现这个类的构造函数，reset（）函数还原这个数组，shuffle函数是这数组随机洗牌
+<meta property="og:description" content="title: 第382题—Linked_list_random_nodetags: leetcode
 
 
-思路一
+题意描述
 
-定义两个数组，一个保存原来的数组，用于reset函数；一个数组用于随机洗牌函数，随机的算法是遍历数组，生成一个随机数，交换随机数的位置的值和当前位置的值，遍历完成
+给定一个单链表，返回单链表的随机结点，每一个结点的概率相同。假设链表非常大，不知道长度，不用额外的空间
 
 
-代码
-1234567891011121314151617">
-<meta property="og:updated_time" content="2016-08-16T02:47:49.284Z">
+思路1
+
+首先，求出链表的长度，生成随机数，模上链表长度，再从头遍历到指定的结点（错误）
+
+
+思路2
+
+水库抽样的思想：从N个数里面抽n个数，每个概率一样。首先把前个数放到">
+<meta property="og:updated_time" content="2016-08-17T06:25:16.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="第384题 shuffle an array">
-<meta name="twitter:description" content="题意描述
-
-给定一个数组，把这个数组当作参数传给solution的类，实现这个类的构造函数，reset（）函数还原这个数组，shuffle函数是这数组随机洗牌
+<meta name="twitter:title" content="Jinhongliang's Blog">
+<meta name="twitter:description" content="title: 第382题—Linked_list_random_nodetags: leetcode
 
 
-思路一
+题意描述
 
-定义两个数组，一个保存原来的数组，用于reset函数；一个数组用于随机洗牌函数，随机的算法是遍历数组，生成一个随机数，交换随机数的位置的值和当前位置的值，遍历完成
+给定一个单链表，返回单链表的随机结点，每一个结点的概率相同。假设链表非常大，不知道长度，不用额外的空间
 
 
-代码
-1234567891011121314151617">
+思路1
+
+首先，求出链表的长度，生成随机数，模上链表长度，再从头遍历到指定的结点（错误）
+
+
+思路2
+
+水库抽样的思想：从N个数里面抽n个数，每个概率一样。首先把前个数放到">
   
     <link rel="alternative" href="/atom.xml" title="Jinhongliang&#39;s Blog" type="application/atom+xml">
   
@@ -209,11 +221,11 @@
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-shuffle_array" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Linked_list_random_node" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/08/16/shuffle_array/" class="article-date">
-  	<time datetime="2016-08-16T02:47:49.284Z" itemprop="datePublished">2016-08-16</time>
+      <a href="/2016/08/17/Linked_list_random_node/" class="article-date">
+  	<time datetime="2016-08-17T06:29:36.162Z" itemprop="datePublished">2016-08-17</time>
 </a>
     </div>
   
@@ -222,40 +234,30 @@
       <input type="hidden" class="isFancy" />
     
     
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      第384题 shuffle an array
-    </h1>
-  
-
-      </header>
-      
-      <div class="article-info article-info-post">
-        
-        
-
-        <div class="clearfix"></div>
-      </div>
-      
-    
     <div class="article-entry" itemprop="articleBody">
       
-        <ul>
+        <hr>
+<p>title: 第382题—Linked_list_random_node<br>tags: leetcode</p>
+<hr>
+<ul>
 <li><p>题意描述</p>
 <ul>
-<li>给定一个数组，把这个数组当作参数传给solution的类，实现这个类的构造函数，reset（）函数还原这个数组，shuffle函数是这数组随机洗牌</li>
+<li>给定一个单链表，返回单链表的随机结点，每一个结点的概率相同。假设链表非常大，不知道长度，不用额外的空间<br><br \=""></li>
 </ul>
 </li>
-<li><p>思路一</p>
+<li><p>思路1</p>
 <ul>
-<li>定义两个数组，一个保存原来的数组，用于reset函数；一个数组用于随机洗牌函数，随机的算法是遍历数组，生成一个随机数，交换随机数的位置的值和当前位置的值，遍历完成</li>
+<li>首先，求出链表的长度，生成随机数，模上链表长度，再从头遍历到指定的结点（错误）<br><br \=""></li>
+</ul>
+</li>
+<li><p>思路2</p>
+<ul>
+<li>水库抽样的思想：从N个数里面抽n个数，每个概率一样。首先把前个数放到数组中，然后遍历n+1个数时，生成随机数（1，n+1）之间，如果（1，n）之间和这个index的数交换，如果（n+1），则不换，类推</li>
+<li>本题目只返回一个数，则数组为1<br><br \=""></li>
 </ul>
 </li>
 <li><p>代码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">public:</div><div class="line">    Solution(vector&lt;int&gt; nums) &#123;</div><div class="line">        temp = nums;</div><div class="line">        orig = nums;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    /** Resets the array to its original configuration and return it. */</div><div class="line">    vector&lt;int&gt; reset() &#123;</div><div class="line">        return orig;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    /** Returns a random shuffling of the array. */</div><div class="line">    vector&lt;int&gt; shuffle() &#123;</div><div class="line">        int size = temp.size();</div><div class="line">        for(int i = 0; i &lt; size; ++i) &#123;</div><div class="line">            int random = rand() % size;</div><div class="line">            swap(i, random);</div><div class="line">        &#125;</div><div class="line">        return temp;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    void swap(int a, int b) &#123;</div><div class="line">        int tmp = temp[a];</div><div class="line">        temp[a] = temp[b];</div><div class="line">        temp[b] = tmp;</div><div class="line">    &#125;</div><div class="line">private:</div><div class="line">    vector&lt;int&gt; temp;</div><div class="line">    vector&lt;int&gt; orig;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">/**</div><div class="line"> * Your Solution object will be instantiated and called as such:</div><div class="line"> * Solution obj = new Solution(nums);</div><div class="line"> * vector&lt;int&gt; param_1 = obj.reset();</div><div class="line"> * vector&lt;int&gt; param_2 = obj.shuffle();</div><div class="line"> */</div></pre></td></tr></table></figure>
-</li>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * Definition for singly-linked list.</div><div class="line"> * struct ListNode &#123;</div><div class="line"> *     int val;</div><div class="line"> *     ListNode *next;</div><div class="line"> *     ListNode(int x) : val(x), next(NULL) &#123;&#125;</div><div class="line"> * &#125;;</div><div class="line"> */</div><div class="line">class Solution &#123;</div><div class="line">public:</div><div class="line">    /** @param head The linked list&apos;s head.</div><div class="line">        Note that the head is guaranteed to be not null, so it contains at least one node. */</div><div class="line">    Solution(ListNode* head) &#123;</div><div class="line">        temp = head;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    /** Returns a random node&apos;s value. */</div><div class="line">    int getRandom() &#123;</div><div class="line">        int res;</div><div class="line">        int len = 1;</div><div class="line">        ListNode* tmp = temp;</div><div class="line">        while(tmp) &#123;</div><div class="line">            if(rand() % len == 0)</div><div class="line">                res = tmp-&gt;val;</div><div class="line">            len ++;</div><div class="line">            tmp = tmp-&gt;next;</div><div class="line">        &#125;</div><div class="line">        return res;</div><div class="line">    &#125;</div><div class="line">private:</div><div class="line">    ListNode* temp;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">/**</div><div class="line"> * Your Solution object will be instantiated and called as such:</div><div class="line"> * Solution obj = new Solution(head);</div><div class="line"> * int param_1 = obj.getRandom();</div><div class="line"> */</div></pre></td></tr></table></figure></li>
 </ul>
 
       
@@ -266,18 +268,9 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/08/17/Linked_list_random_node/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          (no title)
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/08/15/test_markdown/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">test markdown</div>
+    <a href="/2016/08/16/shuffle_array/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">第384题 shuffle an array</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -312,7 +305,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="shuffle_array" data-title="第384题 shuffle an array" data-url="http://www.jinhongliang.cn/2016/08/16/shuffle_array/"></div>
+	<div class="ds-thread" data-thread-key="Linked_list_random_node" data-title="" data-url="http://www.jinhongliang.cn/2016/08/17/Linked_list_random_node/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
