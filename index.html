@@ -177,6 +177,74 @@
 
       <div class="body-wrap">
   
+    <article id="post-Kth_smallest_element_in_a_sorted_matrix" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/08/17/Kth_smallest_element_in_a_sorted_matrix/" class="article-date">
+  	<time datetime="2016-08-17T08:05:46.323Z" itemprop="datePublished">2016-08-17</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/17/Kth_smallest_element_in_a_sorted_matrix/">第378题---Kth Samllest element in a sorted matrix</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li><p>题意描述</p>
+<ul>
+<li>给定一个n*n的矩阵，行和列都是递增的，在这个数组找到第k个最小的元素</li>
+</ul>
+</li>
+<li><p>思路：</p>
+<ul>
+<li>最大值为a[0][0],最大值为a[n-1][n-1];则元素必定在这两个值之间，然后读两个值的中间值，遍历行判断比这个值小的个数，如果个数&lt;k，则low=mid+1；否则high = mid；<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">public:</div><div class="line">    int kthSmallest(vector&lt;vector&lt;int&gt;&gt;&amp; matrix, int k) &#123;</div><div class="line">        int n = matrix.size();</div><div class="line">        int le = matrix[0][0], ri = matrix[n-1][n-1];</div><div class="line">        int mid = 0;</div><div class="line">        while(le &lt; ri) &#123;</div><div class="line">            mid = (le + ri) &gt;&gt; 1;</div><div class="line">            int num = 0;</div><div class="line">            for(int i = 0; i &lt; n; ++i) &#123;</div><div class="line">                int pos = upper_bound(matrix[i].begin(), matrix[i].end(), mid) - matrix[i].begin();</div><div class="line">                num += pos;</div><div class="line">            &#125;</div><div class="line">            </div><div class="line">            if(num &lt; k) &#123;</div><div class="line">                le = mid + 1;</div><div class="line">            &#125; else &#123;</div><div class="line">                ri = mid;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        return le;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-Linked_list_random_node" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -703,58 +771,6 @@
 		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
 	</div>
 
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-hello-world-1" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/08/15/hello-world-1/" class="article-date">
-  	<time datetime="2016-08-15T07:45:49.000Z" itemprop="datePublished">2016-08-15</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/15/hello-world-1/">hello world</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
       
 
       
