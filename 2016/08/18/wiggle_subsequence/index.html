@@ -4,18 +4,45 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>test markdown | Jinhongliang&#39;s Blog</title>
+  <title>Jinhongliang&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="代码演示12345#include &amp;lt;stdio.h&amp;gt;int main(void) &amp;#123;	return 0;&amp;#125;">
+  <meta name="description" content="title:第376题—Wiggle Subsequence
+tags:leetcode
+题意描述
+
+给定一个数组，求摆动子序列；摆动子序列是指两个相邻的数之差，交替正负
+
+
+思路
+
+统计子序列长度变量，控制摆动方向变量，前一个元素变量；如果size&amp;lt;2直接返回长度；判断前两个方向，length++，改变方向；如果方向相同，则prev复制，如果不同，则length++，改变方向（注意两个元">
 <meta property="og:type" content="article">
-<meta property="og:title" content="test markdown">
-<meta property="og:url" content="http://www.jinhongliang.cn/2016/08/15/test_markdown/index.html">
+<meta property="og:title" content="Jinhongliang's Blog">
+<meta property="og:url" content="http://www.jinhongliang.cn/2016/08/18/wiggle_subsequence/index.html">
 <meta property="og:site_name" content="Jinhongliang's Blog">
-<meta property="og:description" content="代码演示12345#include &amp;lt;stdio.h&amp;gt;int main(void) &amp;#123;	return 0;&amp;#125;">
-<meta property="og:updated_time" content="2016-08-15T10:14:59.095Z">
+<meta property="og:description" content="title:第376题—Wiggle Subsequence
+tags:leetcode
+题意描述
+
+给定一个数组，求摆动子序列；摆动子序列是指两个相邻的数之差，交替正负
+
+
+思路
+
+统计子序列长度变量，控制摆动方向变量，前一个元素变量；如果size&amp;lt;2直接返回长度；判断前两个方向，length++，改变方向；如果方向相同，则prev复制，如果不同，则length++，改变方向（注意两个元">
+<meta property="og:updated_time" content="2016-08-18T03:37:46.828Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="test markdown">
-<meta name="twitter:description" content="代码演示12345#include &amp;lt;stdio.h&amp;gt;int main(void) &amp;#123;	return 0;&amp;#125;">
+<meta name="twitter:title" content="Jinhongliang's Blog">
+<meta name="twitter:description" content="title:第376题—Wiggle Subsequence
+tags:leetcode
+题意描述
+
+给定一个数组，求摆动子序列；摆动子序列是指两个相邻的数之差，交替正负
+
+
+思路
+
+统计子序列长度变量，控制摆动方向变量，前一个元素变量；如果size&amp;lt;2直接返回长度；判断前两个方向，length++，改变方向；如果方向相同，则prev复制，如果不同，则length++，改变方向（注意两个元">
   
     <link rel="alternative" href="/atom.xml" title="Jinhongliang&#39;s Blog" type="application/atom+xml">
   
@@ -176,11 +203,11 @@
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-test_markdown" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-wiggle_subsequence" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/08/15/test_markdown/" class="article-date">
-  	<time datetime="2016-08-15T10:14:59.095Z" itemprop="datePublished">2016-08-15</time>
+      <a href="/2016/08/18/wiggle_subsequence/" class="article-date">
+  	<time datetime="2016-08-18T03:37:46.828Z" itemprop="datePublished">2016-08-18</time>
 </a>
     </div>
   
@@ -189,31 +216,25 @@
       <input type="hidden" class="isFancy" />
     
     
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      test markdown
-    </h1>
-  
-
-      </header>
-      
-      <div class="article-info article-info-post">
-        
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/markdown/">markdown</a></li></ul>
-	</div>
-
-        
-
-        <div class="clearfix"></div>
-      </div>
-      
-    
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="代码演示"><a href="#代码演示" class="headerlink" title="代码演示"></a>代码演示</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span> </span>&#123;</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        <hr>
+<p>title:第376题—Wiggle Subsequence</p>
+<h2 id="tags-leetcode"><a href="#tags-leetcode" class="headerlink" title="tags:leetcode"></a>tags:leetcode</h2><ul>
+<li><p>题意描述</p>
+<ul>
+<li>给定一个数组，求摆动子序列；摆动子序列是指两个相邻的数之差，交替正负</li>
+</ul>
+</li>
+<li><p>思路</p>
+<ul>
+<li>统计子序列长度变量，控制摆动方向变量，前一个元素变量；如果size&lt;2直接返回长度；判断前两个方向，length++，改变方向；如果方向相同，则prev复制，如果不同，则length++，改变方向（注意两个元素值相同的情况）</li>
+</ul>
+</li>
+<li><p>代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">public:</div><div class="line">    int wiggleMaxLength(vector&lt;int&gt;&amp; nums) &#123;</div><div class="line">        int size = nums.size();</div><div class="line">        if (size &lt; 2)</div><div class="line">            return size;</div><div class="line">        </div><div class="line">        bool increase = nums[1] &gt; nums[0];</div><div class="line">        int prev = nums[0];</div><div class="line">        int maxlength = 1;</div><div class="line">        for(int i = 1; i &lt; size; ++i) &#123;</div><div class="line">            if(increase) &#123;</div><div class="line">                if(nums[i] &gt; prev) &#123;</div><div class="line">                    maxlength ++;</div><div class="line">                    increase = !increase;</div><div class="line">                &#125;</div><div class="line">            &#125; else &#123;</div><div class="line">                if(nums[i] &lt; prev) &#123;</div><div class="line">                    maxlength ++;</div><div class="line">                    increase = !increase;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">            prev = nums[i];</div><div class="line">        &#125;</div><div class="line">        return maxlength;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+</li>
+</ul>
 
       
     </div>
@@ -223,18 +244,9 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/08/17/Kth_smallest_element_in_a_sorted_matrix/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          第378题---Kth Samllest element in a sorted matrix
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/08/15/test/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">jhl-test</div>
+    <a href="/2016/08/17/shuffle_array/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">第384题 shuffle an array</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -269,7 +281,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="test_markdown" data-title="test markdown" data-url="http://www.jinhongliang.cn/2016/08/15/test_markdown/"></div>
+	<div class="ds-thread" data-thread-key="wiggle_subsequence" data-title="" data-url="http://www.jinhongliang.cn/2016/08/18/wiggle_subsequence/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
