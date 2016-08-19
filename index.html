@@ -32,7 +32,7 @@
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
 			
-			<img lazy-src="/img/timo.jpg" class="js-avatar">
+			<img lazy-src="//img/timo.jpg" class="js-avatar">
 			
 		</a>
 
@@ -139,7 +139,7 @@
 		<header id="header" class="inner">
 			<div class="profilepic">
 				
-					<img lazy-src="/img/timo.jpg" class="js-avatar">
+					<img lazy-src="//img/timo.jpg" class="js-avatar">
 				
 			</div>
 			<hgroup>
@@ -176,6 +176,75 @@
 </nav>
 
       <div class="body-wrap">
+  
+    <article id="post-guess_number_higher_or_lower_II" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/08/19/guess_number_higher_or_lower_II/" class="article-date">
+  	<time datetime="2016-08-19T03:14:02.595Z" itemprop="datePublished">2016-08-19</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/19/guess_number_higher_or_lower_II/">第375题---Guess Number Higher or Lower II</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>题意描述：<ul>
+<li>给定一个数字n,进行猜数游戏，判断高低。求完成猜数的至少的花费</li>
+</ul>
+</li>
+<li><p>思路：动态规划(完全不懂)</p>
+<ul>
+<li>vector<vector <int="">&gt; 存放的是从i到j的最小花费，对于数x，则完成的max的dp(vecs, i, x-1)和dp(vecs, x+1, j)的最大值+x；则最小花费为min(res, 上面的值)，然后把对应的vec[i][j]赋值</vector></li>
+</ul>
+</li>
+<li><p>代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">public:</div><div class="line">    int getMoneyAmount(int n) &#123;</div><div class="line">        vector&lt;int&gt; vec(n+1, 0);</div><div class="line">        vector&lt;vector &lt;int&gt;&gt; vecs(n+1, vec);</div><div class="line">        return DP(vecs, 1, n);</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    int DP(vector&lt;vector &lt;int&gt;&gt;&amp; t, int s, int e) &#123;</div><div class="line">        if(s &gt;= e)</div><div class="line">            return 0;</div><div class="line">        if(t[s][e] != 0)</div><div class="line">            return t[s][e];</div><div class="line">        int res = INT_MAX;</div><div class="line">        for(int i = s; i &lt;= e; ++ i) &#123;</div><div class="line">            int temp = i + max(DP(t, s, i-1), DP(t, i+1, e));</div><div class="line">            res = min(res, temp);</div><div class="line">        &#125;</div><div class="line">        t[s][e] = res;</div><div class="line">        return res;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></li>
+</ul>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-wiggle_subsequence" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -749,63 +818,6 @@
     <div class="article-info article-info-index">
       
       
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-leetcode-test" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/08/15/leetcode-test/" class="article-date">
-  	<time datetime="2016-08-15T08:49:25.000Z" itemprop="datePublished">2016-08-15</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/15/leetcode-test/">leetcode-test</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>ksdlfjsa;d<br>-fjdasklfjdkasl<br>fads-fjklasfj<br>-fadsjlk<br>asd-fas<br>fjdsakl-<br>jlkdsaf<br>-fjdaksl</p>
-<h1 id="this-is-a-leetcode-auto-generate-tag"><a href="#this-is-a-leetcode-auto-generate-tag" class="headerlink" title="this is a leetcode auto-generate-tag"></a>this is a leetcode auto-generate-tag</h1>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
-	</div>
-
       
 
       
