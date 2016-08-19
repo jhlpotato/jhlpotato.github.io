@@ -238,113 +238,7 @@
             
               
                 
-                <a class="post-title-link" href="/2016/08/19/guess_number_higher_or_lower_II/" itemprop="url">
-                  第375题---Guess Number Higher or Lower II
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Veröffentlicht am</span>
-            <time itemprop="dateCreated" datetime="2016-08-19T11:14:02+08:00" content="2016-08-19">
-              2016-08-19
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <ul>
-<li>题意描述：<ul>
-<li>给定一个数字n,进行猜数游戏，判断高低。求完成猜数的至少的花费</li>
-</ul>
-</li>
-<li><p>思路：动态规划(完全不懂)</p>
-<ul>
-<li>vector<vector <int="">&gt; 存放的是从i到j的最小花费，对于数x，则完成的max的dp(vecs, i, x-1)和dp(vecs, x+1, j)的最大值+x；则最小花费为min(res, 上面的值)，然后把对应的vec[i][j]赋值</vector></li>
-</ul>
-</li>
-<li><p>代码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">public:</div><div class="line">    int getMoneyAmount(int n) &#123;</div><div class="line">        vector&lt;int&gt; vec(n+1, 0);</div><div class="line">        vector&lt;vector &lt;int&gt;&gt; vecs(n+1, vec);</div><div class="line">        return DP(vecs, 1, n);</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    int DP(vector&lt;vector &lt;int&gt;&gt;&amp; t, int s, int e) &#123;</div><div class="line">        if(s &gt;= e)</div><div class="line">            return 0;</div><div class="line">        if(t[s][e] != 0)</div><div class="line">            return t[s][e];</div><div class="line">        int res = INT_MAX;</div><div class="line">        for(int i = s; i &lt;= e; ++ i) &#123;</div><div class="line">            int temp = i + max(DP(t, s, i-1), DP(t, i+1, e));</div><div class="line">            res = min(res, temp);</div><div class="line">        &#125;</div><div class="line">        t[s][e] = res;</div><div class="line">        return res;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/08/18/wiggle_subsequence/" itemprop="url">
+                <a class="post-title-link" href="/2016/08/19/wiggle_subsequence/" itemprop="url">
                   第376题---Wiggle Subsequence
                 </a>
               
@@ -358,8 +252,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Veröffentlicht am</span>
-            <time itemprop="dateCreated" datetime="2016-08-18T15:20:51+08:00" content="2016-08-18">
-              2016-08-18
+            <time itemprop="dateCreated" datetime="2016-08-19T11:27:33+08:00" content="2016-08-19">
+              2016-08-19
             </time>
           </span>
 
@@ -400,7 +294,7 @@
 </ul>
 </li>
 <li><p>代码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">public:</div><div class="line">    int wiggleMaxLength(vector&lt;int&gt;&amp; nums) &#123;</div><div class="line">        int size = nums.size();</div><div class="line">        if (size &lt; 2)</div><div class="line">            return size;</div><div class="line">        </div><div class="line">        bool increase = nums[1] &gt; nums[0];</div><div class="line">        int prev = nums[0];</div><div class="line">        int maxlength = 1;</div><div class="line">        for(int i = 1; i &lt; size; ++i) &#123;</div><div class="line">            if(increase) &#123;</div><div class="line">                if(nums[i] &gt; prev) &#123;</div><div class="line">                    maxlength ++;</div><div class="line">                    increase = !increase;</div><div class="line">                &#125;</div><div class="line">            &#125; else &#123;</div><div class="line">                if(nums[i] &lt; prev) &#123;</div><div class="line">                    maxlength ++;</div><div class="line">                    increase = !increase;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">            prev = nums[i];</div><div class="line">        &#125;</div><div class="line">        return maxlength;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">wiggleMaxLength</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> size = nums.size();</div><div class="line">        <span class="keyword">if</span> (size &lt; <span class="number">2</span>)</div><div class="line">            <span class="keyword">return</span> size;</div><div class="line">        </div><div class="line">        <span class="keyword">bool</span> increase = nums[<span class="number">1</span>] &gt; nums[<span class="number">0</span>];</div><div class="line">        <span class="keyword">int</span> prev = nums[<span class="number">0</span>];</div><div class="line">        <span class="keyword">int</span> maxlength = <span class="number">1</span>;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; size; ++i) &#123;</div><div class="line">            <span class="keyword">if</span>(increase) &#123;</div><div class="line">                <span class="keyword">if</span>(nums[i] &gt; prev) &#123;</div><div class="line">                    maxlength ++;</div><div class="line">                    increase = !increase;</div><div class="line">                &#125;</div><div class="line">            &#125; <span class="keyword">else</span> &#123;</div><div class="line">                <span class="keyword">if</span>(nums[i] &lt; prev) &#123;</div><div class="line">                    maxlength ++;</div><div class="line">                    increase = !increase;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">            prev = nums[i];</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> maxlength;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
 </li>
 </ul>
 
@@ -452,7 +346,7 @@
             
               
                 
-                <a class="post-title-link" href="/2016/08/17/shuffle_array/" itemprop="url">
+                <a class="post-title-link" href="/2016/08/19/shuffle_array/" itemprop="url">
                   第384题 shuffle an array
                 </a>
               
@@ -466,8 +360,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Veröffentlicht am</span>
-            <time itemprop="dateCreated" datetime="2016-08-17T16:09:30+08:00" content="2016-08-17">
-              2016-08-17
+            <time itemprop="dateCreated" datetime="2016-08-19T11:27:22+08:00" content="2016-08-19">
+              2016-08-19
             </time>
           </span>
 
@@ -508,7 +402,7 @@
 </ul>
 </li>
 <li><p>代码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">public:</div><div class="line">    Solution(vector&lt;int&gt; nums) &#123;</div><div class="line">        temp = nums;</div><div class="line">        orig = nums;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    /** Resets the array to its original configuration and return it. */</div><div class="line">    vector&lt;int&gt; reset() &#123;</div><div class="line">        return orig;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    /** Returns a random shuffling of the array. */</div><div class="line">    vector&lt;int&gt; shuffle() &#123;</div><div class="line">        int size = temp.size();</div><div class="line">        for(int i = 0; i &lt; size; ++i) &#123;</div><div class="line">            int random = rand() % size;</div><div class="line">            swap(i, random);</div><div class="line">        &#125;</div><div class="line">        return temp;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    void swap(int a, int b) &#123;</div><div class="line">        int tmp = temp[a];</div><div class="line">        temp[a] = temp[b];</div><div class="line">        temp[b] = tmp;</div><div class="line">    &#125;</div><div class="line">private:</div><div class="line">    vector&lt;int&gt; temp;</div><div class="line">    vector&lt;int&gt; orig;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">/**</div><div class="line"> * Your Solution object will be instantiated and called as such:</div><div class="line"> * Solution obj = new Solution(nums);</div><div class="line"> * vector&lt;int&gt; param_1 = obj.reset();</div><div class="line"> * vector&lt;int&gt; param_2 = obj.shuffle();</div><div class="line"> */</div></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    Solution(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; nums) &#123;</div><div class="line">        temp = nums;</div><div class="line">        orig = nums;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="comment">/** Resets the array to its original configuration and return it. */</span></div><div class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; reset() &#123;</div><div class="line">        <span class="keyword">return</span> orig;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="comment">/** Returns a random shuffling of the array. */</span></div><div class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; shuffle() &#123;</div><div class="line">        <span class="keyword">int</span> size = temp.size();</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; size; ++i) &#123;</div><div class="line">            <span class="keyword">int</span> random = rand() % size;</div><div class="line">            swap(i, random);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> temp;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> tmp = temp[a];</div><div class="line">        temp[a] = temp[b];</div><div class="line">        temp[b] = tmp;</div><div class="line">    &#125;</div><div class="line"><span class="keyword">private</span>:</div><div class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; temp;</div><div class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; orig;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * Your Solution object will be instantiated and called as such:</div><div class="line"> * Solution obj = new Solution(nums);</div><div class="line"> * vector&lt;int&gt; param_1 = obj.reset();</div><div class="line"> * vector&lt;int&gt; param_2 = obj.shuffle();</div><div class="line"> */</div></pre></td></tr></table></figure>
 </li>
 </ul>
 
@@ -560,113 +454,7 @@
             
               
                 
-                <a class="post-title-link" href="/2016/08/17/Mini_Parse/" itemprop="url">
-                  第385题---Mini Parse
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Veröffentlicht am</span>
-            <time itemprop="dateCreated" datetime="2016-08-17T16:09:16+08:00" content="2016-08-17">
-              2016-08-17
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <ul>
-<li><p>题意描述：给定一个嵌套整数列表的字符串，返回的他的NestedInteger类的结构体，反序列化？</p>
-</li>
-<li><p>思路：遍历字符串，判断是不是’[‘,如果是，则进入parseList函数，不是则进入parseNum函数；</p>
-<ul>
-<li>parseList函数，判断是不是[，如果是，则进入parseList函数，递归了，如果是-或者数，进入parseNum函数，如果是，跳过，如果是]break，结束</li>
-<li>parseNum函数，判断正负，从index 遍历，获得数值，返回构造的NestedInteger类对象</li>
-</ul>
-</li>
-<li><p>代码</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * // This is the interface that allows for creating nested lists.</div><div class="line"> * // You should not implement it, or speculate about its implementation</div><div class="line"> * class NestedInteger &#123;</div><div class="line"> *   public:</div><div class="line"> *     // Constructor initializes an empty nested list.</div><div class="line"> *     NestedInteger();</div><div class="line"> *</div><div class="line"> *     // Constructor initializes a single integer.</div><div class="line"> *     NestedInteger(int value);</div><div class="line"> *</div><div class="line"> *     // Return true if this NestedInteger holds a single integer, rather than a nested list.</div><div class="line"> *     bool isInteger() const;</div><div class="line"> *</div><div class="line"> *     // Return the single integer that this NestedInteger holds, if it holds a single integer</div><div class="line"> *     // The result is undefined if this NestedInteger holds a nested list</div><div class="line"> *     int getInteger() const;</div><div class="line"> *</div><div class="line"> *     // Set this NestedInteger to hold a single integer.</div><div class="line"> *     void setInteger(int value);</div><div class="line"> *</div><div class="line"> *     // Set this NestedInteger to hold a nested list and adds a nested integer to it.</div><div class="line"> *     void add(const NestedInteger &amp;ni);</div><div class="line"> *</div><div class="line"> *     // Return the nested list that this NestedInteger holds, if it holds a nested list</div><div class="line"> *     // The result is undefined if this NestedInteger holds a single integer</div><div class="line"> *     const vector&lt;NestedInteger&gt; &amp;getList() const;</div><div class="line"> * &#125;;</div><div class="line"> */</div><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="function">NestedInteger <span class="title">deserialize</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> index = <span class="number">0</span>;</div><div class="line">        <span class="keyword">char</span> c = s[index];</div><div class="line">        <span class="keyword">if</span> (c == <span class="string">'['</span>) &#123;</div><div class="line">            <span class="keyword">return</span> parseList(s, index);</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            <span class="keyword">return</span> parseNum(s, index);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function">NestedInteger <span class="title">parseList</span><span class="params">(<span class="built_in">string</span> &amp;s, <span class="keyword">int</span> &amp;index)</span> </span>&#123;</div><div class="line">        index ++; <span class="comment">// eat '['</span></div><div class="line">        NestedInteger root;</div><div class="line">        <span class="keyword">while</span>(index &lt; s.size()) &#123;</div><div class="line">            <span class="keyword">char</span> c = s[index];</div><div class="line">            <span class="keyword">if</span> (c == <span class="string">'['</span>) &#123;</div><div class="line">                root.add(parseList(s, index));</div><div class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (c == <span class="string">'-'</span> || isNumber(c)) &#123;</div><div class="line">                root.add(parseNum(s, index));</div><div class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (c == <span class="string">','</span>) &#123;</div><div class="line">                index ++;</div><div class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (c == <span class="string">']'</span>) &#123;</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        index ++;</div><div class="line">        <span class="keyword">return</span> root;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function">NestedInteger <span class="title">parseNum</span><span class="params">(<span class="built_in">string</span> &amp;s, <span class="keyword">int</span> &amp;index)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> n = <span class="number">0</span>;</div><div class="line">        <span class="keyword">int</span> positive = <span class="number">1</span>;</div><div class="line">        <span class="keyword">if</span>(s[index] == <span class="string">'-'</span>) &#123;</div><div class="line">            positive = <span class="number">-1</span>;</div><div class="line">            index ++;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        <span class="keyword">while</span>(index &lt; s.size()) &#123;</div><div class="line">            <span class="keyword">char</span> c = s[index];</div><div class="line">            <span class="keyword">if</span> (isNumber(c)) &#123;</div><div class="line">                n = <span class="number">10</span> * n + c - <span class="string">'0'</span>;</div><div class="line">                index ++;</div><div class="line">            &#125; <span class="keyword">else</span> &#123;</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> NestedInteger(n * positive);</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isNumber</span><span class="params">(<span class="keyword">char</span> c)</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="string">'0'</span> &lt;= c  &amp;&amp; c &lt;= <span class="string">'9'</span>;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/08/17/Linked_list_random_node/" itemprop="url">
+                <a class="post-title-link" href="/2016/08/19/Linked_list_random_node/" itemprop="url">
                   第382题---Linked_list_random_node
                 </a>
               
@@ -680,8 +468,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Veröffentlicht am</span>
-            <time itemprop="dateCreated" datetime="2016-08-17T16:07:26+08:00" content="2016-08-17">
-              2016-08-17
+            <time itemprop="dateCreated" datetime="2016-08-19T11:27:14+08:00" content="2016-08-19">
+              2016-08-19
             </time>
           </span>
 
@@ -728,7 +516,7 @@
 </ul>
 </li>
 <li><p>代码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * Definition for singly-linked list.</div><div class="line"> * struct ListNode &#123;</div><div class="line"> *     int val;</div><div class="line"> *     ListNode *next;</div><div class="line"> *     ListNode(int x) : val(x), next(NULL) &#123;&#125;</div><div class="line"> * &#125;;</div><div class="line"> */</div><div class="line">class Solution &#123;</div><div class="line">public:</div><div class="line">    /** @param head The linked list&apos;s head.</div><div class="line">        Note that the head is guaranteed to be not null, so it contains at least one node. */</div><div class="line">    Solution(ListNode* head) &#123;</div><div class="line">        temp = head;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    /** Returns a random node&apos;s value. */</div><div class="line">    int getRandom() &#123;</div><div class="line">        int res;</div><div class="line">        int len = 1;</div><div class="line">        ListNode* tmp = temp;</div><div class="line">        while(tmp) &#123;</div><div class="line">            if(rand() % len == 0)</div><div class="line">                res = tmp-&gt;val;</div><div class="line">            len ++;</div><div class="line">            tmp = tmp-&gt;next;</div><div class="line">        &#125;</div><div class="line">        return res;</div><div class="line">    &#125;</div><div class="line">private:</div><div class="line">    ListNode* temp;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">/**</div><div class="line"> * Your Solution object will be instantiated and called as such:</div><div class="line"> * Solution obj = new Solution(head);</div><div class="line"> * int param_1 = obj.getRandom();</div><div class="line"> */</div></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Definition for singly-linked list.</div><div class="line"> * struct ListNode &#123;</div><div class="line"> *     int val;</div><div class="line"> *     ListNode *next;</div><div class="line"> *     ListNode(int x) : val(x), next(NULL) &#123;&#125;</div><div class="line"> * &#125;;</div><div class="line"> */</div><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="comment">/** @param head The linked list's head.</span></div><div class="line">        Note that the head is guaranteed to be not null, so it contains at least one node. */</div><div class="line">    Solution(ListNode* head) &#123;</div><div class="line">        temp = head;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="comment">/** Returns a random node's value. */</span></div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">getRandom</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> res;</div><div class="line">        <span class="keyword">int</span> len = <span class="number">1</span>;</div><div class="line">        ListNode* tmp = temp;</div><div class="line">        <span class="keyword">while</span>(tmp) &#123;</div><div class="line">            <span class="keyword">if</span>(rand() % len == <span class="number">0</span>)</div><div class="line">                res = tmp-&gt;val;</div><div class="line">            len ++;</div><div class="line">            tmp = tmp-&gt;next;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> res;</div><div class="line">    &#125;</div><div class="line"><span class="keyword">private</span>:</div><div class="line">    ListNode* temp;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * Your Solution object will be instantiated and called as such:</div><div class="line"> * Solution obj = new Solution(head);</div><div class="line"> * int param_1 = obj.getRandom();</div><div class="line"> */</div></pre></td></tr></table></figure>
 </li>
 </ul>
 
@@ -780,7 +568,7 @@
             
               
                 
-                <a class="post-title-link" href="/2016/08/17/Kth_smallest_element_in_a_sorted_matrix/" itemprop="url">
+                <a class="post-title-link" href="/2016/08/19/Kth_smallest_element_in_a_sorted_matrix/" itemprop="url">
                   第378题---Kth Samllest element in a sorted matrix
                 </a>
               
@@ -794,8 +582,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Veröffentlicht am</span>
-            <time itemprop="dateCreated" datetime="2016-08-17T16:05:46+08:00" content="2016-08-17">
-              2016-08-17
+            <time itemprop="dateCreated" datetime="2016-08-19T11:27:05+08:00" content="2016-08-19">
+              2016-08-19
             </time>
           </span>
 
@@ -832,8 +620,222 @@
 </li>
 <li><p>思路：</p>
 <ul>
-<li>最大值为a[0][0],最大值为a[n-1][n-1];则元素必定在这两个值之间，然后读两个值的中间值，遍历行判断比这个值小的个数，如果个数&lt;k，则low=mid+1；否则high = mid；<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">public:</div><div class="line">    int kthSmallest(vector&lt;vector&lt;int&gt;&gt;&amp; matrix, int k) &#123;</div><div class="line">        int n = matrix.size();</div><div class="line">        int le = matrix[0][0], ri = matrix[n-1][n-1];</div><div class="line">        int mid = 0;</div><div class="line">        while(le &lt; ri) &#123;</div><div class="line">            mid = (le + ri) &gt;&gt; 1;</div><div class="line">            int num = 0;</div><div class="line">            for(int i = 0; i &lt; n; ++i) &#123;</div><div class="line">                int pos = upper_bound(matrix[i].begin(), matrix[i].end(), mid) - matrix[i].begin();</div><div class="line">                num += pos;</div><div class="line">            &#125;</div><div class="line">            </div><div class="line">            if(num &lt; k) &#123;</div><div class="line">                le = mid + 1;</div><div class="line">            &#125; else &#123;</div><div class="line">                ri = mid;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        return le;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></li>
+<li>最大值为a[0][0],最大值为a[n-1][n-1];则元素必定在这两个值之间，然后读两个值的中间值，遍历行判断比这个值小的个数，如果个数&lt;k，则low=mid+1；否则high = mid；<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">kthSmallest</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; matrix, <span class="keyword">int</span> k)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> n = matrix.size();</div><div class="line">        <span class="keyword">int</span> le = matrix[<span class="number">0</span>][<span class="number">0</span>], ri = matrix[n<span class="number">-1</span>][n<span class="number">-1</span>];</div><div class="line">        <span class="keyword">int</span> mid = <span class="number">0</span>;</div><div class="line">        <span class="keyword">while</span>(le &lt; ri) &#123;</div><div class="line">            mid = (le + ri) &gt;&gt; <span class="number">1</span>;</div><div class="line">            <span class="keyword">int</span> num = <span class="number">0</span>;</div><div class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</div><div class="line">                <span class="keyword">int</span> pos = upper_bound(matrix[i].begin(), matrix[i].end(), mid) - matrix[i].begin();</div><div class="line">                num += pos;</div><div class="line">            &#125;</div><div class="line">            </div><div class="line">            <span class="keyword">if</span>(num &lt; k) &#123;</div><div class="line">                le = mid + <span class="number">1</span>;</div><div class="line">            &#125; <span class="keyword">else</span> &#123;</div><div class="line">                ri = mid;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> le;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+</li>
 </ul>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/08/19/guess_number_higher_or_lower_II/" itemprop="url">
+                  第375题---Guess Number Higher or Lower II
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2016-08-19T11:26:49+08:00" content="2016-08-19">
+              2016-08-19
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ul>
+<li>题意描述：<ul>
+<li>给定一个数字n,进行猜数游戏，判断高低。求完成猜数的至少的花费</li>
+</ul>
+</li>
+<li><p>思路：动态规划(完全不懂)</p>
+<ul>
+<li>vector<vector <int="">&gt; 存放的是从i到j的最小花费，对于数x，则完成的max的dp(vecs, i, x-1)和dp(vecs, x+1, j)的最大值+x；则最小花费为min(res, 上面的值)，然后把对应的vec[i][j]赋值</vector></li>
+</ul>
+</li>
+<li><p>代码</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">getMoneyAmount</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</div><div class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; vec(n+<span class="number">1</span>, <span class="number">0</span>);</div><div class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">vector</span> &lt;<span class="keyword">int</span>&gt;&gt; vecs(n+<span class="number">1</span>, vec);</div><div class="line">        <span class="keyword">return</span> DP(vecs, <span class="number">1</span>, n);</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">DP</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span> &lt;<span class="keyword">int</span>&gt;&gt;&amp; t, <span class="keyword">int</span> s, <span class="keyword">int</span> e)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span>(s &gt;= e)</div><div class="line">            <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">        <span class="keyword">if</span>(t[s][e] != <span class="number">0</span>)</div><div class="line">            <span class="keyword">return</span> t[s][e];</div><div class="line">        <span class="keyword">int</span> res = INT_MAX;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = s; i &lt;= e; ++ i) &#123;</div><div class="line">            <span class="keyword">int</span> temp = i + max(DP(t, s, i<span class="number">-1</span>), DP(t, i+<span class="number">1</span>, e));</div><div class="line">            res = min(res, temp);</div><div class="line">        &#125;</div><div class="line">        t[s][e] = res;</div><div class="line">        <span class="keyword">return</span> res;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/08/19/Mini_Parse/" itemprop="url">
+                  第385题---Mini Parse
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2016-08-19T11:26:39+08:00" content="2016-08-19">
+              2016-08-19
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ul>
+<li><p>题意描述：给定一个嵌套整数列表的字符串，返回的他的NestedInteger类的结构体，反序列化？</p>
+</li>
+<li><p>思路：遍历字符串，判断是不是’[‘,如果是，则进入parseList函数，不是则进入parseNum函数；</p>
+<ul>
+<li>parseList函数，判断是不是[，如果是，则进入parseList函数，递归了，如果是-或者数，进入parseNum函数，如果是，跳过，如果是]break，结束</li>
+<li>parseNum函数，判断正负，从index 遍历，获得数值，返回构造的NestedInteger类对象</li>
+</ul>
+</li>
+<li><p>代码</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * // This is the interface that allows for creating nested lists.</div><div class="line"> * // You should not implement it, or speculate about its implementation</div><div class="line"> * class NestedInteger &#123;</div><div class="line"> *   public:</div><div class="line"> *     // Constructor initializes an empty nested list.</div><div class="line"> *     NestedInteger();</div><div class="line"> *</div><div class="line"> *     // Constructor initializes a single integer.</div><div class="line"> *     NestedInteger(int value);</div><div class="line"> *</div><div class="line"> *     // Return true if this NestedInteger holds a single integer, rather than a nested list.</div><div class="line"> *     bool isInteger() const;</div><div class="line"> *</div><div class="line"> *     // Return the single integer that this NestedInteger holds, if it holds a single integer</div><div class="line"> *     // The result is undefined if this NestedInteger holds a nested list</div><div class="line"> *     int getInteger() const;</div><div class="line"> *</div><div class="line"> *     // Set this NestedInteger to hold a single integer.</div><div class="line"> *     void setInteger(int value);</div><div class="line"> *</div><div class="line"> *     // Set this NestedInteger to hold a nested list and adds a nested integer to it.</div><div class="line"> *     void add(const NestedInteger &amp;ni);</div><div class="line"> *</div><div class="line"> *     // Return the nested list that this NestedInteger holds, if it holds a nested list</div><div class="line"> *     // The result is undefined if this NestedInteger holds a single integer</div><div class="line"> *     const vector&lt;NestedInteger&gt; &amp;getList() const;</div><div class="line"> * &#125;;</div><div class="line"> */</div><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="function">NestedInteger <span class="title">deserialize</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> index = <span class="number">0</span>;</div><div class="line">        <span class="keyword">char</span> c = s[index];</div><div class="line">        <span class="keyword">if</span> (c == <span class="string">'['</span>) &#123;</div><div class="line">            <span class="keyword">return</span> parseList(s, index);</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            <span class="keyword">return</span> parseNum(s, index);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function">NestedInteger <span class="title">parseList</span><span class="params">(<span class="built_in">string</span> &amp;s, <span class="keyword">int</span> &amp;index)</span> </span>&#123;</div><div class="line">        index ++; <span class="comment">// eat '['</span></div><div class="line">        NestedInteger root;</div><div class="line">        <span class="keyword">while</span>(index &lt; s.size()) &#123;</div><div class="line">            <span class="keyword">char</span> c = s[index];</div><div class="line">            <span class="keyword">if</span> (c == <span class="string">'['</span>) &#123;</div><div class="line">                root.add(parseList(s, index));</div><div class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (c == <span class="string">'-'</span> || isNumber(c)) &#123;</div><div class="line">                root.add(parseNum(s, index));</div><div class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (c == <span class="string">','</span>) &#123;</div><div class="line">                index ++;</div><div class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (c == <span class="string">']'</span>) &#123;</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        index ++;</div><div class="line">        <span class="keyword">return</span> root;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function">NestedInteger <span class="title">parseNum</span><span class="params">(<span class="built_in">string</span> &amp;s, <span class="keyword">int</span> &amp;index)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> n = <span class="number">0</span>;</div><div class="line">        <span class="keyword">int</span> positive = <span class="number">1</span>;</div><div class="line">        <span class="keyword">if</span>(s[index] == <span class="string">'-'</span>) &#123;</div><div class="line">            positive = <span class="number">-1</span>;</div><div class="line">            index ++;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        <span class="keyword">while</span>(index &lt; s.size()) &#123;</div><div class="line">            <span class="keyword">char</span> c = s[index];</div><div class="line">            <span class="keyword">if</span> (isNumber(c)) &#123;</div><div class="line">                n = <span class="number">10</span> * n + c - <span class="string">'0'</span>;</div><div class="line">                index ++;</div><div class="line">            &#125; <span class="keyword">else</span> &#123;</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> NestedInteger(n * positive);</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isNumber</span><span class="params">(<span class="keyword">char</span> c)</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="string">'0'</span> &lt;= c  &amp;&amp; c &lt;= <span class="string">'9'</span>;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
 </li>
 </ul>
 

@@ -84,34 +84,37 @@
 
 
 
-<meta name="description" content="题意描述：
-给定一个数字n,进行猜数游戏，判断高低。求完成猜数的至少的花费
+<meta name="description" content="题意描述
+
+给定一个n*n的矩阵，行和列都是递增的，在这个数组找到第k个最小的元素
 
 
-思路：动态规划(完全不懂)
+思路：
 
-vector">
+最大值为a[0][0],最大值为a[n-1][n-1];则元素必定在这两个值之间，然后读两个值的中间值，遍历行判断比这个值小的个数，如果个数&amp;lt;k，则low=mid+1；否则high = mid；1234567891011121314151617181920212223class Solutio">
 <meta property="og:type" content="article">
-<meta property="og:title" content="第375题---Guess Number Higher or Lower II">
-<meta property="og:url" content="http://www.jinhongliang.cn/2016/08/19/guess_number_higher_or_lower_II/index.html">
+<meta property="og:title" content="第378题---Kth Samllest element in a sorted matrix">
+<meta property="og:url" content="http://www.jinhongliang.cn/2016/08/19/Kth_smallest_element_in_a_sorted_matrix/index.html">
 <meta property="og:site_name" content="Jinhongliang's Blog">
-<meta property="og:description" content="题意描述：
-给定一个数字n,进行猜数游戏，判断高低。求完成猜数的至少的花费
+<meta property="og:description" content="题意描述
+
+给定一个n*n的矩阵，行和列都是递增的，在这个数组找到第k个最小的元素
 
 
-思路：动态规划(完全不懂)
+思路：
 
-vector">
-<meta property="og:updated_time" content="2016-08-19T03:26:49.519Z">
+最大值为a[0][0],最大值为a[n-1][n-1];则元素必定在这两个值之间，然后读两个值的中间值，遍历行判断比这个值小的个数，如果个数&amp;lt;k，则low=mid+1；否则high = mid；1234567891011121314151617181920212223class Solutio">
+<meta property="og:updated_time" content="2016-08-19T03:27:05.335Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="第375题---Guess Number Higher or Lower II">
-<meta name="twitter:description" content="题意描述：
-给定一个数字n,进行猜数游戏，判断高低。求完成猜数的至少的花费
+<meta name="twitter:title" content="第378题---Kth Samllest element in a sorted matrix">
+<meta name="twitter:description" content="题意描述
+
+给定一个n*n的矩阵，行和列都是递增的，在这个数组找到第k个最小的元素
 
 
-思路：动态规划(完全不懂)
+思路：
 
-vector">
+最大值为a[0][0],最大值为a[n-1][n-1];则元素必定在这两个值之间，然后读两个值的中间值，遍历行判断比这个值小的个数，如果个数&amp;lt;k，则low=mid+1；否则high = mid；1234567891011121314151617181920212223class Solutio">
 
 
 
@@ -132,9 +135,9 @@ vector">
 
 
 
-  <link rel="canonical" href="http://www.jinhongliang.cn/2016/08/19/guess_number_higher_or_lower_II/"/>
+  <link rel="canonical" href="http://www.jinhongliang.cn/2016/08/19/Kth_smallest_element_in_a_sorted_matrix/"/>
 
-  <title> 第375题---Guess Number Higher or Lower II | Jinhongliang's Blog </title>
+  <title> 第378题---Kth Samllest element in a sorted matrix | Jinhongliang's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh">
@@ -254,7 +257,7 @@ vector">
             
             
               
-                第375题---Guess Number Higher or Lower II
+                第378题---Kth Samllest element in a sorted matrix
               
             
           </h1>
@@ -266,7 +269,7 @@ vector">
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Veröffentlicht am</span>
-            <time itemprop="dateCreated" datetime="2016-08-19T11:26:49+08:00" content="2016-08-19">
+            <time itemprop="dateCreated" datetime="2016-08-19T11:27:05+08:00" content="2016-08-19">
               2016-08-19
             </time>
           </span>
@@ -295,17 +298,16 @@ vector">
 
       
         <ul>
-<li>题意描述：<ul>
-<li>给定一个数字n,进行猜数游戏，判断高低。求完成猜数的至少的花费</li>
-</ul>
-</li>
-<li><p>思路：动态规划(完全不懂)</p>
+<li><p>题意描述</p>
 <ul>
-<li>vector<vector <int="">&gt; 存放的是从i到j的最小花费，对于数x，则完成的max的dp(vecs, i, x-1)和dp(vecs, x+1, j)的最大值+x；则最小花费为min(res, 上面的值)，然后把对应的vec[i][j]赋值</vector></li>
+<li>给定一个n*n的矩阵，行和列都是递增的，在这个数组找到第k个最小的元素</li>
 </ul>
 </li>
-<li><p>代码</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">getMoneyAmount</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</div><div class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; vec(n+<span class="number">1</span>, <span class="number">0</span>);</div><div class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">vector</span> &lt;<span class="keyword">int</span>&gt;&gt; vecs(n+<span class="number">1</span>, vec);</div><div class="line">        <span class="keyword">return</span> DP(vecs, <span class="number">1</span>, n);</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">DP</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span> &lt;<span class="keyword">int</span>&gt;&gt;&amp; t, <span class="keyword">int</span> s, <span class="keyword">int</span> e)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span>(s &gt;= e)</div><div class="line">            <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">        <span class="keyword">if</span>(t[s][e] != <span class="number">0</span>)</div><div class="line">            <span class="keyword">return</span> t[s][e];</div><div class="line">        <span class="keyword">int</span> res = INT_MAX;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = s; i &lt;= e; ++ i) &#123;</div><div class="line">            <span class="keyword">int</span> temp = i + max(DP(t, s, i<span class="number">-1</span>), DP(t, i+<span class="number">1</span>, e));</div><div class="line">            res = min(res, temp);</div><div class="line">        &#125;</div><div class="line">        t[s][e] = res;</div><div class="line">        <span class="keyword">return</span> res;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<li><p>思路：</p>
+<ul>
+<li>最大值为a[0][0],最大值为a[n-1][n-1];则元素必定在这两个值之间，然后读两个值的中间值，遍历行判断比这个值小的个数，如果个数&lt;k，则low=mid+1；否则high = mid；<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">kthSmallest</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; matrix, <span class="keyword">int</span> k)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> n = matrix.size();</div><div class="line">        <span class="keyword">int</span> le = matrix[<span class="number">0</span>][<span class="number">0</span>], ri = matrix[n<span class="number">-1</span>][n<span class="number">-1</span>];</div><div class="line">        <span class="keyword">int</span> mid = <span class="number">0</span>;</div><div class="line">        <span class="keyword">while</span>(le &lt; ri) &#123;</div><div class="line">            mid = (le + ri) &gt;&gt; <span class="number">1</span>;</div><div class="line">            <span class="keyword">int</span> num = <span class="number">0</span>;</div><div class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</div><div class="line">                <span class="keyword">int</span> pos = upper_bound(matrix[i].begin(), matrix[i].end(), mid) - matrix[i].begin();</div><div class="line">                num += pos;</div><div class="line">            &#125;</div><div class="line">            </div><div class="line">            <span class="keyword">if</span>(num &lt; k) &#123;</div><div class="line">                le = mid + <span class="number">1</span>;</div><div class="line">            &#125; <span class="keyword">else</span> &#123;</div><div class="line">                ri = mid;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> le;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+</li>
+</ul>
 </li>
 </ul>
 
@@ -339,16 +341,16 @@ vector">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/08/19/Mini_Parse/" rel="next" title="第385题---Mini Parse">
-                <i class="fa fa-chevron-left"></i> 第385题---Mini Parse
+              <a href="/2016/08/19/guess_number_higher_or_lower_II/" rel="next" title="第375题---Guess Number Higher or Lower II">
+                <i class="fa fa-chevron-left"></i> 第375题---Guess Number Higher or Lower II
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/08/19/Kth_smallest_element_in_a_sorted_matrix/" rel="prev" title="第378题---Kth Samllest element in a sorted matrix">
-                第378题---Kth Samllest element in a sorted matrix <i class="fa fa-chevron-right"></i>
+              <a href="/2016/08/19/Linked_list_random_node/" rel="prev" title="第382题---Linked_list_random_node">
+                第382题---Linked_list_random_node <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>

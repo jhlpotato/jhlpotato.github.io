@@ -84,34 +84,52 @@
 
 
 
-<meta name="description" content="题意描述：
-给定一个数字n,进行猜数游戏，判断高低。求完成猜数的至少的花费
+<meta name="description" content="题意描述
+
+给定一个单链表，返回单链表的随机结点，每一个结点的概率相同。假设链表非常大，不知道长度，不用额外的空间
 
 
-思路：动态规划(完全不懂)
+思路1
 
-vector">
+首先，求出链表的长度，生成随机数，模上链表长度，再从头遍历到指定的结点（错误）
+
+
+思路2
+
+水库抽样的思想：从N个数里面抽n个数，每个概率一样。首先把前个数放到数组中，然后遍历n+1个数时，生成随机数（1，n+1）之间，如果（1，n）之间和这个index的数交换，如">
 <meta property="og:type" content="article">
-<meta property="og:title" content="第375题---Guess Number Higher or Lower II">
-<meta property="og:url" content="http://www.jinhongliang.cn/2016/08/19/guess_number_higher_or_lower_II/index.html">
+<meta property="og:title" content="第382题---Linked_list_random_node">
+<meta property="og:url" content="http://www.jinhongliang.cn/2016/08/19/Linked_list_random_node/index.html">
 <meta property="og:site_name" content="Jinhongliang's Blog">
-<meta property="og:description" content="题意描述：
-给定一个数字n,进行猜数游戏，判断高低。求完成猜数的至少的花费
+<meta property="og:description" content="题意描述
+
+给定一个单链表，返回单链表的随机结点，每一个结点的概率相同。假设链表非常大，不知道长度，不用额外的空间
 
 
-思路：动态规划(完全不懂)
+思路1
 
-vector">
-<meta property="og:updated_time" content="2016-08-19T03:26:49.519Z">
+首先，求出链表的长度，生成随机数，模上链表长度，再从头遍历到指定的结点（错误）
+
+
+思路2
+
+水库抽样的思想：从N个数里面抽n个数，每个概率一样。首先把前个数放到数组中，然后遍历n+1个数时，生成随机数（1，n+1）之间，如果（1，n）之间和这个index的数交换，如">
+<meta property="og:updated_time" content="2016-08-19T03:27:14.319Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="第375题---Guess Number Higher or Lower II">
-<meta name="twitter:description" content="题意描述：
-给定一个数字n,进行猜数游戏，判断高低。求完成猜数的至少的花费
+<meta name="twitter:title" content="第382题---Linked_list_random_node">
+<meta name="twitter:description" content="题意描述
+
+给定一个单链表，返回单链表的随机结点，每一个结点的概率相同。假设链表非常大，不知道长度，不用额外的空间
 
 
-思路：动态规划(完全不懂)
+思路1
 
-vector">
+首先，求出链表的长度，生成随机数，模上链表长度，再从头遍历到指定的结点（错误）
+
+
+思路2
+
+水库抽样的思想：从N个数里面抽n个数，每个概率一样。首先把前个数放到数组中，然后遍历n+1个数时，生成随机数（1，n+1）之间，如果（1，n）之间和这个index的数交换，如">
 
 
 
@@ -132,9 +150,9 @@ vector">
 
 
 
-  <link rel="canonical" href="http://www.jinhongliang.cn/2016/08/19/guess_number_higher_or_lower_II/"/>
+  <link rel="canonical" href="http://www.jinhongliang.cn/2016/08/19/Linked_list_random_node/"/>
 
-  <title> 第375题---Guess Number Higher or Lower II | Jinhongliang's Blog </title>
+  <title> 第382题---Linked_list_random_node | Jinhongliang's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh">
@@ -254,7 +272,7 @@ vector">
             
             
               
-                第375题---Guess Number Higher or Lower II
+                第382题---Linked_list_random_node
               
             
           </h1>
@@ -266,7 +284,7 @@ vector">
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Veröffentlicht am</span>
-            <time itemprop="dateCreated" datetime="2016-08-19T11:26:49+08:00" content="2016-08-19">
+            <time itemprop="dateCreated" datetime="2016-08-19T11:27:14+08:00" content="2016-08-19">
               2016-08-19
             </time>
           </span>
@@ -295,17 +313,24 @@ vector">
 
       
         <ul>
-<li>题意描述：<ul>
-<li>给定一个数字n,进行猜数游戏，判断高低。求完成猜数的至少的花费</li>
+<li><p>题意描述</p>
+<ul>
+<li>给定一个单链表，返回单链表的随机结点，每一个结点的概率相同。假设链表非常大，不知道长度，不用额外的空间<br><br \=""></li>
 </ul>
 </li>
-<li><p>思路：动态规划(完全不懂)</p>
+<li><p>思路1</p>
 <ul>
-<li>vector<vector <int="">&gt; 存放的是从i到j的最小花费，对于数x，则完成的max的dp(vecs, i, x-1)和dp(vecs, x+1, j)的最大值+x；则最小花费为min(res, 上面的值)，然后把对应的vec[i][j]赋值</vector></li>
+<li>首先，求出链表的长度，生成随机数，模上链表长度，再从头遍历到指定的结点（错误）<br><br \=""></li>
+</ul>
+</li>
+<li><p>思路2</p>
+<ul>
+<li>水库抽样的思想：从N个数里面抽n个数，每个概率一样。首先把前个数放到数组中，然后遍历n+1个数时，生成随机数（1，n+1）之间，如果（1，n）之间和这个index的数交换，如果（n+1），则不换，类推</li>
+<li>本题目只返回一个数，则数组为1<br><br \=""></li>
 </ul>
 </li>
 <li><p>代码</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">getMoneyAmount</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</div><div class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; vec(n+<span class="number">1</span>, <span class="number">0</span>);</div><div class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">vector</span> &lt;<span class="keyword">int</span>&gt;&gt; vecs(n+<span class="number">1</span>, vec);</div><div class="line">        <span class="keyword">return</span> DP(vecs, <span class="number">1</span>, n);</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">DP</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span> &lt;<span class="keyword">int</span>&gt;&gt;&amp; t, <span class="keyword">int</span> s, <span class="keyword">int</span> e)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span>(s &gt;= e)</div><div class="line">            <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">        <span class="keyword">if</span>(t[s][e] != <span class="number">0</span>)</div><div class="line">            <span class="keyword">return</span> t[s][e];</div><div class="line">        <span class="keyword">int</span> res = INT_MAX;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = s; i &lt;= e; ++ i) &#123;</div><div class="line">            <span class="keyword">int</span> temp = i + max(DP(t, s, i<span class="number">-1</span>), DP(t, i+<span class="number">1</span>, e));</div><div class="line">            res = min(res, temp);</div><div class="line">        &#125;</div><div class="line">        t[s][e] = res;</div><div class="line">        <span class="keyword">return</span> res;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Definition for singly-linked list.</div><div class="line"> * struct ListNode &#123;</div><div class="line"> *     int val;</div><div class="line"> *     ListNode *next;</div><div class="line"> *     ListNode(int x) : val(x), next(NULL) &#123;&#125;</div><div class="line"> * &#125;;</div><div class="line"> */</div><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="comment">/** @param head The linked list's head.</span></div><div class="line">        Note that the head is guaranteed to be not null, so it contains at least one node. */</div><div class="line">    Solution(ListNode* head) &#123;</div><div class="line">        temp = head;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="comment">/** Returns a random node's value. */</span></div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">getRandom</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> res;</div><div class="line">        <span class="keyword">int</span> len = <span class="number">1</span>;</div><div class="line">        ListNode* tmp = temp;</div><div class="line">        <span class="keyword">while</span>(tmp) &#123;</div><div class="line">            <span class="keyword">if</span>(rand() % len == <span class="number">0</span>)</div><div class="line">                res = tmp-&gt;val;</div><div class="line">            len ++;</div><div class="line">            tmp = tmp-&gt;next;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> res;</div><div class="line">    &#125;</div><div class="line"><span class="keyword">private</span>:</div><div class="line">    ListNode* temp;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * Your Solution object will be instantiated and called as such:</div><div class="line"> * Solution obj = new Solution(head);</div><div class="line"> * int param_1 = obj.getRandom();</div><div class="line"> */</div></pre></td></tr></table></figure>
 </li>
 </ul>
 
@@ -339,16 +364,16 @@ vector">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/08/19/Mini_Parse/" rel="next" title="第385题---Mini Parse">
-                <i class="fa fa-chevron-left"></i> 第385题---Mini Parse
+              <a href="/2016/08/19/Kth_smallest_element_in_a_sorted_matrix/" rel="next" title="第378题---Kth Samllest element in a sorted matrix">
+                <i class="fa fa-chevron-left"></i> 第378题---Kth Samllest element in a sorted matrix
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/08/19/Kth_smallest_element_in_a_sorted_matrix/" rel="prev" title="第378题---Kth Samllest element in a sorted matrix">
-                第378题---Kth Samllest element in a sorted matrix <i class="fa fa-chevron-right"></i>
+              <a href="/2016/08/19/shuffle_array/" rel="prev" title="第384题 shuffle an array">
+                第384题 shuffle an array <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
