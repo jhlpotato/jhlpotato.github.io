@@ -238,8 +238,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/08/23/combination_sum_IV/" itemprop="url">
-                  第377题---Combination Sum IV
+                <a class="post-title-link" href="/2016/08/23/first_unique_character_in_string/" itemprop="url">
+                  第387题---First Unique Character in a String.md
                 </a>
               
             
@@ -252,7 +252,7 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Veröffentlicht am</span>
-            <time itemprop="dateCreated" datetime="2016-08-23T11:32:11+08:00" content="2016-08-23">
+            <time itemprop="dateCreated" datetime="2016-08-23T11:32:25+08:00" content="2016-08-23">
               2016-08-23
             </time>
           </span>
@@ -285,14 +285,16 @@
             <ul>
 <li><p>题意描述</p>
 <ul>
-<li>给定一个都是正整数，没有重复的数组，给定一个目标数，求数组中组合成目标数的方式有几种，数组中的数可以多次使用</li>
+<li>给定一个字符串，返回字符串中给第一个唯一不重复字符的坐标<br><br \=""></li>
 </ul>
 </li>
-<li><p>思路一</p>
+<li><p>思路</p>
 <ul>
-<li>类似于台阶的动态规划，res[0]代表，目标数为0的组合数；res[1]代表，目标数为1的组合数；依次类推，res[i]的组合数res[i] += res[i-num]<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">public:</div><div class="line">    int combinationSum4(vector&lt;int&gt;&amp; nums, int target) &#123;</div><div class="line">        int size = nums.size();</div><div class="line">        if (size == 0)</div><div class="line">            return 0;</div><div class="line">        </div><div class="line">        vector&lt;int&gt; vec(target+1);</div><div class="line">        vec[0] = 1;</div><div class="line">        for(int i = 1; i &lt;= target; ++i) &#123;</div><div class="line">            for(auto num : nums) &#123;</div><div class="line">                if(num &lt;= i) &#123;</div><div class="line">                    vec[i] += vec[i-num];</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        return vec[target];</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></li>
+<li>map统计，遍历查询<br><br \=""></li>
 </ul>
 </li>
+<li><p>代码</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">firstUniqChar</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</div><div class="line">        <span class="built_in">map</span>&lt;<span class="keyword">char</span>, <span class="keyword">int</span>&gt; m;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s.length(); ++i) &#123;</div><div class="line">            m[s[i]] ++;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s.length(); ++i) &#123;</div><div class="line">            <span class="keyword">if</span>(m[s[i]] == <span class="number">1</span>)</div><div class="line">                <span class="keyword">return</span> i;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></li>
 </ul>
 
           

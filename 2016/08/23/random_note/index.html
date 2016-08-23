@@ -104,7 +104,7 @@
 思路：map思想，统计第二个字符串中的字符，对应的字符的index的值+1，相反，遍历第一个字符串的字符，对应的字符的index的值-1，如果index的值小于0，则返回false
 
 代码(注意思想的岔路，题目要求26个字符,仅包含lowercase lett">
-<meta property="og:updated_time" content="2016-08-23T03:24:39.000Z">
+<meta property="og:updated_time" content="2016-08-23T03:38:11.518Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="第383题---Random Note">
 <meta name="twitter:description" content="题意描述 
@@ -269,7 +269,7 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Veröffentlicht am</span>
-            <time itemprop="dateCreated" datetime="2016-08-23T11:33:35+08:00" content="2016-08-23">
+            <time itemprop="dateCreated" datetime="2016-08-23T11:38:11+08:00" content="2016-08-23">
               2016-08-23
             </time>
           </span>
@@ -306,13 +306,14 @@
 <li><p>思路：map思想，统计第二个字符串中的字符，对应的字符的index的值+1，相反，遍历第一个字符串的字符，对应的字符的index的值-1，如果index的值小于0，则返回false</p>
 </li>
 <li><p>代码(注意思想的岔路，题目要求26个字符,仅包含lowercase letters)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">public:</div><div class="line">    bool canConstruct(string ransomNote, string magazine) &#123;</div><div class="line">        vector&lt;int&gt; flags(256, 0);</div><div class="line">        for(int i = 0; i &lt; magazine.size(); ++i) &#123;</div><div class="line">            int nums = (int)(magazine[i] - &apos; &apos;);</div><div class="line">            flags[nums] ++;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        for(int i = 0; i &lt; ransomNote.size(); ++i) &#123;</div><div class="line">            int nums = (int)(ransomNote[i] - &apos; &apos;);</div><div class="line">            flags[nums] --;</div><div class="line">            if(flags[nums] &lt; 0)</div><div class="line">                return false;</div><div class="line">        &#125;</div><div class="line">        return true;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">canConstruct</span><span class="params">(<span class="built_in">string</span> ransomNote, <span class="built_in">string</span> magazine)</span> </span>&#123;</div><div class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; flags(<span class="number">256</span>, <span class="number">0</span>);</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; magazine.size(); ++i) &#123;</div><div class="line">            <span class="keyword">int</span> nums = (<span class="keyword">int</span>)(magazine[i] - <span class="string">' '</span>);</div><div class="line">            flags[nums] ++;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; ransomNote.size(); ++i) &#123;</div><div class="line">            <span class="keyword">int</span> nums = (<span class="keyword">int</span>)(ransomNote[i] - <span class="string">' '</span>);</div><div class="line">            flags[nums] --;</div><div class="line">            <span class="keyword">if</span>(flags[nums] &lt; <span class="number">0</span>)</div><div class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
 </li>
 <li><p>代码二（仅含有26的小写字母）</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">public:</div><div class="line">    bool canConstruct(string ransomNote, string magazine) &#123;</div><div class="line">        vector&lt;int&gt; flags(26, 0);</div><div class="line">        for(int i = 0; i &lt; magazine.size(); ++i) &#123;</div><div class="line">            int nums = (int)(magazine[i] - &apos;a&apos;);</div><div class="line">            flags[nums] ++;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        for(int i = 0; i &lt; ransomNote.size(); ++i) &#123;</div><div class="line">            int nums = (int)(ransomNote[i] - &apos;a&apos;);</div><div class="line">            flags[nums] --;</div><div class="line">            if(flags[nums] &lt; 0)</div><div class="line">                return false;</div><div class="line">        &#125;</div><div class="line">        return true;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
 </li>
 <li><p>代码三（优化转型）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">public:</div><div class="line">    bool canConstruct(string ransomNote, string magazine) &#123;</div><div class="line">        vector&lt;int&gt; flags(26, 0);</div><div class="line">        for(int i = 0; i &lt; magazine.size(); ++i) &#123;</div><div class="line">            int nums = static_cast&lt;int&gt;(magazine[i] - &apos;a&apos;);</div><div class="line">            flags[nums] ++;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        for(int i = 0; i &lt; ransomNote.size(); ++i) &#123;</div><div class="line">            int nums = static_cast&lt;int&gt;(ransomNote[i] - &apos;a&apos;);</div><div class="line">            flags[nums] --;</div><div class="line">            if(flags[nums] &lt; 0)</div><div class="line">                return false;</div><div class="line">        &#125;</div><div class="line">        return true;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></li>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">public:</div><div class="line">    bool canConstruct(string ransomNote, string magazine) &#123;</div><div class="line">        vector&lt;int&gt; flags(26, 0);</div><div class="line">        for(int i = 0; i &lt; magazine.size(); ++i) &#123;</div><div class="line">            int nums = static_cast&lt;int&gt;(magazine[i] - &apos;a&apos;);</div><div class="line">            flags[nums] ++;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        for(int i = 0; i &lt; ransomNote.size(); ++i) &#123;</div><div class="line">            int nums = static_cast&lt;int&gt;(ransomNote[i] - &apos;a&apos;);</div><div class="line">            flags[nums] --;</div><div class="line">            if(flags[nums] &lt; 0)</div><div class="line">                return false;</div><div class="line">        &#125;</div><div class="line">        return true;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+</li>
 </ul>
 
       
@@ -345,16 +346,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/08/23/longest_absolute_file_path/" rel="next" title="第388题---Longest Absolute File Path">
-                <i class="fa fa-chevron-left"></i> 第388题---Longest Absolute File Path
+              <a href="/2016/08/23/trapping_rain_water/" rel="next" title="第42题---Trapping Rain Water">
+                <i class="fa fa-chevron-left"></i> 第42题---Trapping Rain Water
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/08/23/trapping_rain_water/" rel="prev" title="第42题---Trapping Rain Water">
-                第42题---Trapping Rain Water <i class="fa fa-chevron-right"></i>
+              <a href="/2016/08/23/insert_delete_getrandom_o(1)/" rel="prev" title="第380题---Insert Delete getRandom O(1)">
+                第380题---Insert Delete getRandom O(1) <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
