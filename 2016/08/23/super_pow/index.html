@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="leetcode," />
 
 
 
@@ -84,16 +84,49 @@
 
 
 
-<meta name="description" content="随便写写，代码，生活，其他">
+<meta name="description" content="题目描述
+
+给定两个数，一个是整数，一个是数组表示很大的整数，求第一个整数的数组的乘方模上1337的结果
+
+
+思路
+
+a ^ b % k = a % k ^ b % k % k
+
+
+代码
+123456789101112131415161718192021class Solution &amp;#123;public:    int powmod(int a, int k) &amp;#123;        a">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hello world">
-<meta property="og:url" content="http://www.jinhongliang.cn/2016/08/15/hello-world-1/index.html">
+<meta property="og:title" content="第372题---Super Power">
+<meta property="og:url" content="http://www.jinhongliang.cn/2016/08/23/super_pow/index.html">
 <meta property="og:site_name" content="Jinhongliang's Blog">
-<meta property="og:description" content="随便写写，代码，生活，其他">
-<meta property="og:updated_time" content="2016-08-15T07:45:49.071Z">
+<meta property="og:description" content="题目描述
+
+给定两个数，一个是整数，一个是数组表示很大的整数，求第一个整数的数组的乘方模上1337的结果
+
+
+思路
+
+a ^ b % k = a % k ^ b % k % k
+
+
+代码
+123456789101112131415161718192021class Solution &amp;#123;public:    int powmod(int a, int k) &amp;#123;        a">
+<meta property="og:updated_time" content="2016-08-23T03:15:51.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hello world">
-<meta name="twitter:description" content="随便写写，代码，生活，其他">
+<meta name="twitter:title" content="第372题---Super Power">
+<meta name="twitter:description" content="题目描述
+
+给定两个数，一个是整数，一个是数组表示很大的整数，求第一个整数的数组的乘方模上1337的结果
+
+
+思路
+
+a ^ b % k = a % k ^ b % k % k
+
+
+代码
+123456789101112131415161718192021class Solution &amp;#123;public:    int powmod(int a, int k) &amp;#123;        a">
 
 
 
@@ -114,9 +147,9 @@
 
 
 
-  <link rel="canonical" href="http://www.jinhongliang.cn/2016/08/15/hello-world-1/"/>
+  <link rel="canonical" href="http://www.jinhongliang.cn/2016/08/23/super_pow/"/>
 
-  <title> hello world | Jinhongliang's Blog </title>
+  <title> 第372题---Super Power | Jinhongliang's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh">
@@ -236,7 +269,7 @@
             
             
               
-                hello world
+                第372题---Super Power
               
             
           </h1>
@@ -248,8 +281,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Veröffentlicht am</span>
-            <time itemprop="dateCreated" datetime="2016-08-15T15:45:49+08:00" content="2016-08-15">
-              2016-08-15
+            <time itemprop="dateCreated" datetime="2016-08-23T11:18:02+08:00" content="2016-08-23">
+              2016-08-23
             </time>
           </span>
 
@@ -276,7 +309,21 @@
       
 
       
-        
+        <ul>
+<li><p>题目描述</p>
+<ul>
+<li>给定两个数，一个是整数，一个是数组表示很大的整数，求第一个整数的数组的乘方模上1337的结果</li>
+</ul>
+</li>
+<li><p>思路</p>
+<ul>
+<li>a ^ b % k = a % k ^ b % k % k</li>
+</ul>
+</li>
+<li><p>代码</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">powmod</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> k)</span> </span>&#123;</div><div class="line">        a %= base;</div><div class="line">        <span class="keyword">int</span> result = <span class="number">1</span>;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; k; ++i) </div><div class="line">            result = (result * a) % base;</div><div class="line">        <span class="keyword">return</span> result;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">superPow</span><span class="params">(<span class="keyword">int</span> a, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; b)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span>(b.empty())</div><div class="line">            <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">        <span class="keyword">int</span> last_digit = b.back();</div><div class="line">        b.pop_back();</div><div class="line">        <span class="keyword">return</span> powmod(superPow(a, b), <span class="number">10</span>) * powmod(a, last_digit) % base;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line"><span class="keyword">private</span>:</div><div class="line">    <span class="keyword">const</span> <span class="keyword">int</span> base = <span class="number">1337</span>;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></li>
+</ul>
+
       
     </div>
 
@@ -296,21 +343,27 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/leetcode/" rel="tag">#leetcode</a>
+          
+        </div>
+      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/08/15/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2016/08/22/find_k_pairs_with_smallest_sum/" rel="next" title="第373题---Find K Pairs with Smallest Sums">
+                <i class="fa fa-chevron-left"></i> 第373题---Find K Pairs with Smallest Sums
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/08/15/tags-test/" rel="prev" title="tags-test">
-                tags-test <i class="fa fa-chevron-right"></i>
+              <a href="/2016/08/23/combination_sum_IV/" rel="prev" title="第377题---Combination Sum IV">
+                第377题---Combination Sum IV <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>

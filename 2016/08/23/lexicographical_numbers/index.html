@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="leetcode," />
 
 
 
@@ -84,16 +84,49 @@
 
 
 
-<meta name="description" content="随便写写，代码，生活，其他">
+<meta name="description" content="题意描述
+
+给定一个数，求这个数的字典数
+
+
+思路
+
+从1开始，1加入到数组，判断1的10倍是否在n内，如果在，递归；判断1是否在n内，并且n%10 &amp;lt; 9，则递归1+1
+
+
+代码
+12345678910111213141516171819class Solution &amp;#123;public:    void lexicalOrder1(int number, int n) &amp;#123;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hello world">
-<meta property="og:url" content="http://www.jinhongliang.cn/2016/08/15/hello-world-1/index.html">
+<meta property="og:title" content="第386题---Lexicographical Numbers">
+<meta property="og:url" content="http://www.jinhongliang.cn/2016/08/23/lexicographical_numbers/index.html">
 <meta property="og:site_name" content="Jinhongliang's Blog">
-<meta property="og:description" content="随便写写，代码，生活，其他">
-<meta property="og:updated_time" content="2016-08-15T07:45:49.071Z">
+<meta property="og:description" content="题意描述
+
+给定一个数，求这个数的字典数
+
+
+思路
+
+从1开始，1加入到数组，判断1的10倍是否在n内，如果在，递归；判断1是否在n内，并且n%10 &amp;lt; 9，则递归1+1
+
+
+代码
+12345678910111213141516171819class Solution &amp;#123;public:    void lexicalOrder1(int number, int n) &amp;#123;">
+<meta property="og:updated_time" content="2016-08-23T03:22:36.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hello world">
-<meta name="twitter:description" content="随便写写，代码，生活，其他">
+<meta name="twitter:title" content="第386题---Lexicographical Numbers">
+<meta name="twitter:description" content="题意描述
+
+给定一个数，求这个数的字典数
+
+
+思路
+
+从1开始，1加入到数组，判断1的10倍是否在n内，如果在，递归；判断1是否在n内，并且n%10 &amp;lt; 9，则递归1+1
+
+
+代码
+12345678910111213141516171819class Solution &amp;#123;public:    void lexicalOrder1(int number, int n) &amp;#123;">
 
 
 
@@ -114,9 +147,9 @@
 
 
 
-  <link rel="canonical" href="http://www.jinhongliang.cn/2016/08/15/hello-world-1/"/>
+  <link rel="canonical" href="http://www.jinhongliang.cn/2016/08/23/lexicographical_numbers/"/>
 
-  <title> hello world | Jinhongliang's Blog </title>
+  <title> 第386题---Lexicographical Numbers | Jinhongliang's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh">
@@ -236,7 +269,7 @@
             
             
               
-                hello world
+                第386题---Lexicographical Numbers
               
             
           </h1>
@@ -248,8 +281,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Veröffentlicht am</span>
-            <time itemprop="dateCreated" datetime="2016-08-15T15:45:49+08:00" content="2016-08-15">
-              2016-08-15
+            <time itemprop="dateCreated" datetime="2016-08-23T11:33:15+08:00" content="2016-08-23">
+              2016-08-23
             </time>
           </span>
 
@@ -276,7 +309,21 @@
       
 
       
-        
+        <ul>
+<li><p>题意描述</p>
+<ul>
+<li>给定一个数，求这个数的字典数</li>
+</ul>
+</li>
+<li><p>思路</p>
+<ul>
+<li>从1开始，1加入到数组，判断1的10倍是否在n内，如果在，递归；判断1是否在n内，并且n%10 &lt; 9，则递归1+1</li>
+</ul>
+</li>
+<li><p>代码</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">lexicalOrder1</span><span class="params">(<span class="keyword">int</span> number, <span class="keyword">int</span> n)</span> </span>&#123;</div><div class="line">        result.push_back(number);</div><div class="line">        <span class="keyword">if</span>(number * <span class="number">10</span> &lt;= n)</div><div class="line">            lexicalOrder1(number*<span class="number">10</span>, n);</div><div class="line">        <span class="keyword">if</span>(number &lt; n &amp;&amp; number % <span class="number">10</span> &lt; <span class="number">9</span>)</div><div class="line">            lexicalOrder1(number+<span class="number">1</span>, n);</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; lexicalOrder(<span class="keyword">int</span> n) &#123;</div><div class="line">        <span class="keyword">if</span>(n == <span class="number">0</span>)</div><div class="line">            <span class="keyword">return</span> result;</div><div class="line">        lexicalOrder1(<span class="number">1</span>, n);</div><div class="line">        <span class="keyword">return</span> result;</div><div class="line">    &#125;</div><div class="line"><span class="keyword">private</span>:</div><div class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; result;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></li>
+</ul>
+
       
     </div>
 
@@ -296,21 +343,27 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/leetcode/" rel="tag">#leetcode</a>
+          
+        </div>
+      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/08/15/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2016/08/23/insert_delete_getrandom_o(1)_duplicate/" rel="next" title="第381题---Insert Delete getRandom O(1) duplicate">
+                <i class="fa fa-chevron-left"></i> 第381题---Insert Delete getRandom O(1) duplicate
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/08/15/tags-test/" rel="prev" title="tags-test">
-                tags-test <i class="fa fa-chevron-right"></i>
+              <a href="/2016/08/23/longest_absolute_file_path/" rel="prev" title="第388题---Longest Absolute File Path">
+                第388题---Longest Absolute File Path <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>

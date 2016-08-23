@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="leetcode," />
 
 
 
@@ -84,16 +84,49 @@
 
 
 
-<meta name="description" content="随便写写，代码，生活，其他">
+<meta name="description" content="题意描述
+
+猜数游戏
+
+
+思路
+
+二分查找
+
+
+代码
+123456789101112131415161718192021222324// Forward declaration of guess API.// @param num, your guess// @return -1 if my number is lower, 1 if my number is higher, otherwise">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hello world">
-<meta property="og:url" content="http://www.jinhongliang.cn/2016/08/15/hello-world-1/index.html">
+<meta property="og:title" content="第374题---Guess Number Higher or Lower">
+<meta property="og:url" content="http://www.jinhongliang.cn/2016/08/23/guess_number_higher_or_lower/index.html">
 <meta property="og:site_name" content="Jinhongliang's Blog">
-<meta property="og:description" content="随便写写，代码，生活，其他">
-<meta property="og:updated_time" content="2016-08-15T07:45:49.071Z">
+<meta property="og:description" content="题意描述
+
+猜数游戏
+
+
+思路
+
+二分查找
+
+
+代码
+123456789101112131415161718192021222324// Forward declaration of guess API.// @param num, your guess// @return -1 if my number is lower, 1 if my number is higher, otherwise">
+<meta property="og:updated_time" content="2016-08-23T03:19:18.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hello world">
-<meta name="twitter:description" content="随便写写，代码，生活，其他">
+<meta name="twitter:title" content="第374题---Guess Number Higher or Lower">
+<meta name="twitter:description" content="题意描述
+
+猜数游戏
+
+
+思路
+
+二分查找
+
+
+代码
+123456789101112131415161718192021222324// Forward declaration of guess API.// @param num, your guess// @return -1 if my number is lower, 1 if my number is higher, otherwise">
 
 
 
@@ -114,9 +147,9 @@
 
 
 
-  <link rel="canonical" href="http://www.jinhongliang.cn/2016/08/15/hello-world-1/"/>
+  <link rel="canonical" href="http://www.jinhongliang.cn/2016/08/23/guess_number_higher_or_lower/"/>
 
-  <title> hello world | Jinhongliang's Blog </title>
+  <title> 第374题---Guess Number Higher or Lower | Jinhongliang's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh">
@@ -236,7 +269,7 @@
             
             
               
-                hello world
+                第374题---Guess Number Higher or Lower
               
             
           </h1>
@@ -248,8 +281,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Veröffentlicht am</span>
-            <time itemprop="dateCreated" datetime="2016-08-15T15:45:49+08:00" content="2016-08-15">
-              2016-08-15
+            <time itemprop="dateCreated" datetime="2016-08-23T11:32:35+08:00" content="2016-08-23">
+              2016-08-23
             </time>
           </span>
 
@@ -276,7 +309,21 @@
       
 
       
-        
+        <ul>
+<li><p>题意描述</p>
+<ul>
+<li>猜数游戏</li>
+</ul>
+</li>
+<li><p>思路</p>
+<ul>
+<li>二分查找</li>
+</ul>
+</li>
+<li><p>代码</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Forward declaration of guess API.</span></div><div class="line"><span class="comment">// @param num, your guess</span></div><div class="line"><span class="comment">// @return -1 if my number is lower, 1 if my number is higher, otherwise return 0</span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">guess</span><span class="params">(<span class="keyword">int</span> num)</span></span>;</div><div class="line"></div><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">guessNumber</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> start = <span class="number">1</span>;</div><div class="line">        <span class="keyword">int</span> end = n;</div><div class="line">        </div><div class="line">        <span class="keyword">while</span> (start &lt;= end) &#123;</div><div class="line">            <span class="keyword">int</span> mid = start + (end - start) / <span class="number">2</span>;</div><div class="line">            <span class="keyword">int</span> g = guess(mid);</div><div class="line">            <span class="keyword">if</span>(g == <span class="number">0</span>)</div><div class="line">                <span class="keyword">return</span> mid;</div><div class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(g == <span class="number">1</span>)</div><div class="line">                start = mid+<span class="number">1</span>;</div><div class="line">            <span class="keyword">else</span> </div><div class="line">                end = mid<span class="number">-1</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></li>
+</ul>
+
       
     </div>
 
@@ -296,21 +343,27 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/leetcode/" rel="tag">#leetcode</a>
+          
+        </div>
+      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/08/15/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2016/08/23/first_unique_character_in_string/" rel="next" title="第387题---First Unique Character in a String.md">
+                <i class="fa fa-chevron-left"></i> 第387题---First Unique Character in a String.md
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/08/15/tags-test/" rel="prev" title="tags-test">
-                tags-test <i class="fa fa-chevron-right"></i>
+              <a href="/2016/08/23/house_robber/" rel="prev" title="第198题---House Robber">
+                第198题---House Robber <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
