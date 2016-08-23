@@ -238,8 +238,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/08/23/combination_sum_IV/" itemprop="url">
-                  第377题---Combination Sum IV
+                <a class="post-title-link" href="/2016/08/23/random_note/" itemprop="url">
+                  第383题---Random Note
                 </a>
               
             
@@ -252,7 +252,118 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Veröffentlicht am</span>
-            <time itemprop="dateCreated" datetime="2016-08-23T11:39:43+08:00" content="2016-08-23">
+            <time itemprop="dateCreated" datetime="2016-08-23T11:44:11+08:00" content="2016-08-23">
+              2016-08-23
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ul>
+<li><p>题意描述 </p>
+<ul>
+<li>给定两个字符串，判断第一个字符串是否可以从第二个字符串构造出来，也就是说第一个字符串中的字符，都包含在第二个字符串当中</li>
+</ul>
+</li>
+<li><p>思路：map思想，统计第二个字符串中的字符，对应的字符的index的值+1，相反，遍历第一个字符串的字符，对应的字符的index的值-1，如果index的值小于0，则返回false</p>
+</li>
+<li><p>代码(注意思想的岔路，题目要求26个字符,仅包含lowercase letters)</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">canConstruct</span><span class="params">(<span class="built_in">string</span> ransomNote, <span class="built_in">string</span> magazine)</span> </span>&#123;</div><div class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; flags(<span class="number">256</span>, <span class="number">0</span>);</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; magazine.size(); ++i) &#123;</div><div class="line">            <span class="keyword">int</span> nums = (<span class="keyword">int</span>)(magazine[i] - <span class="string">' '</span>);</div><div class="line">            flags[nums] ++;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; ransomNote.size(); ++i) &#123;</div><div class="line">            <span class="keyword">int</span> nums = (<span class="keyword">int</span>)(ransomNote[i] - <span class="string">' '</span>);</div><div class="line">            flags[nums] --;</div><div class="line">            <span class="keyword">if</span>(flags[nums] &lt; <span class="number">0</span>)</div><div class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+</li>
+<li><p>代码二（仅含有26的小写字母）</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">canConstruct</span><span class="params">(<span class="built_in">string</span> ransomNote, <span class="built_in">string</span> magazine)</span> </span>&#123;</div><div class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; flags(<span class="number">26</span>, <span class="number">0</span>);</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; magazine.size(); ++i) &#123;</div><div class="line">            <span class="keyword">int</span> nums = (<span class="keyword">int</span>)(magazine[i] - <span class="string">'a'</span>);</div><div class="line">            flags[nums] ++;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; ransomNote.size(); ++i) &#123;</div><div class="line">            <span class="keyword">int</span> nums = (<span class="keyword">int</span>)(ransomNote[i] - <span class="string">'a'</span>);</div><div class="line">            flags[nums] --;</div><div class="line">            <span class="keyword">if</span>(flags[nums] &lt; <span class="number">0</span>)</div><div class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+</li>
+<li><p>代码三（优化转型）</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">canConstruct</span><span class="params">(<span class="built_in">string</span> ransomNote, <span class="built_in">string</span> magazine)</span> </span>&#123;</div><div class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; flags(<span class="number">26</span>, <span class="number">0</span>);</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; magazine.size(); ++i) &#123;</div><div class="line">            <span class="keyword">int</span> nums = <span class="keyword">static_cast</span>&lt;<span class="keyword">int</span>&gt;(magazine[i] - <span class="string">'a'</span>);</div><div class="line">            flags[nums] ++;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; ransomNote.size(); ++i) &#123;</div><div class="line">            <span class="keyword">int</span> nums = <span class="keyword">static_cast</span>&lt;<span class="keyword">int</span>&gt;(ransomNote[i] - <span class="string">'a'</span>);</div><div class="line">            flags[nums] --;</div><div class="line">            <span class="keyword">if</span>(flags[nums] &lt; <span class="number">0</span>)</div><div class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/08/23/house_robber/" itemprop="url">
+                  第198题---House Robber
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2016-08-23T11:43:34+08:00" content="2016-08-23">
               2016-08-23
             </time>
           </span>
@@ -285,12 +396,24 @@
             <ul>
 <li><p>题意描述</p>
 <ul>
-<li>给定一个都是正整数，没有重复的数组，给定一个目标数，求数组中组合成目标数的方式有几种，数组中的数可以多次使用</li>
+<li>一个vector中表示一系列的房屋的财物价值，小偷不能偷连续两家的财物，否则就会自动报警，问小偷怎么偷，才能偷得最大的财物价值</li>
 </ul>
 </li>
 <li><p>思路一</p>
 <ul>
-<li>类似于台阶的动态规划，res[0]代表，目标数为0的组合数；res[1]代表，目标数为1的组合数；依次类推，res[i]的组合数res[i] += res[i-num]<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">combinationSum4</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> size = nums.size();</div><div class="line">        <span class="keyword">if</span> (size == <span class="number">0</span>)</div><div class="line">            <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">        </div><div class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; vec(target+<span class="number">1</span>);</div><div class="line">        vec[<span class="number">0</span>] = <span class="number">1</span>;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= target; ++i) &#123;</div><div class="line">            <span class="keyword">for</span>(<span class="keyword">auto</span> num : nums) &#123;</div><div class="line">                <span class="keyword">if</span>(num &lt;= i) &#123;</div><div class="line">                    vec[i] += vec[i-num];</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> vec[target];</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<li>分为奇数和偶数统计相关的信息，奇数项，只能由奇数项+当前的财物或者上一个偶数项中的最大值决定，偶数项同样，最后求两个数的大小<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">rob</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> a = <span class="number">0</span>;</div><div class="line">        <span class="keyword">int</span> b = <span class="number">0</span>;</div><div class="line">        </div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.size(); ++i) &#123;</div><div class="line">            <span class="keyword">if</span>(i % <span class="number">2</span> == <span class="number">0</span>) &#123;</div><div class="line">                a = max(a + nums[i], b);</div><div class="line">            &#125; <span class="keyword">else</span> &#123;</div><div class="line">                b = max(a, b + nums[i]);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> a &gt; b ? a : b;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>思路二</p>
+<ul>
+<li>用两个变量表示当前房屋偷还是不偷的财物的数量，偷=上次不偷的+本次偷得；不偷=上次偷或者不偷的最大值<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">rob</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> rob = <span class="number">0</span>;</div><div class="line">        <span class="keyword">int</span> norob = <span class="number">0</span>;</div><div class="line">        <span class="keyword">int</span> size = nums.size();</div><div class="line">        <span class="keyword">if</span>(size == <span class="number">0</span>)</div><div class="line">            <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">        </div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; size; ++i) &#123;</div><div class="line">            <span class="keyword">int</span> temp = norob;</div><div class="line">            norob = rob &gt; norob ? rob : norob;</div><div class="line">            rob = temp + nums[i];</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        <span class="keyword">return</span> rob &gt; norob ? rob : norob;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>思路三</p>
+<ul>
+<li>动态规划的算法，当前状态的值由上一次的值和上上一次值+当前房屋状态的值的最大值决定<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"> <span class="function"><span class="keyword">int</span> <span class="title">max</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span> </span>&#123;</div><div class="line">     <span class="keyword">return</span> a &gt; b ? a : b;</div><div class="line"> &#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">rob</span><span class="params">(<span class="keyword">int</span>* nums, <span class="keyword">int</span> numsSize)</span> </span>&#123;</div><div class="line">    <span class="keyword">int</span>* d;</div><div class="line"></div><div class="line">    d = (<span class="keyword">int</span>*) <span class="built_in">malloc</span> (numsSize * <span class="keyword">sizeof</span>(nums[<span class="number">0</span>]));</div><div class="line"></div><div class="line">    d[<span class="number">0</span>] = nums[<span class="number">0</span>];</div><div class="line">    d[<span class="number">1</span>] = max (nums[<span class="number">0</span>], nums[<span class="number">1</span>]);</div><div class="line"></div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt; numsSize; i++) &#123;</div><div class="line">        d[i] = max(d[i<span class="number">-2</span>]+nums[i], d[i<span class="number">-1</span>]);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> d[numsSize<span class="number">-1</span>];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
@@ -358,7 +481,7 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Veröffentlicht am</span>
-            <time itemprop="dateCreated" datetime="2016-08-23T11:39:26+08:00" content="2016-08-23">
+            <time itemprop="dateCreated" datetime="2016-08-23T11:43:11+08:00" content="2016-08-23">
               2016-08-23
             </time>
           </span>
@@ -406,7 +529,7 @@
 </ul>
 </li>
 <li><p>思路3 令牌桶算法（毛？）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">public:</div><div class="line">    int findDuplicate(vector&lt;int&gt;&amp; nums) &#123;</div><div class="line">        int index = 0;</div><div class="line">        while(index &lt; nums.size()) &#123;</div><div class="line">            if(nums[index] == index) &#123;</div><div class="line">                index ++;</div><div class="line">            &#125; else &#123;</div><div class="line">                if(nums[index] == nums[nums[index]])</div><div class="line">                    return nums[index];</div><div class="line">                else &#123;</div><div class="line">                    int temp = nums[index];</div><div class="line">                    nums[index] = nums[temp];</div><div class="line">                    nums[temp] = temp;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        return -1;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">findDuplicate</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> index = <span class="number">0</span>;</div><div class="line">        <span class="keyword">while</span>(index &lt; nums.size()) &#123;</div><div class="line">            <span class="keyword">if</span>(nums[index] == index) &#123;</div><div class="line">                index ++;</div><div class="line">            &#125; <span class="keyword">else</span> &#123;</div><div class="line">                <span class="keyword">if</span>(nums[index] == nums[nums[index]])</div><div class="line">                    <span class="keyword">return</span> nums[index];</div><div class="line">                <span class="keyword">else</span> &#123;</div><div class="line">                    <span class="keyword">int</span> temp = nums[index];</div><div class="line">                    nums[index] = nums[temp];</div><div class="line">                    nums[temp] = temp;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
 </li>
 </ul>
 
@@ -458,8 +581,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/08/23/house_robber/" itemprop="url">
-                  第198题---House Robber
+                <a class="post-title-link" href="/2016/08/23/combination_sum_IV/" itemprop="url">
+                  第377题---Combination Sum IV
                 </a>
               
             
@@ -472,7 +595,7 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Veröffentlicht am</span>
-            <time itemprop="dateCreated" datetime="2016-08-23T11:39:07+08:00" content="2016-08-23">
+            <time itemprop="dateCreated" datetime="2016-08-23T11:39:43+08:00" content="2016-08-23">
               2016-08-23
             </time>
           </span>
@@ -505,24 +628,12 @@
             <ul>
 <li><p>题意描述</p>
 <ul>
-<li>一个vector中表示一系列的房屋的财物价值，小偷不能偷连续两家的财物，否则就会自动报警，问小偷怎么偷，才能偷得最大的财物价值</li>
+<li>给定一个都是正整数，没有重复的数组，给定一个目标数，求数组中组合成目标数的方式有几种，数组中的数可以多次使用</li>
 </ul>
 </li>
 <li><p>思路一</p>
 <ul>
-<li>分为奇数和偶数统计相关的信息，奇数项，只能由奇数项+当前的财物或者上一个偶数项中的最大值决定，偶数项同样，最后求两个数的大小<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">rob</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> a = <span class="number">0</span>;</div><div class="line">        <span class="keyword">int</span> b = <span class="number">0</span>;</div><div class="line">        </div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.size(); ++i) &#123;</div><div class="line">            <span class="keyword">if</span>(i % <span class="number">2</span> == <span class="number">0</span>) &#123;</div><div class="line">                a = max(a + nums[i], b);</div><div class="line">            &#125; <span class="keyword">else</span> &#123;</div><div class="line">                b = max(a, b + nums[i]);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> a &gt; b ? a : b;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>思路二</p>
-<ul>
-<li>用两个变量表示当前房屋偷还是不偷的财物的数量，偷=上次不偷的+本次偷得；不偷=上次偷或者不偷的最大值<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">public:</div><div class="line">    int rob(vector&lt;int&gt;&amp; nums) &#123;</div><div class="line">        int rob = 0;</div><div class="line">        int norob = 0;</div><div class="line">        int size = nums.size();</div><div class="line">        if(size == 0)</div><div class="line">            return 0;</div><div class="line">        </div><div class="line">        for(int i = 0; i &lt; size; ++i) &#123;</div><div class="line">            int temp = norob;</div><div class="line">            norob = rob &gt; norob ? rob : norob;</div><div class="line">            rob = temp + nums[i];</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        return rob &gt; norob ? rob : norob;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>思路三</p>
-<ul>
-<li>动态规划的算法，当前状态的值由上一次的值和上上一次值+当前房屋状态的值的最大值决定<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"> int max(int a, int b) &#123;</div><div class="line">     return a &gt; b ? a : b;</div><div class="line"> &#125;</div><div class="line"></div><div class="line">int rob(int* nums, int numsSize) &#123;</div><div class="line">    int* d;</div><div class="line"></div><div class="line">    d = (int*) malloc (numsSize * sizeof(nums[0]));</div><div class="line"></div><div class="line">    d[0] = nums[0];</div><div class="line">    d[1] = max (nums[0], nums[1]);</div><div class="line"></div><div class="line">    for (int i = 2; i &lt; numsSize; i++) &#123;</div><div class="line">        d[i] = max(d[i-2]+nums[i], d[i-1]);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    return d[numsSize-1];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<li>类似于台阶的动态规划，res[0]代表，目标数为0的组合数；res[1]代表，目标数为1的组合数；依次类推，res[i]的组合数res[i] += res[i-num]<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">combinationSum4</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> size = nums.size();</div><div class="line">        <span class="keyword">if</span> (size == <span class="number">0</span>)</div><div class="line">            <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">        </div><div class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; vec(target+<span class="number">1</span>);</div><div class="line">        vec[<span class="number">0</span>] = <span class="number">1</span>;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= target; ++i) &#123;</div><div class="line">            <span class="keyword">for</span>(<span class="keyword">auto</span> num : nums) &#123;</div><div class="line">                <span class="keyword">if</span>(num &lt;= i) &#123;</div><div class="line">                    vec[i] += vec[i-num];</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> vec[target];</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
@@ -737,117 +848,6 @@
 </li>
 <li><p>代码实现</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> RandomizedSet &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="comment">/** Initialize your data structure here. */</span></div><div class="line">    RandomizedSet() &#123;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="comment">/** Inserts a value to the set. Returns true if the set did not already contain the specified element. */</span></div><div class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">insert</span><span class="params">(<span class="keyword">int</span> val)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span>(m.find(val) != m.end())</div><div class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">        nums.push_back(val);</div><div class="line">        m[val] = nums.size()<span class="number">-1</span>;</div><div class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="comment">/** Removes a value from the set. Returns true if the set contained the specified element. */</span></div><div class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">remove</span><span class="params">(<span class="keyword">int</span> val)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span>(m.find(val) == m.end())</div><div class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">        <span class="comment">// 交换查找元素和最后一个元素的位置</span></div><div class="line">        <span class="keyword">int</span> last = nums.back();</div><div class="line">        m[last] = m[val];</div><div class="line">        nums[m[val]] = last;</div><div class="line">        <span class="comment">// 删除最后一个元素，和map中的元素</span></div><div class="line">        nums.pop_back();</div><div class="line">        m.erase(val);</div><div class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="comment">/** Get a random element from the set. */</span></div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">getRandom</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> nums[rand() % nums.size()];</div><div class="line">    &#125;</div><div class="line">    </div><div class="line"><span class="keyword">private</span>:</div><div class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; nums;</div><div class="line">    <span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; m;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * Your RandomizedSet object will be instantiated and called as such:</div><div class="line"> * RandomizedSet obj = new RandomizedSet();</div><div class="line"> * bool param_1 = obj.insert(val);</div><div class="line"> * bool param_2 = obj.remove(val);</div><div class="line"> * int param_3 = obj.getRandom();</div><div class="line"> */</div></pre></td></tr></table></figure>
-</li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/08/23/random_note/" itemprop="url">
-                  第383题---Random Note
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Veröffentlicht am</span>
-            <time itemprop="dateCreated" datetime="2016-08-23T11:38:11+08:00" content="2016-08-23">
-              2016-08-23
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <ul>
-<li><p>题意描述 </p>
-<ul>
-<li>给定两个字符串，判断第一个字符串是否可以从第二个字符串构造出来，也就是说第一个字符串中的字符，都包含在第二个字符串当中</li>
-</ul>
-</li>
-<li><p>思路：map思想，统计第二个字符串中的字符，对应的字符的index的值+1，相反，遍历第一个字符串的字符，对应的字符的index的值-1，如果index的值小于0，则返回false</p>
-</li>
-<li><p>代码(注意思想的岔路，题目要求26个字符,仅包含lowercase letters)</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">canConstruct</span><span class="params">(<span class="built_in">string</span> ransomNote, <span class="built_in">string</span> magazine)</span> </span>&#123;</div><div class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; flags(<span class="number">256</span>, <span class="number">0</span>);</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; magazine.size(); ++i) &#123;</div><div class="line">            <span class="keyword">int</span> nums = (<span class="keyword">int</span>)(magazine[i] - <span class="string">' '</span>);</div><div class="line">            flags[nums] ++;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; ransomNote.size(); ++i) &#123;</div><div class="line">            <span class="keyword">int</span> nums = (<span class="keyword">int</span>)(ransomNote[i] - <span class="string">' '</span>);</div><div class="line">            flags[nums] --;</div><div class="line">            <span class="keyword">if</span>(flags[nums] &lt; <span class="number">0</span>)</div><div class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-</li>
-<li><p>代码二（仅含有26的小写字母）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">public:</div><div class="line">    bool canConstruct(string ransomNote, string magazine) &#123;</div><div class="line">        vector&lt;int&gt; flags(26, 0);</div><div class="line">        for(int i = 0; i &lt; magazine.size(); ++i) &#123;</div><div class="line">            int nums = (int)(magazine[i] - &apos;a&apos;);</div><div class="line">            flags[nums] ++;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        for(int i = 0; i &lt; ransomNote.size(); ++i) &#123;</div><div class="line">            int nums = (int)(ransomNote[i] - &apos;a&apos;);</div><div class="line">            flags[nums] --;</div><div class="line">            if(flags[nums] &lt; 0)</div><div class="line">                return false;</div><div class="line">        &#125;</div><div class="line">        return true;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-</li>
-<li><p>代码三（优化转型）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">public:</div><div class="line">    bool canConstruct(string ransomNote, string magazine) &#123;</div><div class="line">        vector&lt;int&gt; flags(26, 0);</div><div class="line">        for(int i = 0; i &lt; magazine.size(); ++i) &#123;</div><div class="line">            int nums = static_cast&lt;int&gt;(magazine[i] - &apos;a&apos;);</div><div class="line">            flags[nums] ++;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        for(int i = 0; i &lt; ransomNote.size(); ++i) &#123;</div><div class="line">            int nums = static_cast&lt;int&gt;(ransomNote[i] - &apos;a&apos;);</div><div class="line">            flags[nums] --;</div><div class="line">            if(flags[nums] &lt; 0)</div><div class="line">                return false;</div><div class="line">        &#125;</div><div class="line">        return true;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
 </li>
 </ul>
 
