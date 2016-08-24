@@ -85,48 +85,39 @@
 
 
 <meta name="description" content="题意描述
-
-猜数游戏
+给定一个不同的整数的数组，求他最长的可除的数组的长度（数组中的每两个数是可除的）
 
 
 思路
+动态规划（懵逼了。）
 
-二分查找
 
-
-代码
-123456789101112131415161718192021222324// Forward declaration of guess API.// @param num, your guess// @return -1 if my number is lower, 1 if my number is higher, otherwise">
+代码123456789101112131415161718192021222324252627282930313233class Solution &amp;#123;public:    vector&amp;lt;int&amp;gt; largestDivisibleSubset(vec">
 <meta property="og:type" content="article">
-<meta property="og:title" content="第374题---Guess Number Higher or Lower">
-<meta property="og:url" content="http://www.jinhongliang.cn/2016/08/23/guess_number_higher_or_lower/index.html">
+<meta property="og:title" content="Jinhongliang's Blog">
+<meta property="og:url" content="http://www.jinhongliang.cn/2016/08/24/largest_divisible_subset/index.html">
 <meta property="og:site_name" content="Jinhongliang's Blog">
 <meta property="og:description" content="题意描述
-
-猜数游戏
+给定一个不同的整数的数组，求他最长的可除的数组的长度（数组中的每两个数是可除的）
 
 
 思路
+动态规划（懵逼了。）
 
-二分查找
 
-
-代码
-123456789101112131415161718192021222324// Forward declaration of guess API.// @param num, your guess// @return -1 if my number is lower, 1 if my number is higher, otherwise">
-<meta property="og:updated_time" content="2016-08-23T03:19:18.000Z">
+代码123456789101112131415161718192021222324252627282930313233class Solution &amp;#123;public:    vector&amp;lt;int&amp;gt; largestDivisibleSubset(vec">
+<meta property="og:updated_time" content="2016-08-24T02:58:28.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="第374题---Guess Number Higher or Lower">
+<meta name="twitter:title" content="Jinhongliang's Blog">
 <meta name="twitter:description" content="题意描述
-
-猜数游戏
+给定一个不同的整数的数组，求他最长的可除的数组的长度（数组中的每两个数是可除的）
 
 
 思路
+动态规划（懵逼了。）
 
-二分查找
 
-
-代码
-123456789101112131415161718192021222324// Forward declaration of guess API.// @param num, your guess// @return -1 if my number is lower, 1 if my number is higher, otherwise">
+代码123456789101112131415161718192021222324252627282930313233class Solution &amp;#123;public:    vector&amp;lt;int&amp;gt; largestDivisibleSubset(vec">
 
 
 
@@ -147,9 +138,9 @@
 
 
 
-  <link rel="canonical" href="http://www.jinhongliang.cn/2016/08/23/guess_number_higher_or_lower/"/>
+  <link rel="canonical" href="http://www.jinhongliang.cn/2016/08/24/largest_divisible_subset/"/>
 
-  <title> 第374题---Guess Number Higher or Lower | Jinhongliang's Blog </title>
+  <title>  | Jinhongliang's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -299,7 +290,7 @@
             
             
               
-                第374题---Guess Number Higher or Lower
+                
               
             
           </h1>
@@ -311,8 +302,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-23T11:32:35+08:00" content="2016-08-23">
-              2016-08-23
+            <time itemprop="dateCreated" datetime="2016-08-24T10:59:43+08:00" content="2016-08-24">
+              2016-08-24
             </time>
           </span>
 
@@ -340,18 +331,15 @@
 
       
         <ul>
-<li><p>题意描述</p>
-<ul>
-<li>猜数游戏</li>
+<li>题意描述<ul>
+<li>给定一个不同的整数的数组，求他最长的可除的数组的长度（数组中的每两个数是可除的）</li>
 </ul>
 </li>
-<li><p>思路</p>
-<ul>
-<li>二分查找</li>
+<li>思路<ul>
+<li>动态规划（懵逼了。）</li>
 </ul>
 </li>
-<li><p>代码</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Forward declaration of guess API.</span></div><div class="line"><span class="comment">// @param num, your guess</span></div><div class="line"><span class="comment">// @return -1 if my number is lower, 1 if my number is higher, otherwise return 0</span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">guess</span><span class="params">(<span class="keyword">int</span> num)</span></span>;</div><div class="line"></div><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">guessNumber</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> start = <span class="number">1</span>;</div><div class="line">        <span class="keyword">int</span> end = n;</div><div class="line">        </div><div class="line">        <span class="keyword">while</span> (start &lt;= end) &#123;</div><div class="line">            <span class="keyword">int</span> mid = start + (end - start) / <span class="number">2</span>;</div><div class="line">            <span class="keyword">int</span> g = guess(mid);</div><div class="line">            <span class="keyword">if</span>(g == <span class="number">0</span>)</div><div class="line">                <span class="keyword">return</span> mid;</div><div class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(g == <span class="number">1</span>)</div><div class="line">                start = mid+<span class="number">1</span>;</div><div class="line">            <span class="keyword">else</span> </div><div class="line">                end = mid<span class="number">-1</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></li>
+<li>代码<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; largestDivisibleSubset(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums) &#123;</div><div class="line">        sort(nums.begin(), nums.end());</div><div class="line">        </div><div class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; T(nums.size(), <span class="number">0</span>);</div><div class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; parent(nums.size(), <span class="number">0</span>);</div><div class="line">        </div><div class="line">        </div><div class="line">        <span class="keyword">int</span> m = <span class="number">0</span>;</div><div class="line">        <span class="keyword">int</span> mi = <span class="number">0</span>;</div><div class="line">        </div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = nums.size()<span class="number">-1</span>; i &gt;= <span class="number">0</span>; --i) &#123;</div><div class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = i; j &lt; nums.size(); ++j) &#123;</div><div class="line">                <span class="keyword">if</span>(nums[j] % nums[i] == <span class="number">0</span> &amp;&amp; T[i] &lt; <span class="number">1</span> + T[j]) &#123;</div><div class="line">                    T[i] = <span class="number">1</span>+T[j];</div><div class="line">                    parent[i] = j;</div><div class="line">                    <span class="keyword">if</span>(T[i] &gt; m) &#123;</div><div class="line">                        m = T[i];</div><div class="line">                        mi = i;</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; ret;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; ++i) &#123;</div><div class="line">            ret.push_back(nums[mi]);</div><div class="line">            mi = parent[mi];</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> ret;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></li>
 </ul>
 
       
@@ -384,17 +372,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/08/23/first_unique_character_in_string/" rel="next" title="第387题---First Unique Character in a String.md">
-                <i class="fa fa-chevron-left"></i> 第387题---First Unique Character in a String.md
+              <a href="/2016/08/23/random_note/" rel="next" title="第383题---Random Note">
+                <i class="fa fa-chevron-left"></i> 第383题---Random Note
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/08/23/lexicographical_numbers/" rel="prev" title="第386题---Lexicographical Numbers">
-                第386题---Lexicographical Numbers <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
