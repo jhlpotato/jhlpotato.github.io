@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion">
+<html class="theme-next mist use-motion">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -99,7 +99,7 @@
 <script type="text/javascript" id="hexo.configuration">
   var NexT = window.NexT || {};
   var CONFIG = {
-    scheme: 'Muse',
+    scheme: 'Mist',
     sidebar: {"position":"left","display":"post"},
     fancybox: true,
     motion: true,
@@ -282,7 +282,7 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-24T10:59:43+08:00" content="2016-08-24">
+            <time itemprop="dateCreated" datetime="2016-08-24T11:01:08+08:00" content="2016-08-24">
               2016-08-24
             </time>
           </span>
@@ -321,7 +321,8 @@
 <li>动态规划（懵逼了。）</li>
 </ul>
 </li>
-<li>代码<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; largestDivisibleSubset(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums) &#123;</div><div class="line">        sort(nums.begin(), nums.end());</div><div class="line">        </div><div class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; T(nums.size(), <span class="number">0</span>);</div><div class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; parent(nums.size(), <span class="number">0</span>);</div><div class="line">        </div><div class="line">        </div><div class="line">        <span class="keyword">int</span> m = <span class="number">0</span>;</div><div class="line">        <span class="keyword">int</span> mi = <span class="number">0</span>;</div><div class="line">        </div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = nums.size()<span class="number">-1</span>; i &gt;= <span class="number">0</span>; --i) &#123;</div><div class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = i; j &lt; nums.size(); ++j) &#123;</div><div class="line">                <span class="keyword">if</span>(nums[j] % nums[i] == <span class="number">0</span> &amp;&amp; T[i] &lt; <span class="number">1</span> + T[j]) &#123;</div><div class="line">                    T[i] = <span class="number">1</span>+T[j];</div><div class="line">                    parent[i] = j;</div><div class="line">                    <span class="keyword">if</span>(T[i] &gt; m) &#123;</div><div class="line">                        m = T[i];</div><div class="line">                        mi = i;</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; ret;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; ++i) &#123;</div><div class="line">            ret.push_back(nums[mi]);</div><div class="line">            mi = parent[mi];</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> ret;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></li>
+<li>代码<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; largestDivisibleSubset(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums) &#123;</div><div class="line">        sort(nums.begin(), nums.end());</div><div class="line">        </div><div class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; T(nums.size(), <span class="number">0</span>);</div><div class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; parent(nums.size(), <span class="number">0</span>);</div><div class="line">        </div><div class="line">        </div><div class="line">        <span class="keyword">int</span> m = <span class="number">0</span>;</div><div class="line">        <span class="keyword">int</span> mi = <span class="number">0</span>;</div><div class="line">        </div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = nums.size()<span class="number">-1</span>; i &gt;= <span class="number">0</span>; --i) &#123;</div><div class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = i; j &lt; nums.size(); ++j) &#123;</div><div class="line">                <span class="keyword">if</span>(nums[j] % nums[i] == <span class="number">0</span> &amp;&amp; T[i] &lt; <span class="number">1</span> + T[j]) &#123;</div><div class="line">                    T[i] = <span class="number">1</span>+T[j];</div><div class="line">                    parent[i] = j;</div><div class="line">                    <span class="keyword">if</span>(T[i] &gt; m) &#123;</div><div class="line">                        m = T[i];</div><div class="line">                        mi = i;</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; ret;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; ++i) &#123;</div><div class="line">            ret.push_back(nums[mi]);</div><div class="line">            mi = parent[mi];</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> ret;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+</li>
 </ul>
 
           
@@ -1453,7 +1454,7 @@
 <div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Muse
+    NexT.Mist
   </a>
 </div>
 
