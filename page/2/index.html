@@ -368,22 +368,26 @@
       
         
           
-            <ul>
-<li><p>题意描述</p>
-<ul>
-<li>给定一个数，求这个数的字典数</li>
-</ul>
-</li>
-<li><p>思路</p>
-<ul>
-<li>从1开始，1加入到数组，判断1的10倍是否在n内，如果在，递归；判断1是否在n内，并且n%10 &lt; 9，则递归1+1</li>
-</ul>
-</li>
-<li><p>代码</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">lexicalOrder1</span><span class="params">(<span class="keyword">int</span> number, <span class="keyword">int</span> n)</span> </span>&#123;</div><div class="line">        result.push_back(number);</div><div class="line">        <span class="keyword">if</span>(number * <span class="number">10</span> &lt;= n)</div><div class="line">            lexicalOrder1(number*<span class="number">10</span>, n);</div><div class="line">        <span class="keyword">if</span>(number &lt; n &amp;&amp; number % <span class="number">10</span> &lt; <span class="number">9</span>)</div><div class="line">            lexicalOrder1(number+<span class="number">1</span>, n);</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; lexicalOrder(<span class="keyword">int</span> n) &#123;</div><div class="line">        <span class="keyword">if</span>(n == <span class="number">0</span>)</div><div class="line">            <span class="keyword">return</span> result;</div><div class="line">        lexicalOrder1(<span class="number">1</span>, n);</div><div class="line">        <span class="keyword">return</span> result;</div><div class="line">    &#125;</div><div class="line"><span class="keyword">private</span>:</div><div class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; result;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></li>
-</ul>
-
           
+题意描述
+
+给定一个数，求这个数的字典数
+
+
+思路
+
+从1开始，1加入到数组，判断1的10倍是否在n内，如果在，递归；判断1是否在n内，并且n%10 &lt; 9，则递归1+1
+
+
+代码
+12345678910111213141516171819class Solution &#123;publi
+          ...
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/08/23/lexicographical_numbers/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -491,22 +495,26 @@
       
         
           
-            <ul>
-<li><p>题意描述</p>
-<ul>
-<li>猜数游戏</li>
-</ul>
-</li>
-<li><p>思路</p>
-<ul>
-<li>二分查找</li>
-</ul>
-</li>
-<li><p>代码</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Forward declaration of guess API.</span></div><div class="line"><span class="comment">// @param num, your guess</span></div><div class="line"><span class="comment">// @return -1 if my number is lower, 1 if my number is higher, otherwise return 0</span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">guess</span><span class="params">(<span class="keyword">int</span> num)</span></span>;</div><div class="line"></div><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">guessNumber</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> start = <span class="number">1</span>;</div><div class="line">        <span class="keyword">int</span> end = n;</div><div class="line">        </div><div class="line">        <span class="keyword">while</span> (start &lt;= end) &#123;</div><div class="line">            <span class="keyword">int</span> mid = start + (end - start) / <span class="number">2</span>;</div><div class="line">            <span class="keyword">int</span> g = guess(mid);</div><div class="line">            <span class="keyword">if</span>(g == <span class="number">0</span>)</div><div class="line">                <span class="keyword">return</span> mid;</div><div class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(g == <span class="number">1</span>)</div><div class="line">                start = mid+<span class="number">1</span>;</div><div class="line">            <span class="keyword">else</span> </div><div class="line">                end = mid<span class="number">-1</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></li>
-</ul>
-
           
+题意描述
+
+猜数游戏
+
+
+思路
+
+二分查找
+
+
+代码
+123456789101112131415161718192021222324// Forward declaration of guess API.// @param num, your guess// @return -1 if my nu
+          ...
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/08/23/guess_number_higher_or_lower/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -614,22 +622,26 @@
       
         
           
-            <ul>
-<li><p>题意描述</p>
-<ul>
-<li>给定一个字符串，返回字符串中给第一个唯一不重复字符的坐标<br><br \=""></li>
-</ul>
-</li>
-<li><p>思路</p>
-<ul>
-<li>map统计，遍历查询<br><br \=""></li>
-</ul>
-</li>
-<li><p>代码</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">firstUniqChar</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</div><div class="line">        <span class="built_in">map</span>&lt;<span class="keyword">char</span>, <span class="keyword">int</span>&gt; m;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s.length(); ++i) &#123;</div><div class="line">            m[s[i]] ++;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s.length(); ++i) &#123;</div><div class="line">            <span class="keyword">if</span>(m[s[i]] == <span class="number">1</span>)</div><div class="line">                <span class="keyword">return</span> i;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></li>
-</ul>
-
           
+题意描述
+
+给定一个字符串，返回字符串中给第一个唯一不重复字符的坐标
+
+
+思路
+
+map统计，遍历查询
+
+
+代码
+1234567891011121314class Solution &#123;public:    int firstUniqChar(string s) &#123;       
+          ...
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/08/23/first_unique_character_in_string/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -737,22 +749,26 @@
       
         
           
-            <ul>
-<li><p>题目描述</p>
-<ul>
-<li>给定两个数，一个是整数，一个是数组表示很大的整数，求第一个整数的数组的乘方模上1337的结果</li>
-</ul>
-</li>
-<li><p>思路</p>
-<ul>
-<li>a ^ b % k = a % k ^ b % k % k</li>
-</ul>
-</li>
-<li><p>代码</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">powmod</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> k)</span> </span>&#123;</div><div class="line">        a %= base;</div><div class="line">        <span class="keyword">int</span> result = <span class="number">1</span>;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; k; ++i) </div><div class="line">            result = (result * a) % base;</div><div class="line">        <span class="keyword">return</span> result;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">superPow</span><span class="params">(<span class="keyword">int</span> a, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; b)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span>(b.empty())</div><div class="line">            <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">        <span class="keyword">int</span> last_digit = b.back();</div><div class="line">        b.pop_back();</div><div class="line">        <span class="keyword">return</span> powmod(superPow(a, b), <span class="number">10</span>) * powmod(a, last_digit) % base;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line"><span class="keyword">private</span>:</div><div class="line">    <span class="keyword">const</span> <span class="keyword">int</span> base = <span class="number">1337</span>;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></li>
-</ul>
-
           
+题目描述
+
+给定两个数，一个是整数，一个是数组表示很大的整数，求第一个整数的数组的乘方模上1337的结果
+
+
+思路
+
+a ^ b % k = a % k ^ b % k % k
+
+
+代码
+123456789101112131415161718192021class Solution &#123;p
+          ...
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/08/23/super_pow/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -860,19 +876,23 @@
       
         
           
-            <ul>
-<li>题意描述<ul>
-<li>给定两个数组，从小到达排列，两个数组中的元素组成一对，按两个数的和从大到小排序，找到前k个最小的pair<br><br></li>
-</ul>
-</li>
-<li>思路<ul>
-<li>没思路，完全copy，代码的写法比较有意思<br><br></li>
-</ul>
-</li>
-<li>代码<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="built_in">vector</span>&lt;pair&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt;&gt; kSmallestPairs(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums1, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums2, <span class="keyword">int</span> k) &#123;</div><div class="line">        <span class="built_in">vector</span>&lt;pair&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt;&gt; result;</div><div class="line">        <span class="keyword">if</span>(nums1.empty() || nums2.empty() || k &lt;= <span class="number">0</span>)</div><div class="line">            <span class="keyword">return</span> result;</div><div class="line">        <span class="keyword">auto</span> comp = [&amp;nums1, &amp;nums2](pair&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; a, pair&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; b) &#123;</div><div class="line">            <span class="keyword">return</span> nums1[a.first] + nums2[a.second] &gt; nums1[b.first] + nums2[b.second];</div><div class="line">        &#125;;</div><div class="line">        priority_queue&lt;pair&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt;, <span class="built_in">vector</span>&lt;pair&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt;&gt;, <span class="keyword">decltype</span>(comp)&gt; min_heap(comp);</div><div class="line">        min_heap.emplace(<span class="number">0</span>, <span class="number">0</span>);</div><div class="line">        <span class="keyword">while</span>(k -- &gt; <span class="number">0</span> &amp;&amp; min_heap.size()) &#123;</div><div class="line">            <span class="keyword">auto</span> idx_pair = min_heap.top();</div><div class="line">            min_heap.pop();</div><div class="line">            result.emplace_back(nums1[idx_pair.first], nums2[idx_pair.second]);</div><div class="line">            <span class="keyword">if</span>(idx_pair.first + <span class="number">1</span> &lt; nums1.size())</div><div class="line">                min_heap.emplace(idx_pair.first + <span class="number">1</span>, idx_pair.second);</div><div class="line">            <span class="keyword">if</span>(idx_pair.first == <span class="number">0</span> &amp;&amp; idx_pair.second + <span class="number">1</span> &lt; nums2.size())</div><div class="line">                min_heap.emplace(idx_pair.first, idx_pair.second + <span class="number">1</span>);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> result;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></li>
-</ul>
-
           
+题意描述
+给定两个数组，从小到达排列，两个数组中的元素组成一对，按两个数的和从大到小排序，找到前k个最小的pair
+
+
+思路
+没思路，完全copy，代码的写法比较有意思
+
+
+代码1234567891011121314151617181920212223class Solution &#123;pu
+          ...
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/08/22/find_k_pairs_with_smallest_sum/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -980,23 +1000,22 @@
       
         
           
-            <ul>
-<li><p>题意描述</p>
-<ul>
-<li>给定一个数组，求摆动子序列；摆动子序列是指两个相邻的数之差，交替正负</li>
-</ul>
-</li>
-<li><p>思路</p>
-<ul>
-<li>统计子序列长度变量，控制摆动方向变量，前一个元素变量；如果size&lt;2直接返回长度；判断前两个方向，length++，改变方向；如果方向相同，则prev复制，如果不同，则length++，改变方向（注意两个元素值相同的情况）</li>
-</ul>
-</li>
-<li><p>代码</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">wiggleMaxLength</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> size = nums.size();</div><div class="line">        <span class="keyword">if</span> (size &lt; <span class="number">2</span>)</div><div class="line">            <span class="keyword">return</span> size;</div><div class="line">        </div><div class="line">        <span class="keyword">bool</span> increase = nums[<span class="number">1</span>] &gt; nums[<span class="number">0</span>];</div><div class="line">        <span class="keyword">int</span> prev = nums[<span class="number">0</span>];</div><div class="line">        <span class="keyword">int</span> maxlength = <span class="number">1</span>;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; size; ++i) &#123;</div><div class="line">            <span class="keyword">if</span>(increase) &#123;</div><div class="line">                <span class="keyword">if</span>(nums[i] &gt; prev) &#123;</div><div class="line">                    maxlength ++;</div><div class="line">                    increase = !increase;</div><div class="line">                &#125;</div><div class="line">            &#125; <span class="keyword">else</span> &#123;</div><div class="line">                <span class="keyword">if</span>(nums[i] &lt; prev) &#123;</div><div class="line">                    maxlength ++;</div><div class="line">                    increase = !increase;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">            prev = nums[i];</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> maxlength;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-
           
+题意描述
+
+给定一个数组，求摆动子序列；摆动子序列是指两个相邻的数之差，交替正负
+
+
+思路
+
+统计子序列长度变量，控制摆动方向变量，前一个元素变量；如果size&lt;2直接返回长度；判断前两个方向，length++，改变方向；如果方向相同，则prev复制，如果不同，则length++，改变方向（
+          ...
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/08/19/wiggle_subsequence/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -1104,23 +1123,22 @@
       
         
           
-            <ul>
-<li><p>题意描述</p>
-<ul>
-<li>给定一个数组，把这个数组当作参数传给solution的类，实现这个类的构造函数，reset（）函数还原这个数组，shuffle函数是这数组随机洗牌</li>
-</ul>
-</li>
-<li><p>思路一</p>
-<ul>
-<li>定义两个数组，一个保存原来的数组，用于reset函数；一个数组用于随机洗牌函数，随机的算法是遍历数组，生成一个随机数，交换随机数的位置的值和当前位置的值，遍历完成</li>
-</ul>
-</li>
-<li><p>代码</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    Solution(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; nums) &#123;</div><div class="line">        temp = nums;</div><div class="line">        orig = nums;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="comment">/** Resets the array to its original configuration and return it. */</span></div><div class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; reset() &#123;</div><div class="line">        <span class="keyword">return</span> orig;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="comment">/** Returns a random shuffling of the array. */</span></div><div class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; shuffle() &#123;</div><div class="line">        <span class="keyword">int</span> size = temp.size();</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; size; ++i) &#123;</div><div class="line">            <span class="keyword">int</span> random = rand() % size;</div><div class="line">            swap(i, random);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> temp;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> tmp = temp[a];</div><div class="line">        temp[a] = temp[b];</div><div class="line">        temp[b] = tmp;</div><div class="line">    &#125;</div><div class="line"><span class="keyword">private</span>:</div><div class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; temp;</div><div class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; orig;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * Your Solution object will be instantiated and called as such:</div><div class="line"> * Solution obj = new Solution(nums);</div><div class="line"> * vector&lt;int&gt; param_1 = obj.reset();</div><div class="line"> * vector&lt;int&gt; param_2 = obj.shuffle();</div><div class="line"> */</div></pre></td></tr></table></figure>
-</li>
-</ul>
-
           
+题意描述
+
+给定一个数组，把这个数组当作参数传给solution的类，实现这个类的构造函数，reset（）函数还原这个数组，shuffle函数是这数组随机洗牌
+
+
+思路一
+
+定义两个数组，一个保存原来的数组，用于reset函数；一个数组用于随机洗牌函数，随机的算法是遍历数组，生成一个随机数，交换随
+          ...
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/08/19/shuffle_array/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -1228,29 +1246,27 @@
       
         
           
-            <ul>
-<li><p>题意描述</p>
-<ul>
-<li>给定一个单链表，返回单链表的随机结点，每一个结点的概率相同。假设链表非常大，不知道长度，不用额外的空间<br><br \=""></li>
-</ul>
-</li>
-<li><p>思路1</p>
-<ul>
-<li>首先，求出链表的长度，生成随机数，模上链表长度，再从头遍历到指定的结点（错误）<br><br \=""></li>
-</ul>
-</li>
-<li><p>思路2</p>
-<ul>
-<li>水库抽样的思想：从N个数里面抽n个数，每个概率一样。首先把前个数放到数组中，然后遍历n+1个数时，生成随机数（1，n+1）之间，如果（1，n）之间和这个index的数交换，如果（n+1），则不换，类推</li>
-<li>本题目只返回一个数，则数组为1<br><br \=""></li>
-</ul>
-</li>
-<li><p>代码</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Definition for singly-linked list.</div><div class="line"> * struct ListNode &#123;</div><div class="line"> *     int val;</div><div class="line"> *     ListNode *next;</div><div class="line"> *     ListNode(int x) : val(x), next(NULL) &#123;&#125;</div><div class="line"> * &#125;;</div><div class="line"> */</div><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="comment">/** @param head The linked list's head.</span></div><div class="line">        Note that the head is guaranteed to be not null, so it contains at least one node. */</div><div class="line">    Solution(ListNode* head) &#123;</div><div class="line">        temp = head;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="comment">/** Returns a random node's value. */</span></div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">getRandom</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> res;</div><div class="line">        <span class="keyword">int</span> len = <span class="number">1</span>;</div><div class="line">        ListNode* tmp = temp;</div><div class="line">        <span class="keyword">while</span>(tmp) &#123;</div><div class="line">            <span class="keyword">if</span>(rand() % len == <span class="number">0</span>)</div><div class="line">                res = tmp-&gt;val;</div><div class="line">            len ++;</div><div class="line">            tmp = tmp-&gt;next;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> res;</div><div class="line">    &#125;</div><div class="line"><span class="keyword">private</span>:</div><div class="line">    ListNode* temp;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * Your Solution object will be instantiated and called as such:</div><div class="line"> * Solution obj = new Solution(head);</div><div class="line"> * int param_1 = obj.getRandom();</div><div class="line"> */</div></pre></td></tr></table></figure>
-</li>
-</ul>
-
           
+题意描述
+
+给定一个单链表，返回单链表的随机结点，每一个结点的概率相同。假设链表非常大，不知道长度，不用额外的空间
+
+
+思路1
+
+首先，求出链表的长度，生成随机数，模上链表长度，再从头遍历到指定的结点（错误）
+
+
+思路2
+
+水库抽样的思想：从N个数里面抽n个数，每个概率一样。首先把前个数放到数组中
+          ...
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/08/19/Linked_list_random_node/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -1358,21 +1374,22 @@
       
         
           
-            <ul>
-<li><p>题意描述</p>
-<ul>
-<li>给定一个n*n的矩阵，行和列都是递增的，在这个数组找到第k个最小的元素</li>
-</ul>
-</li>
-<li><p>思路：</p>
-<ul>
-<li>最大值为a[0][0],最大值为a[n-1][n-1];则元素必定在这两个值之间，然后读两个值的中间值，遍历行判断比这个值小的个数，如果个数&lt;k，则low=mid+1；否则high = mid；<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">kthSmallest</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; matrix, <span class="keyword">int</span> k)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> n = matrix.size();</div><div class="line">        <span class="keyword">int</span> le = matrix[<span class="number">0</span>][<span class="number">0</span>], ri = matrix[n<span class="number">-1</span>][n<span class="number">-1</span>];</div><div class="line">        <span class="keyword">int</span> mid = <span class="number">0</span>;</div><div class="line">        <span class="keyword">while</span>(le &lt; ri) &#123;</div><div class="line">            mid = (le + ri) &gt;&gt; <span class="number">1</span>;</div><div class="line">            <span class="keyword">int</span> num = <span class="number">0</span>;</div><div class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</div><div class="line">                <span class="keyword">int</span> pos = upper_bound(matrix[i].begin(), matrix[i].end(), mid) - matrix[i].begin();</div><div class="line">                num += pos;</div><div class="line">            &#125;</div><div class="line">            </div><div class="line">            <span class="keyword">if</span>(num &lt; k) &#123;</div><div class="line">                le = mid + <span class="number">1</span>;</div><div class="line">            &#125; <span class="keyword">else</span> &#123;</div><div class="line">                ri = mid;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> le;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ul>
-
           
+题意描述
+
+给定一个n*n的矩阵，行和列都是递增的，在这个数组找到第k个最小的元素
+
+
+思路：
+
+最大值为a[0][0],最大值为a[n-1][n-1];则元素必定在这两个值之间，然后读两个值的中间值，遍历行判断比这个值小的个数，如果个数&lt;k，则low=mid+1；否则high = mid；
+          ...
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/08/19/Kth_smallest_element_in_a_sorted_matrix/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -1480,22 +1497,21 @@
       
         
           
-            <ul>
-<li>题意描述：<ul>
-<li>给定一个数字n,进行猜数游戏，判断高低。求完成猜数的至少的花费</li>
-</ul>
-</li>
-<li><p>思路：动态规划(完全不懂)</p>
-<ul>
-<li>vector<vector <int="">&gt; 存放的是从i到j的最小花费，对于数x，则完成的max的dp(vecs, i, x-1)和dp(vecs, x+1, j)的最大值+x；则最小花费为min(res, 上面的值)，然后把对应的vec[i][j]赋值</vector></li>
-</ul>
-</li>
-<li><p>代码</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">getMoneyAmount</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</div><div class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; vec(n+<span class="number">1</span>, <span class="number">0</span>);</div><div class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">vector</span> &lt;<span class="keyword">int</span>&gt;&gt; vecs(n+<span class="number">1</span>, vec);</div><div class="line">        <span class="keyword">return</span> DP(vecs, <span class="number">1</span>, n);</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">DP</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span> &lt;<span class="keyword">int</span>&gt;&gt;&amp; t, <span class="keyword">int</span> s, <span class="keyword">int</span> e)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span>(s &gt;= e)</div><div class="line">            <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">        <span class="keyword">if</span>(t[s][e] != <span class="number">0</span>)</div><div class="line">            <span class="keyword">return</span> t[s][e];</div><div class="line">        <span class="keyword">int</span> res = INT_MAX;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = s; i &lt;= e; ++ i) &#123;</div><div class="line">            <span class="keyword">int</span> temp = i + max(DP(t, s, i<span class="number">-1</span>), DP(t, i+<span class="number">1</span>, e));</div><div class="line">            res = min(res, temp);</div><div class="line">        &#125;</div><div class="line">        t[s][e] = res;</div><div class="line">        <span class="keyword">return</span> res;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-
           
+题意描述：
+给定一个数字n,进行猜数游戏，判断高低。求完成猜数的至少的花费
+
+
+思路：动态规划(完全不懂)
+
+vector&gt; 存放的是从i到j的最小花费，对于数x，则完成的max的dp(vecs, i, x-1)和dp(vecs, x+1, j)的最大值+x；则最小花费为min(res, 上
+          ...
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/08/19/guess_number_higher_or_lower_II/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
