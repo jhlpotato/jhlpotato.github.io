@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="single" />
+  <meta name="keywords" content="leetcode," />
 
 
 
@@ -84,15 +84,28 @@
 
 
 
-<meta name="description" content="随便写写，代码，生活，其他">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Jinhongliang's Blog">
-<meta property="og:url" content="http://www.jinhongliang.cn/page/2/index.html">
+<meta name="description" content="题意描述：实现一个类，对插入，删除，和取得随机数都是O(1),可以多次存入
+思路：插入为1的map，list；删除为1的list，map；随机数， 数组；
+
+插入的过程：在map中判断是否存在val，如果存在（find），false；不存在，在map和vector中插入数字
+删除的过程：在map中判断是否存在val，如果不存在（find）， false；存在，交换元素在vector中位置，删除m">
+<meta property="og:type" content="article">
+<meta property="og:title" content="第381题---Insert Delete getRandom O(1) duplicate">
+<meta property="og:url" content="http://www.jinhongliang.cn/2016/08/24/insert_delete_getrandom_o(1)_duplicate/index.html">
 <meta property="og:site_name" content="Jinhongliang's Blog">
-<meta property="og:description" content="随便写写，代码，生活，其他">
+<meta property="og:description" content="题意描述：实现一个类，对插入，删除，和取得随机数都是O(1),可以多次存入
+思路：插入为1的map，list；删除为1的list，map；随机数， 数组；
+
+插入的过程：在map中判断是否存在val，如果存在（find），false；不存在，在map和vector中插入数字
+删除的过程：在map中判断是否存在val，如果不存在（find）， false；存在，交换元素在vector中位置，删除m">
+<meta property="og:updated_time" content="2016-08-24T07:06:48.963Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Jinhongliang's Blog">
-<meta name="twitter:description" content="随便写写，代码，生活，其他">
+<meta name="twitter:title" content="第381题---Insert Delete getRandom O(1) duplicate">
+<meta name="twitter:description" content="题意描述：实现一个类，对插入，删除，和取得随机数都是O(1),可以多次存入
+思路：插入为1的map，list；删除为1的list，map；随机数， 数组；
+
+插入的过程：在map中判断是否存在val，如果存在（find），false；不存在，在map和vector中插入数字
+删除的过程：在map中判断是否存在val，如果不存在（find）， false；存在，交换元素在vector中位置，删除m">
 
 
 
@@ -113,9 +126,9 @@
 
 
 
-  <link rel="canonical" href="http://www.jinhongliang.cn/page/2/"/>
+  <link rel="canonical" href="http://www.jinhongliang.cn/2016/08/24/insert_delete_getrandom_o(1)_duplicate/"/>
 
-  <title> Jinhongliang's Blog </title>
+  <title> 第381题---Insert Delete getRandom O(1) duplicate | Jinhongliang's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -146,9 +159,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -285,9 +296,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
   
@@ -307,10 +318,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2016/08/24/Mini_Parse/" itemprop="url">
-                  第385题---Mini Parse
-                </a>
+                第381题---Insert Delete getRandom O(1) duplicate
               
             
           </h1>
@@ -322,7 +330,7 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-24T15:07:40+08:00" content="2016-08-24">
+            <time itemprop="dateCreated" datetime="2016-08-24T15:06:48+08:00" content="2016-08-24">
               2016-08-24
             </time>
           </span>
@@ -333,8 +341,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/08/24/Mini_Parse/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/24/Mini_Parse/" itemprop="commentsCount"></span>
+                <a href="/2016/08/24/insert_delete_getrandom_o(1)_duplicate/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/24/insert_delete_getrandom_o(1)_duplicate/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -344,7 +352,7 @@
 
           
           
-             <span id="/2016/08/24/Mini_Parse/" class="leancloud_visitors" data-flag-title="第385题---Mini Parse">
+             <span id="/2016/08/24/insert_delete_getrandom_o(1)_duplicate/" class="leancloud_visitors" data-flag-title="第381题---Insert Delete getRandom O(1) duplicate">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -366,543 +374,117 @@
       
 
       
-        
-          <ul>
-<li><p>题意描述：给定一个嵌套整数列表的字符串，返回的他的NestedInteger类的结构体，反序列化？</p>
-</li>
-<li><p>思路：遍历字符串，判断是不是’[‘,如果是，则进入parseList函数，不是则进入parseNum函数；</p>
+        <ul>
+<li>题意描述：实现一个类，对插入，删除，和取得随机数都是O(1),可以多次存入</li>
+<li><p>思路：插入为1的map，list；删除为1的list，map；随机数， 数组；</p>
 <ul>
-<li>parseList函数，判断是不是[，如果是，则进入parseList函数，递归了，如果是-或者数，进入parseNum函数，如果是，跳过，如果是]break，结束</li>
-<li>parseNum函数，判断正负，从index 遍历，获得数值，返回构造的NestedInteger类对象
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/08/24/Mini_Parse/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+<li>插入的过程：在map中判断是否存在val，如果存在（find），false；不存在，在map和vector中插入数字</li>
+<li>删除的过程：在map中判断是否存在val，如果不存在（find）， false；存在，交换元素在vector中位置，删除map和vector中位置</li>
+<li>取得随机数：直接返回rand % 范围的vector中位置的数<a id="more"></a>
+</li>
+</ul>
+</li>
+<li><p>代码</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> RandomizedCollection &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="comment">/** Initialize your data structure here. */</span></div><div class="line">    RandomizedCollection() &#123;</div><div class="line">        </div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="comment">/** Inserts a value to the collection. Returns true if the collection did not already contain the specified element. */</span></div><div class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">insert</span><span class="params">(<span class="keyword">int</span> val)</span> </span>&#123;</div><div class="line">        <span class="keyword">bool</span> res;</div><div class="line">        <span class="keyword">if</span>(m.find(val) == m.end())</div><div class="line">            res = <span class="literal">true</span>;</div><div class="line">        <span class="keyword">else</span></div><div class="line">            res = <span class="literal">false</span>;</div><div class="line">        nums.push_back(val);</div><div class="line">        m[val].push_back(nums.size() - <span class="number">1</span>);</div><div class="line">        <span class="keyword">return</span> res;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="comment">/** Removes a value from the collection. Returns true if the collection contained the specified element. */</span></div><div class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">remove</span><span class="params">(<span class="keyword">int</span> val)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span>(m.find(val) == m.end())</div><div class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">        <span class="keyword">if</span>(m[val].empty())</div><div class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">            </div><div class="line">        <span class="keyword">int</span> remove_idx = m[val].back();</div><div class="line">        <span class="keyword">int</span> last = nums.size()<span class="number">-1</span>;</div><div class="line">        <span class="keyword">int</span> last_val = nums[last];</div><div class="line">        </div><div class="line">        swap(nums[remove_idx], nums[last]);</div><div class="line">        m[last_val].back() = remove_idx;</div><div class="line">        </div><div class="line">        m[val].pop_back();</div><div class="line">        nums.pop_back();</div><div class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="comment">/** Get a random element from the collection. */</span></div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">getRandom</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> nums[rand() % nums.size()];</div><div class="line">    &#125;</div><div class="line"><span class="keyword">private</span>:</div><div class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; nums;</div><div class="line">    <span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; m;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * Your RandomizedCollection object will be instantiated and called as such:</div><div class="line"> * RandomizedCollection obj = new RandomizedCollection();</div><div class="line"> * bool param_1 = obj.insert(val);</div><div class="line"> * bool param_2 = obj.remove(val);</div><div class="line"> * int param_3 = obj.getRandom();</div><div class="line"> */</div></pre></td></tr></table></figure>
+</li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
         
+
       
     </div>
 
     <div>
       
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="https://raw.githubusercontent.com/jhlpotato/MarkdownImage/master/touxiang/wechatpay.png" alt="jin hongliang WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="https://raw.githubusercontent.com/jhlpotato/MarkdownImage/master/touxiang/alipay.png" alt="jin hongliang Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
     </div>
+  </div>
 
-    <div>
+
       
     </div>
 
     <footer class="post-footer">
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/08/24/longest_absolute_file_path/" itemprop="url">
-                  第388题---Longest Absolute File Path
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-24T15:07:29+08:00" content="2016-08-24">
-              2016-08-24
-            </time>
-          </span>
-
+        <div class="post-tags">
           
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/08/24/longest_absolute_file_path/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/24/longest_absolute_file_path/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/08/24/longest_absolute_file_path/" class="leancloud_visitors" data-flag-title="第388题---Longest Absolute File Path">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
+            <a href="/tags/leetcode/" rel="tag">#leetcode</a>
           
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          <ul>
-<li><p>题意描述</p>
-<ul>
-<li>给定一个字符串，“dir\n\tsubdir1\n\tsubdir2\n\t\tfile.ext”代表一个文件目录，求所有文件的路径长度最大的</li>
-</ul>
-</li>
-<li><p>思路</p>
-<ul>
-<li>不会，有点复杂
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/08/24/longest_absolute_file_path/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/08/24/insert_delete_getrandom_o(1)/" rel="next" title="第380题---Insert Delete getRandom O(1)">
+                <i class="fa fa-chevron-left"></i> 第380题---Insert Delete getRandom O(1)
+              </a>
+            
           </div>
-        
-      
-    </div>
 
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+          <div class="post-nav-prev post-nav-item">
             
+              <a href="/2016/08/24/Kth_smallest_element_in_a_sorted_matrix/" rel="prev" title="第378题---Kth Samllest element in a sorted matrix">
+                第378题---Kth Samllest element in a sorted matrix <i class="fa fa-chevron-right"></i>
+              </a>
             
-              
-                
-                <a class="post-title-link" href="/2016/08/24/Linked_list_random_node/" itemprop="url">
-                  第382题---Linked_list_random_node
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-24T15:07:23+08:00" content="2016-08-24">
-              2016-08-24
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/08/24/Linked_list_random_node/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/24/Linked_list_random_node/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/08/24/Linked_list_random_node/" class="leancloud_visitors" data-flag-title="第382题---Linked_list_random_node">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
+          </div>
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          <ul>
-<li><p>题意描述</p>
-<ul>
-<li>给定一个单链表，返回单链表的随机结点，每一个结点的概率相同。假设链表非常大，不知道长度，不用额外的空间<br><br \></li>
-</ul>
-</li>
-<li><p>思路1</p>
-<ul>
-<li>首先，求出链表的长度，生成随机数，模上链表长度，再从头遍历到指定的结点（错误）<br><br \></li>
-</ul>
-</li>
-<li><p>思路2</p>
-<ul>
-<li>水库抽样的思想：从N个数里面抽n个数，每个概率一样。首先把前个数放到数组中，然后遍历n+1个数时，生成随机数（1，n+1）之间，如果（1，n）之间和这个index的数交换，如果（n+1），则不换，类推</li>
-<li>本题目只返回一个数，则数组为1<br><br \>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/08/24/Linked_list_random_node/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-      
 
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/08/24/lexicographical_numbers/" itemprop="url">
-                  第386题---Lexicographical Numbers
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-24T15:07:06+08:00" content="2016-08-24">
-              2016-08-24
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/08/24/lexicographical_numbers/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/24/lexicographical_numbers/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/08/24/lexicographical_numbers/" class="leancloud_visitors" data-flag-title="第386题---Lexicographical Numbers">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <ul>
-<li><p>题意描述</p>
-<ul>
-<li>给定一个数，求这个数的字典数</li>
-</ul>
-</li>
-<li><p>思路</p>
-<ul>
-<li>从1开始，1加入到数组，判断1的10倍是否在n内，如果在，递归；判断1是否在n内，并且n%10 &lt; 9，则递归1+1
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/08/24/lexicographical_numbers/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
+    <div class="post-spread">
       
     </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/08/24/largest_divisible_subset/" itemprop="url">
-                  第368题---largest divisible subset
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-24T15:06:58+08:00" content="2016-08-24">
-              2016-08-24
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/08/24/largest_divisible_subset/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/24/largest_divisible_subset/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/08/24/largest_divisible_subset/" class="leancloud_visitors" data-flag-title="第368题---largest divisible subset">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <ul>
-<li>题意描述<ul>
-<li>给定一个不同的整数的数组，求他最长的可除的数组的长度（数组中的每两个数是可除的）</li>
-</ul>
-</li>
-<li>思路<ul>
-<li>动态规划（懵逼了。）
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/08/24/largest_divisible_subset/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-  </section>
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
-  </nav>
-
+  </div>
 
 
           </div>
           
 
+  <p>热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/08/24/insert_delete_getrandom_o(1)_duplicate/"
+           data-title="第381题---Insert Delete getRandom O(1) duplicate" data-url="http://www.jinhongliang.cn/2016/08/24/insert_delete_getrandom_o(1)_duplicate/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -922,8 +504,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="https://raw.githubusercontent.com/jhlpotato/MarkdownImage/master/touxiang/timo.jpg"
@@ -995,6 +586,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -1098,6 +700,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 

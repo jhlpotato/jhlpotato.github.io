@@ -308,8 +308,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/08/19/wiggle_subsequence/" itemprop="url">
-                  第376题---Wiggle Subsequence
+                <a class="post-title-link" href="/2016/08/24/guess_number_higher_or_lower/" itemprop="url">
+                  第374题---Guess Number Higher or Lower
                 </a>
               
             
@@ -322,8 +322,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-19T11:27:33+08:00" content="2016-08-19">
-              2016-08-19
+            <time itemprop="dateCreated" datetime="2016-08-24T15:06:17+08:00" content="2016-08-24">
+              2016-08-24
             </time>
           </span>
 
@@ -333,8 +333,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/08/19/wiggle_subsequence/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/19/wiggle_subsequence/" itemprop="commentsCount"></span>
+                <a href="/2016/08/24/guess_number_higher_or_lower/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/24/guess_number_higher_or_lower/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -344,7 +344,7 @@
 
           
           
-             <span id="/2016/08/19/wiggle_subsequence/" class="leancloud_visitors" data-flag-title="第376题---Wiggle Subsequence">
+             <span id="/2016/08/24/guess_number_higher_or_lower/" class="leancloud_visitors" data-flag-title="第374题---Guess Number Higher or Lower">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -367,24 +367,20 @@
 
       
         
-          
-            <ul>
+          <ul>
 <li><p>题意描述</p>
 <ul>
-<li>给定一个数组，求摆动子序列；摆动子序列是指两个相邻的数之差，交替正负</li>
+<li>猜数游戏</li>
 </ul>
 </li>
 <li><p>思路</p>
 <ul>
-<li>统计子序列长度变量，控制摆动方向变量，前一个元素变量；如果size&lt;2直接返回长度；判断前两个方向，length++，改变方向；如果方向相同，则prev复制，如果不同，则length++，改变方向（注意两个元素值相同的情况）</li>
-</ul>
-</li>
-<li><p>代码</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">wiggleMaxLength</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> size = nums.size();</div><div class="line">        <span class="keyword">if</span> (size &lt; <span class="number">2</span>)</div><div class="line">            <span class="keyword">return</span> size;</div><div class="line">        </div><div class="line">        <span class="keyword">bool</span> increase = nums[<span class="number">1</span>] &gt; nums[<span class="number">0</span>];</div><div class="line">        <span class="keyword">int</span> prev = nums[<span class="number">0</span>];</div><div class="line">        <span class="keyword">int</span> maxlength = <span class="number">1</span>;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; size; ++i) &#123;</div><div class="line">            <span class="keyword">if</span>(increase) &#123;</div><div class="line">                <span class="keyword">if</span>(nums[i] &gt; prev) &#123;</div><div class="line">                    maxlength ++;</div><div class="line">                    increase = !increase;</div><div class="line">                &#125;</div><div class="line">            &#125; <span class="keyword">else</span> &#123;</div><div class="line">                <span class="keyword">if</span>(nums[i] &lt; prev) &#123;</div><div class="line">                    maxlength ++;</div><div class="line">                    increase = !increase;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">            prev = nums[i];</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> maxlength;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-
-          
+<li>二分查找
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/08/24/guess_number_higher_or_lower/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -432,8 +428,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/08/19/shuffle_array/" itemprop="url">
-                  第384题 shuffle an array
+                <a class="post-title-link" href="/2016/08/24/first_unique_character_in_string/" itemprop="url">
+                  第387题---First Unique Character in a String.md
                 </a>
               
             
@@ -446,8 +442,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-19T11:27:22+08:00" content="2016-08-19">
-              2016-08-19
+            <time itemprop="dateCreated" datetime="2016-08-24T15:06:10+08:00" content="2016-08-24">
+              2016-08-24
             </time>
           </span>
 
@@ -457,8 +453,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/08/19/shuffle_array/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/19/shuffle_array/" itemprop="commentsCount"></span>
+                <a href="/2016/08/24/first_unique_character_in_string/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/24/first_unique_character_in_string/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -468,7 +464,7 @@
 
           
           
-             <span id="/2016/08/19/shuffle_array/" class="leancloud_visitors" data-flag-title="第384题 shuffle an array">
+             <span id="/2016/08/24/first_unique_character_in_string/" class="leancloud_visitors" data-flag-title="第387题---First Unique Character in a String.md">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -491,24 +487,20 @@
 
       
         
-          
-            <ul>
+          <ul>
 <li><p>题意描述</p>
 <ul>
-<li>给定一个数组，把这个数组当作参数传给solution的类，实现这个类的构造函数，reset（）函数还原这个数组，shuffle函数是这数组随机洗牌</li>
+<li>给定一个字符串，返回字符串中给第一个唯一不重复字符的坐标<br><br \></li>
 </ul>
 </li>
-<li><p>思路一</p>
+<li><p>思路</p>
 <ul>
-<li>定义两个数组，一个保存原来的数组，用于reset函数；一个数组用于随机洗牌函数，随机的算法是遍历数组，生成一个随机数，交换随机数的位置的值和当前位置的值，遍历完成</li>
-</ul>
-</li>
-<li><p>代码</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    Solution(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; nums) &#123;</div><div class="line">        temp = nums;</div><div class="line">        orig = nums;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="comment">/** Resets the array to its original configuration and return it. */</span></div><div class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; reset() &#123;</div><div class="line">        <span class="keyword">return</span> orig;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="comment">/** Returns a random shuffling of the array. */</span></div><div class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; shuffle() &#123;</div><div class="line">        <span class="keyword">int</span> size = temp.size();</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; size; ++i) &#123;</div><div class="line">            <span class="keyword">int</span> random = rand() % size;</div><div class="line">            swap(i, random);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> temp;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> tmp = temp[a];</div><div class="line">        temp[a] = temp[b];</div><div class="line">        temp[b] = tmp;</div><div class="line">    &#125;</div><div class="line"><span class="keyword">private</span>:</div><div class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; temp;</div><div class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; orig;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * Your Solution object will be instantiated and called as such:</div><div class="line"> * Solution obj = new Solution(nums);</div><div class="line"> * vector&lt;int&gt; param_1 = obj.reset();</div><div class="line"> * vector&lt;int&gt; param_2 = obj.shuffle();</div><div class="line"> */</div></pre></td></tr></table></figure>
-</li>
-</ul>
-
-          
+<li>map统计，遍历查询<br><br \>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/08/24/first_unique_character_in_string/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -556,8 +548,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/08/19/Linked_list_random_node/" itemprop="url">
-                  第382题---Linked_list_random_node
+                <a class="post-title-link" href="/2016/08/24/find_the_duplicate_number/" itemprop="url">
+                  第287题---Find the Duplicate Number
                 </a>
               
             
@@ -570,8 +562,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-19T11:27:14+08:00" content="2016-08-19">
-              2016-08-19
+            <time itemprop="dateCreated" datetime="2016-08-24T15:05:55+08:00" content="2016-08-24">
+              2016-08-24
             </time>
           </span>
 
@@ -581,8 +573,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/08/19/Linked_list_random_node/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/19/Linked_list_random_node/" itemprop="commentsCount"></span>
+                <a href="/2016/08/24/find_the_duplicate_number/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/24/find_the_duplicate_number/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -592,7 +584,7 @@
 
           
           
-             <span id="/2016/08/19/Linked_list_random_node/" class="leancloud_visitors" data-flag-title="第382题---Linked_list_random_node">
+             <span id="/2016/08/24/find_the_duplicate_number/" class="leancloud_visitors" data-flag-title="第287题---Find the Duplicate Number">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -615,30 +607,25 @@
 
       
         
-          
-            <ul>
+          <ul>
 <li><p>题意描述</p>
 <ul>
-<li>给定一个单链表，返回单链表的随机结点，每一个结点的概率相同。假设链表非常大，不知道长度，不用额外的空间<br><br \=""></li>
+<li>给定一个包含n+1个数的数组，其中数的范围为[1, n]之间，至少存在一个重复的数，找出这个重复的数</li>
 </ul>
 </li>
 <li><p>思路1</p>
 <ul>
-<li>首先，求出链表的长度，生成随机数，模上链表长度，再从头遍历到指定的结点（错误）<br><br \=""></li>
+<li>暴力破解（N的平方）</li>
 </ul>
 </li>
-<li><p>思路2</p>
+<li><p>思路2（限制，数组为n+1,如果小于n+1就不可行了，可能a[n]不存在的情况，和数组必定存在重复数的前提）</p>
 <ul>
-<li>水库抽样的思想：从N个数里面抽n个数，每个概率一样。首先把前个数放到数组中，然后遍历n+1个数时，生成随机数（1，n+1）之间，如果（1，n）之间和这个index的数交换，如果（n+1），则不换，类推</li>
-<li>本题目只返回一个数，则数组为1<br><br \=""></li>
-</ul>
-</li>
-<li><p>代码</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Definition for singly-linked list.</div><div class="line"> * struct ListNode &#123;</div><div class="line"> *     int val;</div><div class="line"> *     ListNode *next;</div><div class="line"> *     ListNode(int x) : val(x), next(NULL) &#123;&#125;</div><div class="line"> * &#125;;</div><div class="line"> */</div><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="comment">/** @param head The linked list's head.</span></div><div class="line">        Note that the head is guaranteed to be not null, so it contains at least one node. */</div><div class="line">    Solution(ListNode* head) &#123;</div><div class="line">        temp = head;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="comment">/** Returns a random node's value. */</span></div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">getRandom</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> res;</div><div class="line">        <span class="keyword">int</span> len = <span class="number">1</span>;</div><div class="line">        ListNode* tmp = temp;</div><div class="line">        <span class="keyword">while</span>(tmp) &#123;</div><div class="line">            <span class="keyword">if</span>(rand() % len == <span class="number">0</span>)</div><div class="line">                res = tmp-&gt;val;</div><div class="line">            len ++;</div><div class="line">            tmp = tmp-&gt;next;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> res;</div><div class="line">    &#125;</div><div class="line"><span class="keyword">private</span>:</div><div class="line">    ListNode* temp;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * Your Solution object will be instantiated and called as such:</div><div class="line"> * Solution obj = new Solution(head);</div><div class="line"> * int param_1 = obj.getRandom();</div><div class="line"> */</div></pre></td></tr></table></figure>
-</li>
-</ul>
-
-          
+<li>类似于找到环的起点的解法，一个走一步，一个走两步，因为存在重复的数，必定可以相遇，然后再fast指针起点，开始移动
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/08/24/find_the_duplicate_number/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -686,8 +673,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/08/19/Kth_smallest_element_in_a_sorted_matrix/" itemprop="url">
-                  第378题---Kth Samllest element in a sorted matrix
+                <a class="post-title-link" href="/2016/08/24/find_k_pairs_with_smallest_sum/" itemprop="url">
+                  第373题---Find K Pairs with Smallest Sums
                 </a>
               
             
@@ -700,8 +687,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-19T11:27:05+08:00" content="2016-08-19">
-              2016-08-19
+            <time itemprop="dateCreated" datetime="2016-08-24T15:05:30+08:00" content="2016-08-24">
+              2016-08-24
             </time>
           </span>
 
@@ -711,8 +698,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/08/19/Kth_smallest_element_in_a_sorted_matrix/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/19/Kth_smallest_element_in_a_sorted_matrix/" itemprop="commentsCount"></span>
+                <a href="/2016/08/24/find_k_pairs_with_smallest_sum/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/24/find_k_pairs_with_smallest_sum/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -722,7 +709,7 @@
 
           
           
-             <span id="/2016/08/19/Kth_smallest_element_in_a_sorted_matrix/" class="leancloud_visitors" data-flag-title="第378题---Kth Samllest element in a sorted matrix">
+             <span id="/2016/08/24/find_k_pairs_with_smallest_sum/" class="leancloud_visitors" data-flag-title="第373题---Find K Pairs with Smallest Sums">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -745,145 +732,138 @@
 
       
         
+          <ul>
+<li>题意描述<ul>
+<li>给定两个数组，从小到达排列，两个数组中的元素组成一对，按两个数的和从大到小排序，找到前k个最小的pair<br><br /></li>
+</ul>
+</li>
+<li>思路<ul>
+<li>没思路，完全copy，代码的写法比较有意思<br><br />
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/08/24/find_k_pairs_with_smallest_sum/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/08/24/combination_sum_IV/" itemprop="url">
+                  第377题---Combination Sum IV
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-08-24T15:04:55+08:00" content="2016-08-24">
+              2016-08-24
+            </time>
+          </span>
+
           
-            <ul>
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/08/24/combination_sum_IV/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/24/combination_sum_IV/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/08/24/combination_sum_IV/" class="leancloud_visitors" data-flag-title="第377题---Combination Sum IV">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <ul>
 <li><p>题意描述</p>
 <ul>
-<li>给定一个n*n的矩阵，行和列都是递增的，在这个数组找到第k个最小的元素</li>
+<li>给定一个都是正整数，没有重复的数组，给定一个目标数，求数组中组合成目标数的方式有几种，数组中的数可以多次使用</li>
 </ul>
 </li>
-<li><p>思路：</p>
+<li><p>思路一</p>
 <ul>
-<li>最大值为a[0][0],最大值为a[n-1][n-1];则元素必定在这两个值之间，然后读两个值的中间值，遍历行判断比这个值小的个数，如果个数&lt;k，则low=mid+1；否则high = mid；<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">kthSmallest</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; matrix, <span class="keyword">int</span> k)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> n = matrix.size();</div><div class="line">        <span class="keyword">int</span> le = matrix[<span class="number">0</span>][<span class="number">0</span>], ri = matrix[n<span class="number">-1</span>][n<span class="number">-1</span>];</div><div class="line">        <span class="keyword">int</span> mid = <span class="number">0</span>;</div><div class="line">        <span class="keyword">while</span>(le &lt; ri) &#123;</div><div class="line">            mid = (le + ri) &gt;&gt; <span class="number">1</span>;</div><div class="line">            <span class="keyword">int</span> num = <span class="number">0</span>;</div><div class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</div><div class="line">                <span class="keyword">int</span> pos = upper_bound(matrix[i].begin(), matrix[i].end(), mid) - matrix[i].begin();</div><div class="line">                num += pos;</div><div class="line">            &#125;</div><div class="line">            </div><div class="line">            <span class="keyword">if</span>(num &lt; k) &#123;</div><div class="line">                le = mid + <span class="number">1</span>;</div><div class="line">            &#125; <span class="keyword">else</span> &#123;</div><div class="line">                ri = mid;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> le;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/08/19/guess_number_higher_or_lower_II/" itemprop="url">
-                  第375题---Guess Number Higher or Lower II
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-19T11:26:49+08:00" content="2016-08-19">
-              2016-08-19
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/08/19/guess_number_higher_or_lower_II/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/19/guess_number_higher_or_lower_II/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/08/19/guess_number_higher_or_lower_II/" class="leancloud_visitors" data-flag-title="第375题---Guess Number Higher or Lower II">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <ul>
-<li>题意描述：<ul>
-<li>给定一个数字n,进行猜数游戏，判断高低。求完成猜数的至少的花费</li>
-</ul>
-</li>
-<li><p>思路：动态规划(完全不懂)</p>
-<ul>
-<li>vector<vector <int="">&gt; 存放的是从i到j的最小花费，对于数x，则完成的max的dp(vecs, i, x-1)和dp(vecs, x+1, j)的最大值+x；则最小花费为min(res, 上面的值)，然后把对应的vec[i][j]赋值</vector></li>
-</ul>
-</li>
-<li><p>代码</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">getMoneyAmount</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</div><div class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; vec(n+<span class="number">1</span>, <span class="number">0</span>);</div><div class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">vector</span> &lt;<span class="keyword">int</span>&gt;&gt; vecs(n+<span class="number">1</span>, vec);</div><div class="line">        <span class="keyword">return</span> DP(vecs, <span class="number">1</span>, n);</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">DP</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span> &lt;<span class="keyword">int</span>&gt;&gt;&amp; t, <span class="keyword">int</span> s, <span class="keyword">int</span> e)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span>(s &gt;= e)</div><div class="line">            <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">        <span class="keyword">if</span>(t[s][e] != <span class="number">0</span>)</div><div class="line">            <span class="keyword">return</span> t[s][e];</div><div class="line">        <span class="keyword">int</span> res = INT_MAX;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = s; i &lt;= e; ++ i) &#123;</div><div class="line">            <span class="keyword">int</span> temp = i + max(DP(t, s, i<span class="number">-1</span>), DP(t, i+<span class="number">1</span>, e));</div><div class="line">            res = min(res, temp);</div><div class="line">        &#125;</div><div class="line">        t[s][e] = res;</div><div class="line">        <span class="keyword">return</span> res;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-
-          
+<li>类似于台阶的动态规划，res[0]代表，目标数为0的组合数；res[1]代表，目标数为1的组合数；依次类推，res[i]的组合数res[i] += res[i-num]
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/08/24/combination_sum_IV/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -914,7 +894,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span>
   </nav>
 
 
@@ -955,7 +935,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">21</span>
+              <span class="site-state-item-count">20</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -965,7 +945,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">1</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
