@@ -309,6 +309,132 @@
             
               
                 
+                <a class="post-title-link" href="/2016/08/24/Linked_list_random_node/" itemprop="url">
+                  第382题---Linked_list_random_node
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-08-24T15:07:23+08:00" content="2016-08-24">
+              2016-08-24
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/08/24/Linked_list_random_node/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/24/Linked_list_random_node/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/08/24/Linked_list_random_node/" class="leancloud_visitors" data-flag-title="第382题---Linked_list_random_node">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <ul>
+<li><p>题意描述</p>
+<ul>
+<li>给定一个单链表，返回单链表的随机结点，每一个结点的概率相同。假设链表非常大，不知道长度，不用额外的空间<br><br \></li>
+</ul>
+</li>
+<li><p>思路1</p>
+<ul>
+<li>首先，求出链表的长度，生成随机数，模上链表长度，再从头遍历到指定的结点（错误）<br><br \></li>
+</ul>
+</li>
+<li><p>思路2</p>
+<ul>
+<li>水库抽样的思想：从N个数里面抽n个数，每个概率一样。首先把前个数放到数组中，然后遍历n+1个数时，生成随机数（1，n+1）之间，如果（1，n）之间和这个index的数交换，如果（n+1），则不换，类推</li>
+<li>本题目只返回一个数，则数组为1<br><br \>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/08/24/Linked_list_random_node/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/08/24/lexicographical_numbers/" itemprop="url">
                   第386题---Lexicographical Numbers
                 </a>
@@ -764,124 +890,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/08/24/insert_delete_getrandom_o(1)/" itemprop="url">
-                  第380题---Insert Delete getRandom O(1)
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-24T15:06:43+08:00" content="2016-08-24">
-              2016-08-24
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/08/24/insert_delete_getrandom_o(1)/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/24/insert_delete_getrandom_o(1)/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/08/24/insert_delete_getrandom_o(1)/" class="leancloud_visitors" data-flag-title="第380题---Insert Delete getRandom O(1)">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <ul>
-<li>题意描述：实现一个类，对插入，删除，和取得随机数都是O(1)</li>
-<li><p>思路：插入为1的map，list；删除为1的list，map；随机数， 数组；</p>
-<ul>
-<li>插入的过程：在map中判断是否存在val，如果存在（find），false；不存在，在map和vector中插入数字</li>
-<li>删除的过程：在map中判断是否存在val，如果不存在（find）， false；存在，交换元素在vector中位置，删除map和vector中位置</li>
-<li>取得随机数：直接返回rand % 范围的vector中位置的数
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/08/24/insert_delete_getrandom_o(1)/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -927,7 +935,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">22</span>
+              <span class="site-state-item-count">23</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
