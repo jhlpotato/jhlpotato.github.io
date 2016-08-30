@@ -309,6 +309,124 @@
             
               
                 
+                <a class="post-title-link" href="/2016/08/24/insert_delete_getrandom_o(1)_duplicate/" itemprop="url">
+                  第381题---Insert Delete getRandom O(1) duplicate
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-08-24T15:06:48+08:00" content="2016-08-24">
+              2016-08-24
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/08/24/insert_delete_getrandom_o(1)_duplicate/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/24/insert_delete_getrandom_o(1)_duplicate/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/08/24/insert_delete_getrandom_o(1)_duplicate/" class="leancloud_visitors" data-flag-title="第381题---Insert Delete getRandom O(1) duplicate">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <ul>
+<li>题意描述：实现一个类，对插入，删除，和取得随机数都是O(1),可以多次存入</li>
+<li><p>思路：插入为1的map，list；删除为1的list，map；随机数， 数组；</p>
+<ul>
+<li>插入的过程：在map中判断是否存在val，如果存在（find），false；不存在，在map和vector中插入数字</li>
+<li>删除的过程：在map中判断是否存在val，如果不存在（find）， false；存在，交换元素在vector中位置，删除map和vector中位置</li>
+<li>取得随机数：直接返回rand % 范围的vector中位置的数
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/08/24/insert_delete_getrandom_o(1)_duplicate/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/08/24/insert_delete_getrandom_o(1)/" itemprop="url">
                   第380题---Insert Delete getRandom O(1)
                 </a>
@@ -765,126 +883,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/08/24/first_unique_character_in_string/" itemprop="url">
-                  第387题---First Unique Character in a String.md
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-24T15:06:10+08:00" content="2016-08-24">
-              2016-08-24
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/08/24/first_unique_character_in_string/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/24/first_unique_character_in_string/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/08/24/first_unique_character_in_string/" class="leancloud_visitors" data-flag-title="第387题---First Unique Character in a String.md">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <ul>
-<li><p>题意描述</p>
-<ul>
-<li>给定一个字符串，返回字符串中给第一个唯一不重复字符的坐标<br><br \></li>
-</ul>
-</li>
-<li><p>思路</p>
-<ul>
-<li>map统计，遍历查询<br><br \>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/08/24/first_unique_character_in_string/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -930,7 +928,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">23</span>
+              <span class="site-state-item-count">24</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
