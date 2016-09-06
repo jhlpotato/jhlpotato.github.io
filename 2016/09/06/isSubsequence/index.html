@@ -91,11 +91,7 @@
 
 思路
 
-两个指针分别指向两个字符的开头，如果两者相同，两个指针同时向后移动；如果不同，只有字符串t的指针向后移动；如果其中一个指针指向了字符的结尾，则结束；判断s的指针是否到了字符串的结尾，如果到了结尾返回true；否则返回false
-
-
-代码
-12345678910111213141516">
+两个指针分别指向两个字符的开头，如果两者相同，两个指针同时向后移动；如果不同，只有字符串t的指针向后移动；如果其中一个指针指向了字符的结尾，则结束；判断s的指针是否到了字符串的结尾，如果到了结尾返回true；否则返回false">
 <meta property="og:type" content="article">
 <meta property="og:title" content="第392题---Is Subsequence">
 <meta property="og:url" content="http://www.jinhongliang.cn/2016/09/06/isSubsequence/index.html">
@@ -107,12 +103,8 @@
 
 思路
 
-两个指针分别指向两个字符的开头，如果两者相同，两个指针同时向后移动；如果不同，只有字符串t的指针向后移动；如果其中一个指针指向了字符的结尾，则结束；判断s的指针是否到了字符串的结尾，如果到了结尾返回true；否则返回false
-
-
-代码
-12345678910111213141516">
-<meta property="og:updated_time" content="2016-09-06T02:35:39.000Z">
+两个指针分别指向两个字符的开头，如果两者相同，两个指针同时向后移动；如果不同，只有字符串t的指针向后移动；如果其中一个指针指向了字符的结尾，则结束；判断s的指针是否到了字符串的结尾，如果到了结尾返回true；否则返回false">
+<meta property="og:updated_time" content="2016-09-06T02:38:32.756Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="第392题---Is Subsequence">
 <meta name="twitter:description" content="题意描述
@@ -122,11 +114,7 @@
 
 思路
 
-两个指针分别指向两个字符的开头，如果两者相同，两个指针同时向后移动；如果不同，只有字符串t的指针向后移动；如果其中一个指针指向了字符的结尾，则结束；判断s的指针是否到了字符串的结尾，如果到了结尾返回true；否则返回false
-
-
-代码
-12345678910111213141516">
+两个指针分别指向两个字符的开头，如果两者相同，两个指针同时向后移动；如果不同，只有字符串t的指针向后移动；如果其中一个指针指向了字符的结尾，则结束；判断s的指针是否到了字符串的结尾，如果到了结尾返回true；否则返回false">
 
 
 
@@ -352,7 +340,7 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-09-06T10:36:53+08:00" content="2016-09-06">
+            <time itemprop="dateCreated" datetime="2016-09-06T10:38:32+08:00" content="2016-09-06">
               2016-09-06
             </time>
           </span>
@@ -404,11 +392,13 @@
 </li>
 <li><p>思路</p>
 <ul>
-<li>两个指针分别指向两个字符的开头，如果两者相同，两个指针同时向后移动；如果不同，只有字符串t的指针向后移动；如果其中一个指针指向了字符的结尾，则结束；判断s的指针是否到了字符串的结尾，如果到了结尾返回true；否则返回false</li>
+<li>两个指针分别指向两个字符的开头，如果两者相同，两个指针同时向后移动；如果不同，只有字符串t的指针向后移动；如果其中一个指针指向了字符的结尾，则结束；判断s的指针是否到了字符串的结尾，如果到了结尾返回true；否则返回false<a id="more"></a>
+</li>
 </ul>
 </li>
 <li><p>代码</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isSubsequence</span><span class="params">(<span class="built_in">string</span> s, <span class="built_in">string</span> t)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> i = <span class="number">0</span>, j = <span class="number">0</span>;</div><div class="line">        <span class="keyword">while</span>(s[i] != <span class="string">'\0'</span> &amp;&amp; t[j] != <span class="string">'\0'</span>) &#123;</div><div class="line">            <span class="keyword">if</span>(s[i] == t[j]) &#123;</div><div class="line">                i ++;</div><div class="line">                j ++;</div><div class="line">            &#125; <span class="keyword">else</span> &#123;</div><div class="line">                j ++;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span>(s[i] == <span class="string">'\0'</span>)</div><div class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">        <span class="keyword">else</span> </div><div class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></li>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isSubsequence</span><span class="params">(<span class="built_in">string</span> s, <span class="built_in">string</span> t)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> i = <span class="number">0</span>, j = <span class="number">0</span>;</div><div class="line">        <span class="keyword">while</span>(s[i] != <span class="string">'\0'</span> &amp;&amp; t[j] != <span class="string">'\0'</span>) &#123;</div><div class="line">            <span class="keyword">if</span>(s[i] == t[j]) &#123;</div><div class="line">                i ++;</div><div class="line">                j ++;</div><div class="line">            &#125; <span class="keyword">else</span> &#123;</div><div class="line">                j ++;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span>(s[i] == <span class="string">'\0'</span>)</div><div class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">        <span class="keyword">else</span> </div><div class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+</li>
 </ul>
 
       
