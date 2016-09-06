@@ -86,35 +86,41 @@
 
 <meta name="description" content="题意描述
 
-给定一个字符串，返回字符串中给第一个唯一不重复字符的坐标
+给定一个数组，数组中的每一个数组都代表一个8位的二进制数，0-255之间，则按照UTF-8的规则，判断这个数组是不是一个UTF-8的字符
 
 
-思路
+解题思路
 
-map统计，遍历查询">
+分类，但是不要嵌套分类
+第一位为0的情况；前两位为110的情况；前三位为1110的情况；前四位为11110的情况
+刚开始考虑的直接，if-else套if-else,逻辑混乱。现在直接每一种情况用一个函数调用">
 <meta property="og:type" content="article">
-<meta property="og:title" content="第387题---First Unique Character in a String.md">
-<meta property="og:url" content="http://www.jinhongliang.cn/2016/08/24/first_unique_character_in_string/index.html">
+<meta property="og:title" content="第393题---UTF-8 Validation">
+<meta property="og:url" content="http://www.jinhongliang.cn/2016/09/06/utf-8_validation/index.html">
 <meta property="og:site_name" content="Jinhongliang's Blog">
 <meta property="og:description" content="题意描述
 
-给定一个字符串，返回字符串中给第一个唯一不重复字符的坐标
+给定一个数组，数组中的每一个数组都代表一个8位的二进制数，0-255之间，则按照UTF-8的规则，判断这个数组是不是一个UTF-8的字符
 
 
-思路
+解题思路
 
-map统计，遍历查询">
-<meta property="og:updated_time" content="2016-08-24T07:06:10.375Z">
+分类，但是不要嵌套分类
+第一位为0的情况；前两位为110的情况；前三位为1110的情况；前四位为11110的情况
+刚开始考虑的直接，if-else套if-else,逻辑混乱。现在直接每一种情况用一个函数调用">
+<meta property="og:updated_time" content="2016-09-06T04:05:48.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="第387题---First Unique Character in a String.md">
+<meta name="twitter:title" content="第393题---UTF-8 Validation">
 <meta name="twitter:description" content="题意描述
 
-给定一个字符串，返回字符串中给第一个唯一不重复字符的坐标
+给定一个数组，数组中的每一个数组都代表一个8位的二进制数，0-255之间，则按照UTF-8的规则，判断这个数组是不是一个UTF-8的字符
 
 
-思路
+解题思路
 
-map统计，遍历查询">
+分类，但是不要嵌套分类
+第一位为0的情况；前两位为110的情况；前三位为1110的情况；前四位为11110的情况
+刚开始考虑的直接，if-else套if-else,逻辑混乱。现在直接每一种情况用一个函数调用">
 
 
 
@@ -135,9 +141,9 @@ map统计，遍历查询">
 
 
 
-  <link rel="canonical" href="http://www.jinhongliang.cn/2016/08/24/first_unique_character_in_string/"/>
+  <link rel="canonical" href="http://www.jinhongliang.cn/2016/09/06/utf-8_validation/"/>
 
-  <title> 第387题---First Unique Character in a String.md | Jinhongliang's Blog </title>
+  <title> 第393题---UTF-8 Validation | Jinhongliang's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -328,7 +334,7 @@ map统计，遍历查询">
             
             
               
-                第387题---First Unique Character in a String.md
+                第393题---UTF-8 Validation
               
             
           </h1>
@@ -340,8 +346,8 @@ map统计，遍历查询">
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-24T15:06:10+08:00" content="2016-08-24">
-              2016-08-24
+            <time itemprop="dateCreated" datetime="2016-09-06T12:06:56+08:00" content="2016-09-06">
+              2016-09-06
             </time>
           </span>
 
@@ -351,8 +357,8 @@ map统计，遍历查询">
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/08/24/first_unique_character_in_string/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/24/first_unique_character_in_string/" itemprop="commentsCount"></span>
+                <a href="/2016/09/06/utf-8_validation/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/06/utf-8_validation/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -362,7 +368,7 @@ map统计，遍历查询">
 
           
           
-             <span id="/2016/08/24/first_unique_character_in_string/" class="leancloud_visitors" data-flag-title="第387题---First Unique Character in a String.md">
+             <span id="/2016/09/06/utf-8_validation/" class="leancloud_visitors" data-flag-title="第393题---UTF-8 Validation">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -387,16 +393,17 @@ map统计，遍历查询">
         <ul>
 <li><p>题意描述</p>
 <ul>
-<li>给定一个字符串，返回字符串中给第一个唯一不重复字符的坐标<br><br \=""></li>
+<li>给定一个数组，数组中的每一个数组都代表一个8位的二进制数，0-255之间，则按照UTF-8的规则，判断这个数组是不是一个UTF-8的字符</li>
 </ul>
 </li>
-<li><p>思路</p>
+<li><p>解题思路</p>
 <ul>
-<li>map统计，遍历查询<br><br \=""><a id="more"></a></li>
+<li>分类，但是不要嵌套分类</li>
+<li>第一位为0的情况；前两位为110的情况；前三位为1110的情况；前四位为11110的情况</li>
+<li>刚开始考虑的直接，if-else套if-else,逻辑混乱。现在直接每一种情况用一个函数调用<a id="more"></a></li>
 </ul>
 </li>
-<li>代码<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">firstUniqChar</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</div><div class="line">        <span class="built_in">map</span>&lt;<span class="keyword">char</span>, <span class="keyword">int</span>&gt; m;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s.length(); ++i) &#123;</div><div class="line">            m[s[i]] ++;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s.length(); ++i) &#123;</div><div class="line">            <span class="keyword">if</span>(m[s[i]] == <span class="number">1</span>)</div><div class="line">                <span class="keyword">return</span> i;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-</li>
+<li>代码<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isOne</span><span class="params">(<span class="keyword">int</span> num, <span class="keyword">int</span> k)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> flag = <span class="number">1</span> &lt;&lt; (<span class="number">8</span>-k);</div><div class="line">        <span class="keyword">return</span> num &amp; flag;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isOneZero</span><span class="params">(<span class="keyword">int</span> num)</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> isOne(num, <span class="number">1</span>) &amp;&amp; (!isOne(num, <span class="number">2</span>));</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isOneOneZero</span><span class="params">(<span class="keyword">int</span> num)</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> isOne(num, <span class="number">1</span>) &amp;&amp; isOne(num, <span class="number">2</span>) &amp;&amp; (!isOne(num, <span class="number">3</span>));</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isOneOneOneZero</span><span class="params">(<span class="keyword">int</span> num)</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> isOne(num, <span class="number">1</span>) &amp;&amp; isOne(num, <span class="number">2</span>) &amp;&amp; isOne(num, <span class="number">3</span>) &amp;&amp; (!isOne(num, <span class="number">4</span>));</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isOneOneOneOneZero</span><span class="params">(<span class="keyword">int</span> num)</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> isOne(num, <span class="number">1</span>) &amp;&amp; isOne(num, <span class="number">2</span>) &amp;&amp; isOne(num, <span class="number">3</span>) &amp;&amp; isOne(num, <span class="number">4</span>) &amp;&amp; (!isOne(num, <span class="number">5</span>));</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">validUtf8</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; data)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> size = data.size();</div><div class="line">        <span class="keyword">if</span>(size == <span class="number">0</span>)</div><div class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">        <span class="keyword">int</span> index = <span class="number">0</span>;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> index = <span class="number">0</span>; index &lt; size;) &#123;</div><div class="line">            <span class="keyword">if</span>(!isOne(data[index], <span class="number">1</span>)) &#123;</div><div class="line">                index ++;</div><div class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (isOneOneZero(data[index])) &#123;</div><div class="line">                <span class="keyword">if</span>(isOneZero(data[index+<span class="number">1</span>])) </div><div class="line">                    index += <span class="number">2</span>;</div><div class="line">                <span class="keyword">else</span> </div><div class="line">                    <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (isOneOneOneZero(data[index])) &#123;</div><div class="line">                <span class="keyword">if</span>(isOneZero(data[index+<span class="number">1</span>]) &amp;&amp; isOneZero(data[index+<span class="number">2</span>]))</div><div class="line">                    index += <span class="number">3</span>;</div><div class="line">                <span class="keyword">else</span> </div><div class="line">                    <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (isOneOneOneOneZero(data[index])) &#123;</div><div class="line">                <span class="keyword">if</span>(isOneZero(data[index+<span class="number">1</span>]) &amp;&amp; isOneZero(data[index+<span class="number">2</span>]) &amp;&amp; isOneZero(data[index+<span class="number">3</span>]))</div><div class="line">                    index += <span class="number">4</span>;</div><div class="line">                <span class="keyword">else</span> </div><div class="line">                    <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">            &#125; <span class="keyword">else</span></div><div class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></li>
 </ul>
 
       
@@ -450,17 +457,13 @@ map统计，遍历查询">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/08/24/find_the_duplicate_number/" rel="next" title="第287题---Find the Duplicate Number">
-                <i class="fa fa-chevron-left"></i> 第287题---Find the Duplicate Number
+              <a href="/2016/09/06/isSubsequence/" rel="next" title="第392题---Is Subsequence">
+                <i class="fa fa-chevron-left"></i> 第392题---Is Subsequence
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/08/24/guess_number_higher_or_lower/" rel="prev" title="第374题---Guess Number Higher or Lower">
-                第374题---Guess Number Higher or Lower <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -489,8 +492,8 @@ map统计，遍历查询">
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/08/24/first_unique_character_in_string/"
-           data-title="第387题---First Unique Character in a String.md" data-url="http://www.jinhongliang.cn/2016/08/24/first_unique_character_in_string/">
+      <div class="ds-thread" data-thread-key="2016/09/06/utf-8_validation/"
+           data-title="第393题---UTF-8 Validation" data-url="http://www.jinhongliang.cn/2016/09/06/utf-8_validation/">
       </div>
     
   </div>
