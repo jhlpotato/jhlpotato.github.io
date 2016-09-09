@@ -85,30 +85,36 @@
 
 
 <meta name="description" content="题意描述
-给定一个不同的整数的数组，求他最长的可除的数组的长度（数组中的每两个数是可除的）
+
+给定一了一系列的pair，表示出发地到目的地，重新规划路线，同一出发地，不同目的地，按字母序排
 
 
 思路
-动态规划（懵逼了。）">
+
+其实就是一个图，深度优先搜索遍历">
 <meta property="og:type" content="article">
-<meta property="og:title" content="第368题---largest divisible subset">
-<meta property="og:url" content="http://www.jinhongliang.cn/2016/08/24/largest_divisible_subset/index.html">
+<meta property="og:title" content="第332题---Reconstruct Itinerary">
+<meta property="og:url" content="http://www.jinhongliang.cn/2016/09/09/reconstruct_itinerary/index.html">
 <meta property="og:site_name" content="Jinhongliang's Blog">
 <meta property="og:description" content="题意描述
-给定一个不同的整数的数组，求他最长的可除的数组的长度（数组中的每两个数是可除的）
+
+给定一了一系列的pair，表示出发地到目的地，重新规划路线，同一出发地，不同目的地，按字母序排
 
 
 思路
-动态规划（懵逼了。）">
-<meta property="og:updated_time" content="2016-08-24T07:06:58.811Z">
+
+其实就是一个图，深度优先搜索遍历">
+<meta property="og:updated_time" content="2016-09-09T02:58:47.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="第368题---largest divisible subset">
+<meta name="twitter:title" content="第332题---Reconstruct Itinerary">
 <meta name="twitter:description" content="题意描述
-给定一个不同的整数的数组，求他最长的可除的数组的长度（数组中的每两个数是可除的）
+
+给定一了一系列的pair，表示出发地到目的地，重新规划路线，同一出发地，不同目的地，按字母序排
 
 
 思路
-动态规划（懵逼了。）">
+
+其实就是一个图，深度优先搜索遍历">
 
 
 
@@ -129,9 +135,9 @@
 
 
 
-  <link rel="canonical" href="http://www.jinhongliang.cn/2016/08/24/largest_divisible_subset/"/>
+  <link rel="canonical" href="http://www.jinhongliang.cn/2016/09/09/reconstruct_itinerary/"/>
 
-  <title> 第368题---largest divisible subset | Jinhongliang's Blog </title>
+  <title> 第332题---Reconstruct Itinerary | Jinhongliang's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -322,7 +328,7 @@
             
             
               
-                第368题---largest divisible subset
+                第332题---Reconstruct Itinerary
               
             
           </h1>
@@ -334,8 +340,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-24T15:06:58+08:00" content="2016-08-24">
-              2016-08-24
+            <time itemprop="dateCreated" datetime="2016-09-09T11:01:10+08:00" content="2016-09-09">
+              2016-09-09
             </time>
           </span>
 
@@ -345,8 +351,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/08/24/largest_divisible_subset/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/24/largest_divisible_subset/" itemprop="commentsCount"></span>
+                <a href="/2016/09/09/reconstruct_itinerary/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/09/reconstruct_itinerary/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -356,7 +362,7 @@
 
           
           
-             <span id="/2016/08/24/largest_divisible_subset/" class="leancloud_visitors" data-flag-title="第368题---largest divisible subset">
+             <span id="/2016/09/09/reconstruct_itinerary/" class="leancloud_visitors" data-flag-title="第332题---Reconstruct Itinerary">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -379,16 +385,17 @@
 
       
         <ul>
-<li>题意描述<ul>
-<li>给定一个不同的整数的数组，求他最长的可除的数组的长度（数组中的每两个数是可除的）</li>
+<li><p>题意描述</p>
+<ul>
+<li>给定一了一系列的pair，表示出发地到目的地，重新规划路线，同一出发地，不同目的地，按字母序排</li>
 </ul>
 </li>
-<li>思路<ul>
-<li>动态规划（懵逼了。）<a id="more"></a></li>
+<li><p>思路</p>
+<ul>
+<li>其实就是一个图，深度优先搜索遍历<a id="more"></a></li>
 </ul>
 </li>
-<li>代码<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; largestDivisibleSubset(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums) &#123;</div><div class="line">        sort(nums.begin(), nums.end());</div><div class="line">        </div><div class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; T(nums.size(), <span class="number">0</span>);</div><div class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; parent(nums.size(), <span class="number">0</span>);</div><div class="line">        </div><div class="line">        </div><div class="line">        <span class="keyword">int</span> m = <span class="number">0</span>;</div><div class="line">        <span class="keyword">int</span> mi = <span class="number">0</span>;</div><div class="line">        </div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = nums.size()<span class="number">-1</span>; i &gt;= <span class="number">0</span>; --i) &#123;</div><div class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = i; j &lt; nums.size(); ++j) &#123;</div><div class="line">                <span class="keyword">if</span>(nums[j] % nums[i] == <span class="number">0</span> &amp;&amp; T[i] &lt; <span class="number">1</span> + T[j]) &#123;</div><div class="line">                    T[i] = <span class="number">1</span>+T[j];</div><div class="line">                    parent[i] = j;</div><div class="line">                    <span class="keyword">if</span>(T[i] &gt; m) &#123;</div><div class="line">                        m = T[i];</div><div class="line">                        mi = i;</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; ret;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; ++i) &#123;</div><div class="line">            ret.push_back(nums[mi]);</div><div class="line">            mi = parent[mi];</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> ret;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-</li>
+<li>代码<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; findItinerary(<span class="built_in">vector</span>&lt;pair&lt;<span class="built_in">string</span>, <span class="built_in">string</span>&gt;&gt; tickets) &#123;</div><div class="line">        <span class="built_in">unordered_map</span>&lt;<span class="built_in">string</span>, <span class="built_in">multiset</span>&lt;<span class="built_in">string</span>&gt;&gt; graph;</div><div class="line">        </div><div class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; itinerary;</div><div class="line">        </div><div class="line">        <span class="keyword">if</span>(tickets.size() == <span class="number">0</span>)</div><div class="line">            <span class="keyword">return</span> itinerary;</div><div class="line">        </div><div class="line">        <span class="keyword">for</span>(pair&lt;<span class="built_in">string</span>, <span class="built_in">string</span>&gt; eachTicket : tickets) &#123;</div><div class="line">            graph[eachTicket.first].insert(eachTicket.second);</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        <span class="built_in">stack</span>&lt;<span class="built_in">string</span>&gt; dfs;</div><div class="line">        dfs.push(<span class="string">"JFK"</span>);</div><div class="line">        </div><div class="line">        <span class="keyword">while</span>(!dfs.empty()) &#123;</div><div class="line">            <span class="built_in">string</span> topAirport = dfs.top();</div><div class="line">            <span class="keyword">if</span>(graph[topAirport].empty()) &#123;</div><div class="line">                itinerary.push_back(topAirport);</div><div class="line">                dfs.pop();</div><div class="line">            &#125; <span class="keyword">else</span> &#123;</div><div class="line">                dfs.push(*(graph[topAirport].begin()));</div><div class="line">                graph[topAirport].erase(graph[topAirport].begin());</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        reverse(itinerary.begin(), itinerary.end());</div><div class="line">        <span class="keyword">return</span> itinerary;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></li>
 </ul>
 
       
@@ -442,17 +449,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/08/24/Kth_smallest_element_in_a_sorted_matrix/" rel="next" title="第378题---Kth Samllest element in a sorted matrix">
-                <i class="fa fa-chevron-left"></i> 第378题---Kth Samllest element in a sorted matrix
+              <a href="/2016/09/06/decode_string/" rel="next" title="第394题---Decode String">
+                <i class="fa fa-chevron-left"></i> 第394题---Decode String
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/08/24/lexicographical_numbers/" rel="prev" title="第386题---Lexicographical Numbers">
-                第386题---Lexicographical Numbers <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -481,8 +484,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/08/24/largest_divisible_subset/"
-           data-title="第368题---largest divisible subset" data-url="http://www.jinhongliang.cn/2016/08/24/largest_divisible_subset/">
+      <div class="ds-thread" data-thread-key="2016/09/09/reconstruct_itinerary/"
+           data-title="第332题---Reconstruct Itinerary" data-url="http://www.jinhongliang.cn/2016/09/09/reconstruct_itinerary/">
       </div>
     
   </div>
