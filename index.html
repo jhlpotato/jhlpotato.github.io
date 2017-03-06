@@ -309,7 +309,7 @@
             
               
                 
-                <a class="post-title-link" href="/2016/12/13/network_router/" itemprop="url">
+                <a class="post-title-link" href="/2017/03/06/network_router/" itemprop="url">
                   网络路由的基本概念
                 </a>
               
@@ -323,8 +323,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-12-13T22:11:50+08:00" content="2016-12-13">
-              2016-12-13
+            <time itemprop="dateCreated" datetime="2017-03-06T19:08:27+08:00" content="2017-03-06">
+              2017-03-06
             </time>
           </span>
 
@@ -334,8 +334,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/12/13/network_router/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/13/network_router/" itemprop="commentsCount"></span>
+                <a href="/2017/03/06/network_router/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/06/network_router/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -345,7 +345,7 @@
 
           
           
-             <span id="/2016/12/13/network_router/" class="leancloud_visitors" data-flag-title="网络路由的基本概念">
+             <span id="/2017/03/06/network_router/" class="leancloud_visitors" data-flag-title="网络路由的基本概念">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -368,69 +368,15 @@
 
       
         
-          
-            <h3 id="为什么（why）"><a href="#为什么（why）" class="headerlink" title="为什么（why）"></a>为什么（why）</h3><ul>
+          <h3 id="为什么（why）"><a href="#为什么（why）" class="headerlink" title="为什么（why）"></a>为什么（why）</h3><ul>
 <li>说来惭愧，学计算机从本科算起来到现在已经有7年时间，如果打游戏也算对计算机学习的话，那就要从小学三年级开始了。最近，临近硕士毕业的时候，竟然对网络中的基本概念和基本认识没有理解，不知道其中的原理。</li>
 <li>最近，写硕士论文的时候，因为使用到了Teredo隧道知识，用到了Miredo软件搭建服务，因而又涉及到了网络路由的相关知识，但是我发现，名词都看的懂，但是就不是不明白背后是怎么运行。发现本科学习的计算机网络真是还给了老师。所以自己就最基本的网络路由的知识拾起点皮毛。</li>
 </ul>
-<h3 id="做什么（what）"><a href="#做什么（what）" class="headerlink" title="做什么（what）"></a>做什么（what）</h3><ul>
-<li>说来就是很简单的一件事，就是一台主机A，通过一个路由，ping通另一个网段的主机B。具体的看下图。<br><img src="https://raw.githubusercontent.com/jhlpotato/MarkdownImage/master/blog/ipv4_route_picture.jpg" alt="ipv4_router_picture"><br><br><ul>
-<li>主机A 的ip地址为192.168.1.1</li>
-<li>主机B的IP地址为192.168.2.2</li>
-<li>中间路由器的与A相连的IP地址为192.168.1.2，与B相连的IP地址为192.168.2.1</li>
-</ul>
-</li>
-<li>就是主机A可以ping通主机B的简单路由过程。</li>
-<li>如果把ipv4地址，换成ipv6地址会怎么样那？也就是下面的类似相同实验，使用ipv6地址的实验。具体网络拓扑图如下图所示。<br><img src="https://raw.githubusercontent.com/jhlpotato/MarkdownImage/master/blog/ipv6_router_picture.jpg" alt="ipv6_router_picture"><br><br><ul>
-<li>主机A的IP地址为2001:10::1</li>
-<li>主机B的IP地址为2001:20::2</li>
-<li>中间路由器与A相连的IP地址为2001:10::2，与B相连的IP地址为2001:20::1</li>
-</ul>
-</li>
-</ul>
-<h3 id="怎么做（how）"><a href="#怎么做（how）" class="headerlink" title="怎么做（how）"></a>怎么做（how）</h3><ul>
-<li>基本的准备工作<ul>
-<li>找到实验室三台空闲的机器（也可以使用虚拟机搭建，和物理机没有区别）</li>
-<li>其中一台机器有两块网卡（这个模拟路由器，也可以在虚拟机上模拟两块网卡）</li>
-</ul>
-</li>
-<li><p>操作步骤</p>
-<ul>
-<li><p>配置静态IP（ubuntu配置方法），将3台机器按照上图的网络拓扑，设置静态IP</p>
-<ul>
-<li><p>修改/etc/network/interfaces文件，添加下面的信息</p>
-<ul>
-<li><figure class="highlight plain"><figcaption><span>eth0</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">iface eth0 inet static</div><div class="line">address 192.168.1.1</div><div class="line">netmask 255.255.255.0</div><div class="line">gateway 192.168.1.1</div></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>重新启动机器或者使用命令重启网卡模块</p>
-<ul>
-<li><figure class="highlight plain"><figcaption><span>restart ```(ubuntu没起作用)</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">- 配置路由器上的ipv4数据包转发功能，linux系统默认是不开启数据包转发功能的</div><div class="line">    - 修改/etc/sysctl.conf文件中的net.ipv4.ip_forward=0的值修改为1</div><div class="line">- 配置路由表</div><div class="line">    - 此时从机器A，ping路由器IP192.168.1.2是可以ping通的，他们是同网段，并且是直接相连的</div><div class="line">    - 但是此时ping 192.168.2.1或者192.168.2.2是ping不通的。他们不是同一网段的，所以ping不通</div><div class="line">    - 此时我们需要将192.168.2.0网段的路由加到路由表中去，起始可以有两种做法</div><div class="line">        - 第一种做法，添加192.168.2.0网段路由表项到路由表中</div><div class="line">            - ``` sudo route add -net 192.168.2.0 netmask 255.255.255.0 gw 192.168.1.2</div></pre></td></tr></table></figure>
-<ul>
-<li>所有是192.168.2.0网段，掩码为255.255.255.0的数据包都发送到192.168.1.2的网关</li>
-</ul>
-</li>
-<li>第二种做法，添加默认网关<ul>
-<li><code>sudo route add default gw 192.168.1.2</code></li>
-<li>如果数据包在路由表中没有符合的表项，都从网关192.168.1.2转发出去</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>然后类似的规则配置机器B</li>
-<li>不同的操作系统默认路由配置不同（Centos会自己配置默认路由）</li>
-</ul>
-</li>
-<li>这样就可以在机器A ping 通机器B了（注意如果B不配置路由的情况，ping包没有返回响应）</li>
-<li>ipv6地址配置和ipv4配置类似。注意ipv6静态地址配置和路由表添加<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3></li>
-</ul>
-</li>
-<li>注意三个地方，A的路由表，B的路由表和路由器的转发</li>
-<li>网上关于Teredo隧道服务器安装文档较少，后面Teredo搭建成功了写一下安装过程吧。</li>
-</ul>
-
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2017/03/06/network_router/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -1060,8 +1006,8 @@
       <div class="footer-inner">
         <div class="copyright" >
   
-  &copy; 
-  <span itemprop="copyrightYear">2016</span>
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
