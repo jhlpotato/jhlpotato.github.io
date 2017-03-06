@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="leetcode," />
+  <meta name="keywords" content="single" />
 
 
 
@@ -84,34 +84,25 @@
 
 
 
-<meta name="description" content="题意描述：
-给定一个数字n,进行猜数游戏，判断高低。求完成猜数的至少的花费
-
-
-思路：动态规划(完全不懂)
-
-vector">
+<meta name="description" content="title: 关于返回局部变量地址的一些思考
+tags: leetcode问题描述在华为培训中碰到了下面的返回局部变量地址的代码。
+12345678910struct QueryTable *QueryTableAdapter(key) &amp;#123;    struct QueryTable stAdaptor[m] = &amp;#123;...&amp;#125;;        // 进行查表    if">
 <meta property="og:type" content="article">
-<meta property="og:title" content="第375题---Guess Number Higher or Lower II">
-<meta property="og:url" content="http://www.jinhongliang.cn/2016/08/24/guess_number_higher_or_lower_II/index.html">
+<meta property="og:title" content="Jinhongliang's Blog">
+<meta property="og:url" content="http://www.jinhongliang.cn/2017/03/06/some_thought_about_value_address/index.html">
 <meta property="og:site_name" content="Jinhongliang's Blog">
-<meta property="og:description" content="题意描述：
-给定一个数字n,进行猜数游戏，判断高低。求完成猜数的至少的花费
-
-
-思路：动态规划(完全不懂)
-
-vector">
-<meta property="og:updated_time" content="2016-08-24T07:06:27.359Z">
+<meta property="og:description" content="title: 关于返回局部变量地址的一些思考
+tags: leetcode问题描述在华为培训中碰到了下面的返回局部变量地址的代码。
+12345678910struct QueryTable *QueryTableAdapter(key) &amp;#123;    struct QueryTable stAdaptor[m] = &amp;#123;...&amp;#125;;        // 进行查表    if">
+<meta property="og:image" content="https://raw.githubusercontent.com/jhlpotato/MarkdownImage/master/blog/statck_mem.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/jhlpotato/MarkdownImage/master/blog/heap_stack_mem.png">
+<meta property="og:updated_time" content="2017-03-06T11:08:59.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="第375题---Guess Number Higher or Lower II">
-<meta name="twitter:description" content="题意描述：
-给定一个数字n,进行猜数游戏，判断高低。求完成猜数的至少的花费
-
-
-思路：动态规划(完全不懂)
-
-vector">
+<meta name="twitter:title" content="Jinhongliang's Blog">
+<meta name="twitter:description" content="title: 关于返回局部变量地址的一些思考
+tags: leetcode问题描述在华为培训中碰到了下面的返回局部变量地址的代码。
+12345678910struct QueryTable *QueryTableAdapter(key) &amp;#123;    struct QueryTable stAdaptor[m] = &amp;#123;...&amp;#125;;        // 进行查表    if">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/jhlpotato/MarkdownImage/master/blog/statck_mem.png">
 
 
 
@@ -132,9 +123,9 @@ vector">
 
 
 
-  <link rel="canonical" href="http://www.jinhongliang.cn/2016/08/24/guess_number_higher_or_lower_II/"/>
+  <link rel="canonical" href="http://www.jinhongliang.cn/2017/03/06/some_thought_about_value_address/"/>
 
-  <title> 第375题---Guess Number Higher or Lower II | Jinhongliang's Blog </title>
+  <title>  | Jinhongliang's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -325,7 +316,7 @@ vector">
             
             
               
-                第375题---Guess Number Higher or Lower II
+                
               
             
           </h1>
@@ -337,8 +328,8 @@ vector">
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-24T15:06:27+08:00" content="2016-08-24">
-              2016-08-24
+            <time itemprop="dateCreated" datetime="2017-03-06T19:12:20+08:00" content="2017-03-06">
+              2017-03-06
             </time>
           </span>
 
@@ -348,8 +339,8 @@ vector">
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/08/24/guess_number_higher_or_lower_II/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/24/guess_number_higher_or_lower_II/" itemprop="commentsCount"></span>
+                <a href="/2017/03/06/some_thought_about_value_address/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/06/some_thought_about_value_address/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -359,7 +350,7 @@ vector">
 
           
           
-             <span id="/2016/08/24/guess_number_higher_or_lower_II/" class="leancloud_visitors" data-flag-title="第375题---Guess Number Higher or Lower II">
+             <span id="/2017/03/06/some_thought_about_value_address/" class="leancloud_visitors" data-flag-title="">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -381,21 +372,20 @@ vector">
       
 
       
-        <ul>
-<li>题意描述：<ul>
-<li>给定一个数字n,进行猜数游戏，判断高低。求完成猜数的至少的花费</li>
-</ul>
-</li>
-<li><p>思路：动态规划(完全不懂)</p>
-<ul>
-<li>vector<vector <int="">&gt; 存放的是从i到j的最小花费，对于数x，则完成的max的dp(vecs, i, x-1)和dp(vecs, x+1, j)的最大值+x；则最小花费为min(res, 上面的值)，然后把对应的vec[i][j]赋值<a id="more"></a>
-</vector></li>
-</ul>
-</li>
-<li><p>代码</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">getMoneyAmount</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</div><div class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; vec(n+<span class="number">1</span>, <span class="number">0</span>);</div><div class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">vector</span> &lt;<span class="keyword">int</span>&gt;&gt; vecs(n+<span class="number">1</span>, vec);</div><div class="line">        <span class="keyword">return</span> DP(vecs, <span class="number">1</span>, n);</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">DP</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span> &lt;<span class="keyword">int</span>&gt;&gt;&amp; t, <span class="keyword">int</span> s, <span class="keyword">int</span> e)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span>(s &gt;= e)</div><div class="line">            <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">        <span class="keyword">if</span>(t[s][e] != <span class="number">0</span>)</div><div class="line">            <span class="keyword">return</span> t[s][e];</div><div class="line">        <span class="keyword">int</span> res = INT_MAX;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = s; i &lt;= e; ++ i) &#123;</div><div class="line">            <span class="keyword">int</span> temp = i + max(DP(t, s, i<span class="number">-1</span>), DP(t, i+<span class="number">1</span>, e));</div><div class="line">            res = min(res, temp);</div><div class="line">        &#125;</div><div class="line">        t[s][e] = res;</div><div class="line">        <span class="keyword">return</span> res;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-</li>
-</ul>
+        <hr>
+<p>title: 关于返回局部变量地址的一些思考</p>
+<h2 id="tags-leetcode"><a href="#tags-leetcode" class="headerlink" title="tags: leetcode"></a>tags: leetcode</h2><h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>在华为培训中碰到了下面的返回局部变量地址的代码。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">struct</span> QueryTable *<span class="title">QueryTableAdapter</span><span class="params">(key)</span> </span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">struct</span> QueryTable stAdaptor[m] = &#123;...&#125;;</div><div class="line">    </div><div class="line">    <span class="comment">// 进行查表</span></div><div class="line">    <span class="keyword">if</span>(查表成功) </div><div class="line">    &#123;</div><div class="line">        <span class="keyword">return</span> &amp;(stAdaptor[n]); <span class="comment">//m &gt; n</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>但是在看The Practice of Programming的时候碰到了以下代码</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* newitem: create new item from name and value */</span></div><div class="line"><span class="function">Nameval *<span class="title">newitem</span><span class="params">(<span class="keyword">char</span> *name, <span class="keyword">int</span> value)</span></span></div><div class="line">&#123;</div><div class="line">    Nameval *newp;</div><div class="line">    newp = (Nameval *)emalloc(<span class="keyword">sizeof</span>(Nameval));</div><div class="line">    newp-&gt;name = name;</div><div class="line">    newp-&gt;value = value;</div><div class="line">    newp-&gt;next = <span class="literal">NULL</span>;</div><div class="line">    <span class="keyword">return</span> newp;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>第一段代码返回局部变量地址就发生了错误，但是第二段代码返回局部变量地址就正确</p>
+<a id="more"></a>
+<h3 id="思路解析"><a href="#思路解析" class="headerlink" title="思路解析"></a>思路解析</h3><p>第一段代码的返回了一个数组的地址，数组是在栈上分配的，当从函数退出时，<br>调用者拿到了数组的地址，但是栈上分配的数据已经回收</p>
+<p>内存分配图</p>
+<p><img src="https://raw.githubusercontent.com/jhlpotato/MarkdownImage/master/blog/statck_mem.png" alt="picture"></p>
+<p>第二段代码返回的是一个在堆上分配的数据结构的地址，当从函数退出时，<br>调用者拿到了结构体的地址，但是堆上分配的数据还存在</p>
+<p>内存分配图</p>
+<p><img src="https://raw.githubusercontent.com/jhlpotato/MarkdownImage/master/blog/heap_stack_mem.png" alt="picture"></p>
 
       
     </div>
@@ -437,28 +427,18 @@ vector">
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/leetcode/" rel="tag">#leetcode</a>
-          
-        </div>
-      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/08/24/guess_number_higher_or_lower/" rel="next" title="第374题---Guess Number Higher or Lower">
-                <i class="fa fa-chevron-left"></i> 第374题---Guess Number Higher or Lower
+              <a href="/2017/03/06/network_router/" rel="next" title="网络路由的基本概念">
+                <i class="fa fa-chevron-left"></i> 网络路由的基本概念
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/08/24/house_robber/" rel="prev" title="第198题---House Robber">
-                第198题---House Robber <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -480,15 +460,12 @@ vector">
           </div>
           
 
-  <p>热评文章</p>
-  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
-
 
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/08/24/guess_number_higher_or_lower_II/"
-           data-title="第375题---Guess Number Higher or Lower II" data-url="http://www.jinhongliang.cn/2016/08/24/guess_number_higher_or_lower_II/">
+      <div class="ds-thread" data-thread-key="2017/03/06/some_thought_about_value_address/"
+           data-title="" data-url="http://www.jinhongliang.cn/2017/03/06/some_thought_about_value_address/">
       </div>
     
   </div>
@@ -601,7 +578,7 @@ vector">
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#tags-leetcode"><span class="nav-number">1.</span> <span class="nav-text">tags: leetcode</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题描述"><span class="nav-number">1.1.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#思路解析"><span class="nav-number">1.2.</span> <span class="nav-text">思路解析</span></a></li></ol></li></ol></div>
             
           </div>
         </section>

@@ -309,6 +309,124 @@
             
               
                 
+                <a class="post-title-link" href="/2017/03/06/some_thought_about_value_address/" itemprop="url">
+                  未命名
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-03-06T19:12:20+08:00" content="2017-03-06">
+              2017-03-06
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/03/06/some_thought_about_value_address/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/06/some_thought_about_value_address/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/03/06/some_thought_about_value_address/" class="leancloud_visitors" data-flag-title="">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <hr>
+<p>title: 关于返回局部变量地址的一些思考</p>
+<h2 id="tags-leetcode"><a href="#tags-leetcode" class="headerlink" title="tags: leetcode"></a>tags: leetcode</h2><h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>在华为培训中碰到了下面的返回局部变量地址的代码。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">struct</span> QueryTable *<span class="title">QueryTableAdapter</span><span class="params">(key)</span> </div><div class="line"></span>&#123;</div><div class="line">    <span class="keyword">struct</span> QueryTable stAdaptor[m] = &#123;...&#125;;</div><div class="line">    </div><div class="line">    <span class="comment">// 进行查表</span></div><div class="line">    <span class="keyword">if</span>(查表成功) </div><div class="line">    &#123;</div><div class="line">        <span class="keyword">return</span> &amp;(stAdaptor[n]); <span class="comment">//m &gt; n</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>但是在看The Practice of Programming的时候碰到了以下代码</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* newitem: create new item from name and value */</span></div><div class="line"><span class="function">Nameval *<span class="title">newitem</span><span class="params">(<span class="keyword">char</span> *name, <span class="keyword">int</span> value)</span></div><div class="line"></span>&#123;</div><div class="line">    Nameval *newp;</div><div class="line">    newp = (Nameval *)emalloc(<span class="keyword">sizeof</span>(Nameval));</div><div class="line">    newp-&gt;name = name;</div><div class="line">    newp-&gt;value = value;</div><div class="line">    newp-&gt;next = <span class="literal">NULL</span>;</div><div class="line">    <span class="keyword">return</span> newp;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>第一段代码返回局部变量地址就发生了错误，但是第二段代码返回局部变量地址就正确</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2017/03/06/some_thought_about_value_address/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2017/03/06/network_router/" itemprop="url">
                   网络路由的基本概念
                 </a>
@@ -766,126 +884,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/09/06/isSubsequence/" itemprop="url">
-                  第392题---Is Subsequence
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-09-06T10:38:32+08:00" content="2016-09-06">
-              2016-09-06
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/09/06/isSubsequence/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/06/isSubsequence/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/09/06/isSubsequence/" class="leancloud_visitors" data-flag-title="第392题---Is Subsequence">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <ul>
-<li><p>题意描述</p>
-<ul>
-<li>判断一个字符串s是否是另外一个字符串t的子序列，子序列的意思是s的字符顺序在t中是一样的</li>
-</ul>
-</li>
-<li><p>思路</p>
-<ul>
-<li>两个指针分别指向两个字符的开头，如果两者相同，两个指针同时向后移动；如果不同，只有字符串t的指针向后移动；如果其中一个指针指向了字符的结尾，则结束；判断s的指针是否到了字符串的结尾，如果到了结尾返回true；否则返回false
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/09/06/isSubsequence/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -931,7 +929,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">31</span>
+              <span class="site-state-item-count">32</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
