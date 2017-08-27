@@ -1,0 +1,907 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="网络," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="为什么（why）
+说来惭愧，学计算机从本科算起来到现在已经有7年时间，如果打游戏也算对计算机学习的话，那就要从小学三年级开始了。最近，临近硕士毕业的时候，竟然对网络中的基本概念和基本认识没有理解，不知道其中的原理。
+最近，写硕士论文的时候，因为使用到了Teredo隧道知识，用到了Miredo软件搭建服务，因而又涉及到了网络路由的相关知识，但是我发现，名词都看的懂，但是就不是不明白背后是怎么运行。发">
+<meta property="og:type" content="article">
+<meta property="og:title" content="网络路由的基本概念">
+<meta property="og:url" content="http://www.jinhongliang.cn/2017/08/26/network_router/index.html">
+<meta property="og:site_name" content="Jinhongliang's Blog">
+<meta property="og:description" content="为什么（why）
+说来惭愧，学计算机从本科算起来到现在已经有7年时间，如果打游戏也算对计算机学习的话，那就要从小学三年级开始了。最近，临近硕士毕业的时候，竟然对网络中的基本概念和基本认识没有理解，不知道其中的原理。
+最近，写硕士论文的时候，因为使用到了Teredo隧道知识，用到了Miredo软件搭建服务，因而又涉及到了网络路由的相关知识，但是我发现，名词都看的懂，但是就不是不明白背后是怎么运行。发">
+<meta property="og:image" content="https://raw.githubusercontent.com/jhlpotato/MarkdownImage/master/blog/ipv4_route_picture.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/jhlpotato/MarkdownImage/master/blog/ipv6_router_picture.jpg">
+<meta property="og:updated_time" content="2017-03-06T11:08:27.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="网络路由的基本概念">
+<meta name="twitter:description" content="为什么（why）
+说来惭愧，学计算机从本科算起来到现在已经有7年时间，如果打游戏也算对计算机学习的话，那就要从小学三年级开始了。最近，临近硕士毕业的时候，竟然对网络中的基本概念和基本认识没有理解，不知道其中的原理。
+最近，写硕士论文的时候，因为使用到了Teredo隧道知识，用到了Miredo软件搭建服务，因而又涉及到了网络路由的相关知识，但是我发现，名词都看的懂，但是就不是不明白背后是怎么运行。发">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/jhlpotato/MarkdownImage/master/blog/ipv4_route_picture.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 888888,
+      author: '鱼欲遇雨'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://www.jinhongliang.cn/2017/08/26/network_router/"/>
+
+  <title> 网络路由的基本概念 | Jinhongliang's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?c9ee89942924bf33cdfbb0abffe6e95c";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Jinhongliang's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Jinhongliang's Blog</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="st-search-show-outputs">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <form class="site-search-form">
+  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+</form>
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'rys8AAi5JFgf1nBE5m_4','2.0.0');
+</script>
+
+
+
+    </div>
+  
+</nav>
+<script charset="Shift_JIS" src="http://chabudai.sakura.ne.jp/blogparts/honehoneclock/honehone_clock_tr.js"></script>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                网络路由的基本概念
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-08-26T23:55:29+08:00" content="2017-08-26">
+              2017-08-26
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/08/26/network_router/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/08/26/network_router/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/08/26/network_router/" class="leancloud_visitors" data-flag-title="网络路由的基本概念">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="为什么（why）"><a href="#为什么（why）" class="headerlink" title="为什么（why）"></a>为什么（why）</h3><ul>
+<li>说来惭愧，学计算机从本科算起来到现在已经有7年时间，如果打游戏也算对计算机学习的话，那就要从小学三年级开始了。最近，临近硕士毕业的时候，竟然对网络中的基本概念和基本认识没有理解，不知道其中的原理。</li>
+<li>最近，写硕士论文的时候，因为使用到了Teredo隧道知识，用到了Miredo软件搭建服务，因而又涉及到了网络路由的相关知识，但是我发现，名词都看的懂，但是就不是不明白背后是怎么运行。发现本科学习的计算机网络真是还给了老师。所以自己就最基本的网络路由的知识拾起点皮毛。</li>
+</ul>
+<a id="more"></a>
+<h3 id="做什么（what）"><a href="#做什么（what）" class="headerlink" title="做什么（what）"></a>做什么（what）</h3><ul>
+<li>说来就是很简单的一件事，就是一台主机A，通过一个路由，ping通另一个网段的主机B。具体的看下图。<br><img src="https://raw.githubusercontent.com/jhlpotato/MarkdownImage/master/blog/ipv4_route_picture.jpg" alt="ipv4_router_picture"><br><br><ul>
+<li>主机A 的ip地址为192.168.1.1</li>
+<li>主机B的IP地址为192.168.2.2</li>
+<li>中间路由器的与A相连的IP地址为192.168.1.2，与B相连的IP地址为192.168.2.1</li>
+</ul>
+</li>
+<li>就是主机A可以ping通主机B的简单路由过程。</li>
+<li>如果把ipv4地址，换成ipv6地址会怎么样那？也就是下面的类似相同实验，使用ipv6地址的实验。具体网络拓扑图如下图所示。<br><img src="https://raw.githubusercontent.com/jhlpotato/MarkdownImage/master/blog/ipv6_router_picture.jpg" alt="ipv6_router_picture"><br><br><ul>
+<li>主机A的IP地址为2001:10::1</li>
+<li>主机B的IP地址为2001:20::2</li>
+<li>中间路由器与A相连的IP地址为2001:10::2，与B相连的IP地址为2001:20::1</li>
+</ul>
+</li>
+</ul>
+<h3 id="怎么做（how）"><a href="#怎么做（how）" class="headerlink" title="怎么做（how）"></a>怎么做（how）</h3><ul>
+<li>基本的准备工作<ul>
+<li>找到实验室三台空闲的机器（也可以使用虚拟机搭建，和物理机没有区别）</li>
+<li>其中一台机器有两块网卡（这个模拟路由器，也可以在虚拟机上模拟两块网卡）</li>
+</ul>
+</li>
+<li><p>操作步骤</p>
+<ul>
+<li><p>配置静态IP（ubuntu配置方法），将3台机器按照上图的网络拓扑，设置静态IP</p>
+<ul>
+<li><p>修改/etc/network/interfaces文件，添加下面的信息</p>
+<ul>
+<li><figure class="highlight plain"><figcaption><span>eth0</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">iface eth0 inet static</div><div class="line">address 192.168.1.1</div><div class="line">netmask 255.255.255.0</div><div class="line">gateway 192.168.1.1</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>重新启动机器或者使用命令重启网卡模块</p>
+<ul>
+<li><figure class="highlight plain"><figcaption><span>restart ```(ubuntu没起作用)</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">- 配置路由器上的ipv4数据包转发功能，linux系统默认是不开启数据包转发功能的</div><div class="line">    - 修改/etc/sysctl.conf文件中的net.ipv4.ip_forward=0的值修改为1</div><div class="line">- 配置路由表</div><div class="line">    - 此时从机器A，ping路由器IP192.168.1.2是可以ping通的，他们是同网段，并且是直接相连的</div><div class="line">    - 但是此时ping 192.168.2.1或者192.168.2.2是ping不通的。他们不是同一网段的，所以ping不通</div><div class="line">    - 此时我们需要将192.168.2.0网段的路由加到路由表中去，起始可以有两种做法</div><div class="line">        - 第一种做法，添加192.168.2.0网段路由表项到路由表中</div><div class="line">            - ``` sudo route add -net 192.168.2.0 netmask 255.255.255.0 gw 192.168.1.2</div></pre></td></tr></table></figure>
+<ul>
+<li>所有是192.168.2.0网段，掩码为255.255.255.0的数据包都发送到192.168.1.2的网关</li>
+</ul>
+</li>
+<li>第二种做法，添加默认网关<ul>
+<li><code>sudo route add default gw 192.168.1.2</code></li>
+<li>如果数据包在路由表中没有符合的表项，都从网关192.168.1.2转发出去</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>然后类似的规则配置机器B</li>
+<li>不同的操作系统默认路由配置不同（Centos会自己配置默认路由）</li>
+</ul>
+</li>
+<li>这样就可以在机器A ping 通机器B了（注意如果B不配置路由的情况，ping包没有返回响应）</li>
+<li>ipv6地址配置和ipv4配置类似。注意ipv6静态地址配置和路由表添加<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3></li>
+</ul>
+</li>
+<li>注意三个地方，A的路由表，B的路由表和路由器的转发</li>
+<li>网上关于Teredo隧道服务器安装文档较少，后面Teredo搭建成功了写一下安装过程吧。</li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="https://raw.githubusercontent.com/jhlpotato/MarkdownImage/master/touxiang/wechatpay.png" alt="jin hongliang WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="https://raw.githubusercontent.com/jhlpotato/MarkdownImage/master/touxiang/alipay.png" alt="jin hongliang Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/网络/" rel="tag">#网络</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/08/26/random_note/" rel="next" title="第383题---Random Note">
+                <i class="fa fa-chevron-left"></i> 第383题---Random Note
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/08/26/max_num_of_rectangle_no_larger_than_k/" rel="prev" title="第363题---Max Sum of Rectangle No Larger Than K">
+                第363题---Max Sum of Rectangle No Larger Than K <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  <p>热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/08/26/network_router/"
+           data-title="网络路由的基本概念" data-url="http://www.jinhongliang.cn/2017/08/26/network_router/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://raw.githubusercontent.com/jhlpotato/MarkdownImage/master/touxiang/timo.jpg"
+               alt="jin hongliang" />
+          <p class="site-author-name" itemprop="name">jin hongliang</p>
+          <p class="site-description motion-element" itemprop="description">随便写写，代码，生活，其他</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">33</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/jhlpotato" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/lzdxs" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/jin-hong-liang-6" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-fw fa-zhihu"></i>
+                  
+                  Zhihu
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么（why）"><span class="nav-number">1.</span> <span class="nav-text">为什么（why）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#做什么（what）"><span class="nav-number">2.</span> <span class="nav-text">做什么（what）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#怎么做（how）"><span class="nav-number">3.</span> <span class="nav-text">怎么做（how）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">jin hongliang</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"jinhongliang"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("QkAyyhx5BTXs3flAtLEebzmo-gzGzoHsz", "FVG0yOOfEDvW5K04lchHeTXB");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+</body>
+</html>

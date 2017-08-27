@@ -309,8 +309,8 @@
             
               
                 
-                <a class="post-title-link" href="/2017/03/06/some_thought_about_value_address/" itemprop="url">
-                  未命名
+                <a class="post-title-link" href="/2017/08/27/2017-07-16-cjson-api/" itemprop="url">
+                  cJSON API 接口使用说明
                 </a>
               
             
@@ -323,8 +323,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-03-06T19:12:20+08:00" content="2017-03-06">
-              2017-03-06
+            <time itemprop="dateCreated" datetime="2017-08-27T09:53:29+08:00" content="2017-08-27">
+              2017-08-27
             </time>
           </span>
 
@@ -334,8 +334,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2017/03/06/some_thought_about_value_address/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/06/some_thought_about_value_address/" itemprop="commentsCount"></span>
+                <a href="/2017/08/27/2017-07-16-cjson-api/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/08/27/2017-07-16-cjson-api/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -345,7 +345,7 @@
 
           
           
-             <span id="/2017/03/06/some_thought_about_value_address/" class="leancloud_visitors" data-flag-title="">
+             <span id="/2017/08/27/2017-07-16-cjson-api/" class="leancloud_visitors" data-flag-title="cJSON API 接口使用说明">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -368,15 +368,19 @@
 
       
         
-          <hr>
-<p>title: 关于返回局部变量地址的一些思考</p>
-<h2 id="tags-leetcode"><a href="#tags-leetcode" class="headerlink" title="tags: leetcode"></a>tags: leetcode</h2><h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>在华为培训中碰到了下面的返回局部变量地址的代码。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">struct</span> QueryTable *<span class="title">QueryTableAdapter</span><span class="params">(key)</span> </div><div class="line"></span>&#123;</div><div class="line">    <span class="keyword">struct</span> QueryTable stAdaptor[m] = &#123;...&#125;;</div><div class="line">    </div><div class="line">    <span class="comment">// 进行查表</span></div><div class="line">    <span class="keyword">if</span>(查表成功) </div><div class="line">    &#123;</div><div class="line">        <span class="keyword">return</span> &amp;(stAdaptor[n]); <span class="comment">//m &gt; n</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>但是在看The Practice of Programming的时候碰到了以下代码</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* newitem: create new item from name and value */</span></div><div class="line"><span class="function">Nameval *<span class="title">newitem</span><span class="params">(<span class="keyword">char</span> *name, <span class="keyword">int</span> value)</span></div><div class="line"></span>&#123;</div><div class="line">    Nameval *newp;</div><div class="line">    newp = (Nameval *)emalloc(<span class="keyword">sizeof</span>(Nameval));</div><div class="line">    newp-&gt;name = name;</div><div class="line">    newp-&gt;value = value;</div><div class="line">    newp-&gt;next = <span class="literal">NULL</span>;</div><div class="line">    <span class="keyword">return</span> newp;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>第一段代码返回局部变量地址就发生了错误，但是第二段代码返回局部变量地址就正确</p>
+          <h1 id="cJSON-API-接口使用说明"><a href="#cJSON-API-接口使用说明" class="headerlink" title="cJSON API 接口使用说明"></a>cJSON API 接口使用说明</h1><h3 id="cJSON的介绍"><a href="#cJSON的介绍" class="headerlink" title="cJSON的介绍"></a>cJSON的介绍</h3><p>cJSON是一个轻量级的JSON解析器使用ANSIC标准。</p>
+<p>所谓的轻量级，如果你的项目需要使用到解析JSON，那么只需要将cJSON的库中的<code>cJSON.h</code>和<code>cJSON.c</code>放入到你的项目中适当的位置就行了。</p>
+<p>目前介绍的cJSON的版本为<code>1.5.7</code>。</p>
+<p>cJSON库的项目的github地址为：<a href="https://github.com/DaveGamble/cJSON/releases">cJSON</a></p>
+<p>在项目的过程中还使用都了shell文件的解析JSON的库，也是轻量级的就是一个JSON.sh文件。</p>
+<p>有兴趣的可以看一下这个shell的JSON库， <a href="https://github.com/dominictarr/JSON.sh">JSON.sh</a></p>
+<p>现在已经有了各种语言的解析的JSON的库，大家可以自行到github上面搜索</p>
+<h3 id="为什么介绍cJSON"><a href="#为什么介绍cJSON" class="headerlink" title="为什么介绍cJSON"></a>为什么介绍cJSON</h3><p>在项目中需要使用到cJSON的解析JSON库，但是总感觉有点用起来不顺手，所以就自己写些demo来使用这些接口。</p>
+<p>主要一些cJSON的接口使用到内存分配的问题，所以特别要注意，而且就在<code>1.5.7</code>刚刚修复了一个内存的问题。</p>
+<p>组内还在讨论要不要，把cJSON的问题再升级一下。</p>
+<p>自己做了写了一些非常简陋并且丑陋的example代码，<a href="https://github.com/jhlpotato/my_code">link</a> 下面的cjson文件下</p>
           <div class="post-more-link text-center">
-            <a class="btn" href="/2017/03/06/some_thought_about_value_address/#more" rel="contents">
+            <a class="btn" href="/2017/08/27/2017-07-16-cjson-api/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -427,8 +431,8 @@
             
               
                 
-                <a class="post-title-link" href="/2017/03/06/network_router/" itemprop="url">
-                  网络路由的基本概念
+                <a class="post-title-link" href="/2017/08/26/wiggle_subsequence/" itemprop="url">
+                  第376题---Wiggle Subsequence
                 </a>
               
             
@@ -441,8 +445,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-03-06T19:08:27+08:00" content="2017-03-06">
-              2017-03-06
+            <time itemprop="dateCreated" datetime="2017-08-26T23:55:29+08:00" content="2017-08-26">
+              2017-08-26
             </time>
           </span>
 
@@ -452,8 +456,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2017/03/06/network_router/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/06/network_router/" itemprop="commentsCount"></span>
+                <a href="/2017/08/26/wiggle_subsequence/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/08/26/wiggle_subsequence/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -463,122 +467,7 @@
 
           
           
-             <span id="/2017/03/06/network_router/" class="leancloud_visitors" data-flag-title="网络路由的基本概念">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="为什么（why）"><a href="#为什么（why）" class="headerlink" title="为什么（why）"></a>为什么（why）</h3><ul>
-<li>说来惭愧，学计算机从本科算起来到现在已经有7年时间，如果打游戏也算对计算机学习的话，那就要从小学三年级开始了。最近，临近硕士毕业的时候，竟然对网络中的基本概念和基本认识没有理解，不知道其中的原理。</li>
-<li>最近，写硕士论文的时候，因为使用到了Teredo隧道知识，用到了Miredo软件搭建服务，因而又涉及到了网络路由的相关知识，但是我发现，名词都看的懂，但是就不是不明白背后是怎么运行。发现本科学习的计算机网络真是还给了老师。所以自己就最基本的网络路由的知识拾起点皮毛。</li>
-</ul>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2017/03/06/network_router/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/09/09/reconstruct_itinerary/" itemprop="url">
-                  第332题---Reconstruct Itinerary
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-09-09T11:01:10+08:00" content="2016-09-09">
-              2016-09-09
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/09/09/reconstruct_itinerary/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/09/reconstruct_itinerary/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/09/09/reconstruct_itinerary/" class="leancloud_visitors" data-flag-title="第332题---Reconstruct Itinerary">
+             <span id="/2017/08/26/wiggle_subsequence/" class="leancloud_visitors" data-flag-title="第376题---Wiggle Subsequence">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -604,14 +493,14 @@
           <ul>
 <li><p>题意描述</p>
 <ul>
-<li>给定一了一系列的pair，表示出发地到目的地，重新规划路线，同一出发地，不同目的地，按字母序排</li>
+<li>给定一个数组，求摆动子序列；摆动子序列是指两个相邻的数之差，交替正负</li>
 </ul>
 </li>
 <li><p>思路</p>
 <ul>
-<li>其实就是一个图，深度优先搜索遍历
+<li>统计子序列长度变量，控制摆动方向变量，前一个元素变量；如果size&lt;2直接返回长度；判断前两个方向，length++，改变方向；如果方向相同，则prev复制，如果不同，则length++，改变方向（注意两个元素值相同的情况）
           <div class="post-more-link text-center">
-            <a class="btn" href="/2016/09/09/reconstruct_itinerary/#more" rel="contents">
+            <a class="btn" href="/2017/08/26/wiggle_subsequence/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -662,8 +551,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/09/06/decode_string/" itemprop="url">
-                  第394题---Decode String
+                <a class="post-title-link" href="/2017/08/26/Linked_list_random_node/" itemprop="url">
+                  第382题---Linked_list_random_node
                 </a>
               
             
@@ -676,8 +565,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-09-06T14:49:54+08:00" content="2016-09-06">
-              2016-09-06
+            <time itemprop="dateCreated" datetime="2017-08-26T23:55:29+08:00" content="2017-08-26">
+              2017-08-26
             </time>
           </span>
 
@@ -687,8 +576,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/09/06/decode_string/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/06/decode_string/" itemprop="commentsCount"></span>
+                <a href="/2017/08/26/Linked_list_random_node/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/08/26/Linked_list_random_node/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -698,7 +587,7 @@
 
           
           
-             <span id="/2016/09/06/decode_string/" class="leancloud_visitors" data-flag-title="第394题---Decode String">
+             <span id="/2017/08/26/Linked_list_random_node/" class="leancloud_visitors" data-flag-title="第382题---Linked_list_random_node">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -724,15 +613,20 @@
           <ul>
 <li><p>题意描述</p>
 <ul>
-<li>给定一个字符串，这个字符串只包含数字，字母和[]中括号，数字代表后面紧跟的中括号内字母重复的次数，可以嵌套，把这个字符串进行解码成正常的字符串</li>
+<li>给定一个单链表，返回单链表的随机结点，每一个结点的概率相同。假设链表非常大，不知道长度，不用额外的空间<br><br \></li>
 </ul>
 </li>
-<li><p>思路</p>
+<li><p>思路1</p>
 <ul>
-<li>因为有嵌套，所以需要栈保存上面的状态信息，又如果使用栈，又可以使用递归解决</li>
-<li>递归，首先判断是不是数字，如果不是数字，直接把字母加入临时的字符串中，如果是数字，记录数字，递归中括号内的字符，重复数字次数
+<li>首先，求出链表的长度，生成随机数，模上链表长度，再从头遍历到指定的结点（错误）<br><br \></li>
+</ul>
+</li>
+<li><p>思路2</p>
+<ul>
+<li>水库抽样的思想：从N个数里面抽n个数，每个概率一样。首先把前个数放到数组中，然后遍历n+1个数时，生成随机数（1，n+1）之间，如果（1，n）之间和这个index的数交换，如果（n+1），则不换，类推</li>
+<li>本题目只返回一个数，则数组为1<br><br \>
           <div class="post-more-link text-center">
-            <a class="btn" href="/2016/09/06/decode_string/#more" rel="contents">
+            <a class="btn" href="/2017/08/26/Linked_list_random_node/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -783,8 +677,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/09/06/utf-8_validation/" itemprop="url">
-                  第393题---UTF-8 Validation
+                <a class="post-title-link" href="/2017/08/26/Mini_Parse/" itemprop="url">
+                  第385题---Mini Parse
                 </a>
               
             
@@ -797,8 +691,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-09-06T12:06:56+08:00" content="2016-09-06">
-              2016-09-06
+            <time itemprop="dateCreated" datetime="2017-08-26T23:55:29+08:00" content="2017-08-26">
+              2017-08-26
             </time>
           </span>
 
@@ -808,8 +702,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/09/06/utf-8_validation/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/06/utf-8_validation/" itemprop="commentsCount"></span>
+                <a href="/2017/08/26/Mini_Parse/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/08/26/Mini_Parse/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -819,7 +713,125 @@
 
           
           
-             <span id="/2016/09/06/utf-8_validation/" class="leancloud_visitors" data-flag-title="第393题---UTF-8 Validation">
+             <span id="/2017/08/26/Mini_Parse/" class="leancloud_visitors" data-flag-title="第385题---Mini Parse">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <ul>
+<li><p>题意描述：给定一个嵌套整数列表的字符串，返回的他的NestedInteger类的结构体，反序列化？</p>
+</li>
+<li><p>思路：遍历字符串，判断是不是’[‘,如果是，则进入parseList函数，不是则进入parseNum函数；</p>
+<ul>
+<li>parseList函数，判断是不是[，如果是，则进入parseList函数，递归了，如果是-或者数，进入parseNum函数，如果是，跳过，如果是]break，结束</li>
+<li>parseNum函数，判断正负，从index 遍历，获得数值，返回构造的NestedInteger类对象
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2017/08/26/Mini_Parse/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/08/26/combination_sum_IV/" itemprop="url">
+                  第377题---Combination Sum IV
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-08-26T23:55:29+08:00" content="2017-08-26">
+              2017-08-26
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/08/26/combination_sum_IV/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/08/26/combination_sum_IV/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/08/26/combination_sum_IV/" class="leancloud_visitors" data-flag-title="第377题---Combination Sum IV">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -845,16 +857,14 @@
           <ul>
 <li><p>题意描述</p>
 <ul>
-<li>给定一个数组，数组中的每一个数组都代表一个8位的二进制数，0-255之间，则按照UTF-8的规则，判断这个数组是不是一个UTF-8的字符</li>
+<li>给定一个都是正整数，没有重复的数组，给定一个目标数，求数组中组合成目标数的方式有几种，数组中的数可以多次使用</li>
 </ul>
 </li>
-<li><p>解题思路</p>
+<li><p>思路一</p>
 <ul>
-<li>分类，但是不要嵌套分类</li>
-<li>第一位为0的情况；前两位为110的情况；前三位为1110的情况；前四位为11110的情况</li>
-<li>刚开始考虑的直接，if-else套if-else,逻辑混乱。现在直接每一种情况用一个函数调用
+<li>类似于台阶的动态规划，res[0]代表，目标数为0的组合数；res[1]代表，目标数为1的组合数；依次类推，res[i]的组合数res[i] += res[i-num]
           <div class="post-more-link text-center">
-            <a class="btn" href="/2016/09/06/utf-8_validation/#more" rel="contents">
+            <a class="btn" href="/2017/08/26/combination_sum_IV/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -929,7 +939,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">32</span>
+              <span class="site-state-item-count">33</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -939,7 +949,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

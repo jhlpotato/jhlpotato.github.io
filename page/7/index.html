@@ -309,8 +309,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/08/24/find_k_pairs_with_smallest_sum/" itemprop="url">
-                  第373题---Find K Pairs with Smallest Sums
+                <a class="post-title-link" href="/2017/08/26/some_thought_about_value_address/" itemprop="url">
+                  关于返回局部变量地址的一些思考
                 </a>
               
             
@@ -323,8 +323,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-24T15:05:30+08:00" content="2016-08-24">
-              2016-08-24
+            <time itemprop="dateCreated" datetime="2017-08-26T23:55:29+08:00" content="2017-08-26">
+              2017-08-26
             </time>
           </span>
 
@@ -334,8 +334,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/08/24/find_k_pairs_with_smallest_sum/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/24/find_k_pairs_with_smallest_sum/" itemprop="commentsCount"></span>
+                <a href="/2017/08/26/some_thought_about_value_address/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/08/26/some_thought_about_value_address/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -345,7 +345,7 @@
 
           
           
-             <span id="/2016/08/24/find_k_pairs_with_smallest_sum/" class="leancloud_visitors" data-flag-title="第373题---Find K Pairs with Smallest Sums">
+             <span id="/2017/08/26/some_thought_about_value_address/" class="leancloud_visitors" data-flag-title="关于返回局部变量地址的一些思考">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -368,15 +368,13 @@
 
       
         
-          <ul>
-<li>题意描述<ul>
-<li>给定两个数组，从小到达排列，两个数组中的元素组成一对，按两个数的和从大到小排序，找到前k个最小的pair<br><br /></li>
-</ul>
-</li>
-<li>思路<ul>
-<li>没思路，完全copy，代码的写法比较有意思<br><br />
+          <h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>在华为培训中碰到了下面的返回局部变量地址的代码。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">struct</span> QueryTable *<span class="title">QueryTableAdapter</span><span class="params">(key)</span> </div><div class="line"></span>&#123;</div><div class="line">    <span class="keyword">struct</span> QueryTable stAdaptor[m] = &#123;...&#125;;</div><div class="line">    </div><div class="line">    <span class="comment">// 进行查表</span></div><div class="line">    <span class="keyword">if</span>(查表成功) </div><div class="line">    &#123;</div><div class="line">        <span class="keyword">return</span> &amp;(stAdaptor[n]); <span class="comment">//m &gt; n</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>但是在看The Practice of Programming的时候碰到了以下代码</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* newitem: create new item from name and value */</span></div><div class="line"><span class="function">Nameval *<span class="title">newitem</span><span class="params">(<span class="keyword">char</span> *name, <span class="keyword">int</span> value)</span></div><div class="line"></span>&#123;</div><div class="line">    Nameval *newp;</div><div class="line">    newp = (Nameval *)emalloc(<span class="keyword">sizeof</span>(Nameval));</div><div class="line">    newp-&gt;name = name;</div><div class="line">    newp-&gt;value = value;</div><div class="line">    newp-&gt;next = <span class="literal">NULL</span>;</div><div class="line">    <span class="keyword">return</span> newp;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>第一段代码返回局部变量地址就发生了错误，但是第二段代码返回局部变量地址就正确</p>
           <div class="post-more-link text-center">
-            <a class="btn" href="/2016/08/24/find_k_pairs_with_smallest_sum/#more" rel="contents">
+            <a class="btn" href="/2017/08/26/some_thought_about_value_address/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -427,8 +425,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/08/24/combination_sum_IV/" itemprop="url">
-                  第377题---Combination Sum IV
+                <a class="post-title-link" href="/2017/08/26/shuffle_array/" itemprop="url">
+                  第384题 shuffle an array
                 </a>
               
             
@@ -441,8 +439,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-24T15:04:55+08:00" content="2016-08-24">
-              2016-08-24
+            <time itemprop="dateCreated" datetime="2017-08-26T23:55:29+08:00" content="2017-08-26">
+              2017-08-26
             </time>
           </span>
 
@@ -452,8 +450,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/08/24/combination_sum_IV/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/24/combination_sum_IV/" itemprop="commentsCount"></span>
+                <a href="/2017/08/26/shuffle_array/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/08/26/shuffle_array/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -463,7 +461,7 @@
 
           
           
-             <span id="/2016/08/24/combination_sum_IV/" class="leancloud_visitors" data-flag-title="第377题---Combination Sum IV">
+             <span id="/2017/08/26/shuffle_array/" class="leancloud_visitors" data-flag-title="第384题 shuffle an array">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -489,14 +487,134 @@
           <ul>
 <li><p>题意描述</p>
 <ul>
-<li>给定一个都是正整数，没有重复的数组，给定一个目标数，求数组中组合成目标数的方式有几种，数组中的数可以多次使用</li>
+<li>给定一个数组，把这个数组当作参数传给solution的类，实现这个类的构造函数，reset（）函数还原这个数组，shuffle函数是这数组随机洗牌</li>
 </ul>
 </li>
 <li><p>思路一</p>
 <ul>
-<li>类似于台阶的动态规划，res[0]代表，目标数为0的组合数；res[1]代表，目标数为1的组合数；依次类推，res[i]的组合数res[i] += res[i-num]
+<li>定义两个数组，一个保存原来的数组，用于reset函数；一个数组用于随机洗牌函数，随机的算法是遍历数组，生成一个随机数，交换随机数的位置的值和当前位置的值，遍历完成
           <div class="post-more-link text-center">
-            <a class="btn" href="/2016/08/24/combination_sum_IV/#more" rel="contents">
+            <a class="btn" href="/2017/08/26/shuffle_array/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/08/26/longest_absolute_file_path/" itemprop="url">
+                  第388题---Longest Absolute File Path
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-08-26T23:55:29+08:00" content="2017-08-26">
+              2017-08-26
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/08/26/longest_absolute_file_path/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/08/26/longest_absolute_file_path/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/08/26/longest_absolute_file_path/" class="leancloud_visitors" data-flag-title="第388题---Longest Absolute File Path">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <ul>
+<li><p>题意描述</p>
+<ul>
+<li>给定一个字符串，“dir\n\tsubdir1\n\tsubdir2\n\t\tfile.ext”代表一个文件目录，求所有文件的路径长度最大的</li>
+</ul>
+</li>
+<li><p>思路</p>
+<ul>
+<li>不会，有点复杂
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2017/08/26/longest_absolute_file_path/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -571,7 +689,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">32</span>
+              <span class="site-state-item-count">33</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -581,7 +699,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
